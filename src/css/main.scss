@@ -23,6 +23,13 @@ button:focus {
 	outline:0 !important;
 }
 
+
+h2{
+	@include fs-header(4);
+	color: $neutral-1;
+	padding-top:3px;
+}
+
 h4, h5{
 	@include fs-header(3);
 }
@@ -39,7 +46,7 @@ h4, h5{
 	background:#EFEFEF;
 }
 
-.gv-inner{
+.gv-inner, .nav-slice-inner{
 	max-width:620px;
 	margin: 0;
 	padding:$gs-baseline 0;
@@ -63,6 +70,8 @@ h4, h5{
 		max-width:1300px;
 	}
 }
+
+
 
 
 .gv-section-title {
@@ -101,19 +110,50 @@ h4, h5{
 	
 }
 
+//, .gv-inner-content-50pc:before
+.gv-inner-top-border:before, .gv-inner-content-50pc:before {
+   content: "";
+   display: block;
+   width: gs-span(1);
+   height: 3px;
+   background-color:$neutral-4;
+   margin-bottom: 3px;
+
+}
+
+.gv-inner-top-border:after {
+   content: "";
+   display: block;
+   width: 100%;
+   margin-bottom: $gs-baseline;
+
+}
+
+
+
 .gv-inner-content-50pc{
+	h1,h2,h3,h4{
+		margin:0;
+		padding:0;
+	}
+
+	color:$neutral-1;
 	position:relative;
 	display: inline-block;
 	vertical-align:top;
 	width:gs-span(4);
-	margin-top: $gs-baseline/2;
+	margin-top: 0;
 	margin-bottom: gs-height(1);
+	padding: 0 0 $gs-gutter;
+
 
 	@include mq(tablet) {
 		margin-bottom: $gs-baseline;
 	}
 	
 }
+
+
 
 .gv-inner-content-50pc:first-child {
 		border-right: none;
@@ -127,6 +167,7 @@ h4, h5{
 	}
     
 }
+
 
 .gv-back-to-top{
 	@include fs-textSans(3);

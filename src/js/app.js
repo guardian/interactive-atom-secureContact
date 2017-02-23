@@ -60,7 +60,7 @@ function checkElScroll(el)
     var docViewBottom = docViewTop + window.height;
     var backTop = document.getElementById("backToTop");
 
-        if(isElementVisible(document.querySelector(".top-slice")))
+        if(isElementVisible(document.querySelector(".standy-two")))
         {
             hideNavElement(el);
             
