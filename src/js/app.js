@@ -44,30 +44,33 @@ function toggleButtonClass(el){
 
 function addScrollListener(){
         var el = document.querySelector(".nav-slice-fixed");
-
+        var elMob = document.querySelector(".gv-back-top-button");
         //console.log(el.scrollTop)
         // var el = .style.display = 'none';
 
         
-        window.onscroll=function(){ checkElScroll(el) };
-        window.onresize=function(){ checkElScroll(el) };
+        window.onscroll=function(){ checkElScroll(el, "none-mobile") };
+        window.onresize=function(){ checkElScroll(el, "none-mobile") };
+
+        window.onscroll=function(){ checkElScroll(elMob, "mobile") };
+        window.onresize=function(){ checkElScroll(elMob, "mobile") };
 }
 
-function checkElScroll(el)
+function checkElScroll(el, s)
 {
     
     var docViewTop = document.body.scrollTop;
     var docViewBottom = docViewTop + window.height;
-    var backTop = document.getElementById("backToTop");
+
+    console.log(s, s=="mobile", "look here on Monday")
+
 
         if(isElementVisible(document.querySelector(".standy-two")))
         {
-            hideNavElement(el);
-            
-
-        }else{
-            
-            showNavElement(el);
+            s=="mobile" ? hideNavElementMobile(el) : hideNavElement(el);
+   
+        }else{            
+            s=="mobile" ? showNavElementMobile(el) : showNavElement(el);
             
         }
 
@@ -81,13 +84,22 @@ function checkElScroll(el)
 function hideNavElement(el){
      el.classList.remove("active-none-mobile");
      el.classList.add("inactive");
-
-    }
+}
 
 function showNavElement(el){
      el.classList.remove("inactive");
      el.classList.add("active-none-mobile");
-    }
+}
+
+function hideNavElementMobile(el){
+     el.classList.remove("active-mobile");
+     el.classList.add("inactive");
+}
+
+function showNavElementMobile(el){
+     el.classList.remove("inactive");
+     el.classList.add("active-mobile");
+}
 
 
 

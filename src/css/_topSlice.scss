@@ -14,10 +14,11 @@
 			@include fs-headline(9);
 			font-weight: 200;
 			color: $accent-main;
-			margin:$gs-baseline 0;
+			margin:0 0 $gs-baseline ;
 
 			@include mq(tablet) {
 		        font-size:60px;
+		        margin:$gs-baseline 0;
 		    }
 
 		}
@@ -38,7 +39,7 @@
 
 .standfirst-slice{
 	background: rgba($accent-main,0.4) !important;
-	color:white;
+	color:#FFF;
 
 	.gv-inner{
 		padding:gs-height(1) 0 $gs-baseline*0.5;
@@ -47,10 +48,16 @@
 
 
 	p{
-		@include fs-headline(4);
-		font-weight:200;
-		color: #FFF;
+	
 		max-width: 460px !important;
+		@include fs-headline(3);
+		font-weight:200;
+		@include mq(tablet){
+			@include fs-headline(4);
+			
+			
+		}
+		
 	}
 
 
@@ -59,24 +66,31 @@
 .standy-two{
 
 	.gv-inner{
-		padding:$gs-baseline*0.5 0 gs-height(1);
+		padding:$gs-baseline 0 gs-height(1);
 	}
 
 	
 }
 
 .standy-bg-img{
-	.gv-inner::before {
+	.gv-inner-content::before {
 	   content: " ";
 	   position:absolute;
-	   top:0;
-	   left:800px;
+	   top:-36px;
+	   margin-left:560px;
 	   width: 513px;
 	   height: 520px;
 	   z-index: 1000;
 	   background-image: url('<%= path %>/assets/front-page-comp.png');
 	   background-repeat:no-repeat;
 	   background-blend-mode: multiply;
+	   display:none;
+
+	   @include mq(desktop){
+	   		display:block;
+	   }
+
+	   
 
 	}
 }
@@ -96,9 +110,9 @@
 
 	li{
 		display:inline-block;
-		padding:3px $gs-baseline;
+		padding:4px $gs-baseline 2px;
 		margin: $gs-baseline*0.5 $gs-gutter*0.5  $gs-baseline*0.5 0;
-		height:18px;
+		height:21px;
 		border: 1px solid #FFF;
 		border-radius: 100px;
 		@include fs-textSans(3);
@@ -119,7 +133,8 @@
 	}
 
 	li:hover{
-		background-color:$accent-main;
+		background-color:$bg-main;
+		border: 1px solid $bg-main;
 		
 	}	
 
@@ -130,6 +145,10 @@
 		a{
 			text-decoration:none;
 		}
+	}
+
+	h5{
+		color: #FFF;
 	}
 }
 
@@ -161,33 +180,7 @@
 
 	}
 
-	button{
-		display:inline-block;
-		padding: 0px 12px;
-	    margin: 0px 3px 0 0;
-	    height: 21px;
-	    background-color:$bg-main;
-		color:#FFF;
-		border: 1px solid $bg-main;
-	    border-radius: 100px;
-	    @include fs-textSans(3);
 	
-	    text-align: center;
-	    cursor: pointer;
-	
-
-		// background-image: url('<%= path %>/assets/arrow-right.svg');
-	 //    background-position: right center;
-	 //    background-repeat: no-repeat;
-	 //    background-size: 24px;
-	 //    margin-right: 6px;
-	}
-
-	button:hover{
-		background-color:$accent-main;
-		border: 1px solid $accent-main;
-		
-	}
 
 	ul{		
 		width:100%;
@@ -247,4 +240,40 @@
 		max-width: gs-span(3)+10;
 	}
 
+}
+
+
+.support-slice, .gv-in-copy{
+	button{
+		display:inline-block;
+		padding: 0px 12px;
+	    margin: 0px 3px 0 0;
+	    height: 21px;
+	    background-color:$accent-main;
+		color:#FFF;
+		border: 1px solid $accent-main;
+	    border-radius: 100px;
+	    @include fs-textSans(3);
+	
+	    text-align: center;
+	    cursor: pointer;
+
+	    a{
+	    	color:#FFF;
+	    	text-decoration: none;
+	    }
+	
+
+		// background-image: url('<%= path %>/assets/arrow-right.svg');
+	 //    background-position: right center;
+	 //    background-repeat: no-repeat;
+	 //    background-size: 24px;
+	 //    margin-right: 6px;
+	}
+
+	button:hover{
+		background-color:$bg-main;
+		border: 1px solid $bg-main;
+		
+	}
 }

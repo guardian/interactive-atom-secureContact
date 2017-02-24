@@ -18,6 +18,7 @@ $accent-main: $news-main-2;
 // Project specific imports
 @import "share";
 @import "topSlice";
+@import "backTopButton";
 
 button:focus {
 	outline:0 !important;
@@ -31,13 +32,18 @@ h2{
 }
 
 h4, h5{
-	@include fs-header(3);
+	@include fs-bodyHeading(3);
+	color: $neutral-1;
 }
 
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
     background:#FFF;
+    margin-bottom: gs-height(2) !important;
+    @include mq(tablet){
+    	margin-bottom: 0 !important;
+    }
 }
 
 .gv-slice {
@@ -110,22 +116,47 @@ h4, h5{
 	
 }
 
-//, .gv-inner-content-50pc:before
-.gv-inner-top-border:before, .gv-inner-content-50pc:before {
+
+
+
+.gv-inner-top-border{
+	ul{
+		margin:0;
+		list-style-type: none;
+	}
+	li{	
+		margin: 0 0 $gs-baseline $gs-gutter*0.5;
+		text-align: left;
+		color:$neutral-2;
+		max-width:gs-span(6);
+	}
+
+
+	
+}
+.gv-inner-top-border:before {
    content: "";
    display: block;
-   width: gs-span(1);
-   height: 3px;
-   background-color:$neutral-4;
-   margin-bottom: 3px;
+   @include mq(leftCol){
+   		width: gs-span(1);
+   		height: 3px;
+   		background-color:$neutral-4;
+   		margin-bottom: 3px;
+   }
+   
 
 }
 
-.gv-inner-top-border:after {
-   content: "";
-   display: block;
-   width: 100%;
-   margin-bottom: $gs-baseline;
+.gv-inner-content-50pc:before {
+    content: "";
+    display: block;
+
+	width: gs-span(1);
+	height: 3px;
+	background-color:$neutral-4;
+	margin-bottom: 3px;
+   
+   
 
 }
 
@@ -142,13 +173,12 @@ h4, h5{
 	display: inline-block;
 	vertical-align:top;
 	width:gs-span(4);
-	margin-top: 0;
-	margin-bottom: gs-height(1);
+	margin:$gs-baseline 0 0 ;
 	padding: 0 0 $gs-gutter;
 
 
 	@include mq(tablet) {
-		margin-bottom: $gs-baseline;
+		margin:0 0 $gs-baseline;
 	}
 	
 }
@@ -182,7 +212,7 @@ h4, h5{
 	position:relative;
 	height:30px;
 	padding:4px $gs-baseline 3px 36px;
-	margin: $gs-baseline $gs-gutter 0 0;
+	margin: $gs-baseline $gs-gutter $gs-baseline 0;
 	
 	border: 1px solid $news-main-1;
 	border-radius: 100px;
@@ -202,11 +232,50 @@ h4, h5{
 }
 
 .show-less{
-	background-image: url('<%= path %>/assets/minus.svg');
+	background-image: url('<%= path %>/assets/cross.svg');
     background-position: 6px center;
     background-repeat: no-repeat;
     background-size: 18px;
 }
+
+
+	.in-copy-button {
+		display:inline-block;
+		padding: 0px 30px 0 9px;
+	    margin: 0px 3px 0 0;
+	    height: 21px;
+	    background-color:$accent-main;
+		color:#FFF;
+		border: 1px solid $accent-main;
+	    border-radius: 100px;
+	    @include fs-textSans(3);
+	
+	    text-align: center;
+	    cursor: pointer;
+
+	    background-image: url('<%= path %>/assets/tick.svg');
+	    background-position: right center;
+	    background-repeat: no-repeat;
+	    background-size: 24px 15px;
+
+	    a{
+	    	color:#FFF;
+	    }
+	
+
+		// background-image: url('<%= path %>/assets/arrow-right.svg');
+	 //    background-position: right center;
+	 //    background-repeat: no-repeat;
+	 //    background-size: 24px;
+	 //    margin-right: 6px;
+	}
+
+	.in-copy-button:hover{
+		background-color:$bg-main;
+		border: 1px solid $bg-main;
+		text-decoration:none;
+		
+	}
 
 
 
@@ -236,6 +305,14 @@ h4, h5{
 
 	@include mq(tablet) {
         display:block;
+    }
+}
+
+.active-mobile{
+	display:block;
+
+	@include mq(tablet) {
+        display:none;
     }
 }
 
