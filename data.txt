@@ -1,0 +1,45 @@
+tagheadline: contact us
+headline: Contact the Guardian securely
+standfirst: Some of the most important stories published by the Guardian have come from anonymous or confidential tip offs. If you have a story you’d like to share with us keep reading to learn more about contacting us securely
+
+[navsOne]
+
+[]
+
+
+[navsTwo]
+
+[]
+
+[cards]
+		hed:SecureDrop
+		[.pros]
+		*SecureDrop does not record where things came from
+		*All we can see is what has been sent to randomly generated code - higest security level
+		[]
+
+		[.cons]
+		*You will need to download Tor software to access our SecureDrop system
+		*If you are being monitored, the very act of using Tor may arouse suspicion
+		[]
+
+		readMoreCopy:<h4>Get started</h4>- For maximum security and anonymity, use a computer that you are confident is not being monitored.- Install Tor Browser.- Follow the instructions at securedrop.theguardian.com<h4>How we can get back to you</h4>You don’t have to provide us with a means of contacting you but	it can sometimes be useful for us to be able to do so. It can also help us if you are able to provide some background about what is in the documents and why you think they might be of interest to us. We can reply to you on SecureDrop. Or if you prefer another mode of communication, send us your contact details through a SecureDrop message.
+
+		hed:email
+		[.pros]
+		*You can send longer messages and attachments — which is very difficult using phone apps.
+		*Encrypted emails and documents are password protected — so even if someone got hold of your communications they’d have to crack the password.
+		*It’s easy to communicate directly with a particular Guardian journalist.
+		*All we can see is what has been sent to randomly generated code - highest security level
+		[]
+
+		[.cons]
+		*It requires a bit of technical prowess to set up.
+		*If you lose your "keys" or forget your password, you won’t be able to read your own communication
+		[]
+
+		readMoreCopy:If you plan to write an email to a Guardian journalist about a	sensitive matter, look into PGP encryption. Used properly, PGP should make a message or document unreadable to anyone except the person who sent it and the person for whom it was encrypted.<h4>How does it work?</h4>With PGP, you will use a “public key” that belongs to the person you are writing to, but is freely available on the internet. This key turns your message into an unreadable jumble. Your recipient – and no one else – has a corresponding “private key” which can unlock messages that were encrypted by their public key.<h4>Get started</h4>Set up your own public and private keys. Two popular PGP encryption software packages are Gpg4win for Windows and GPG Suite for Macs./n- If you use a browser to access a webmail service, such as Gmail or Yahoo! Mail, you may want to look at Mailvelope./n- Find the public keys of Guardian journalists at pgp.theguardian.com/n- Remember to encrypt your attachments also! The software listed above can do that for you.
+[]
+
+
+

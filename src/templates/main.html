@@ -1,215 +1,76 @@
-<div class='gv-slice standfirst-slice standy-bg-img'>
-	<div class="gv-inner">
-				<div class="gv-inner-content">
+<div class='gv-slice gv-head-slice standy-bg-img'>
+    <div class="gv-inner gv-head-inner">
+        <div class="gv-inner-content gv-standfirst">
+        
+        	<h4>{{{tagheadline}}}</h4>
+        	<h1>{{{headline}}}</h1>
+            <p>{{{standfirst}}}</p>
+    
+        </div>
+    </div>
+</div>
 
-<p>{{{standfirst}}}</p>
+<div class='gv-slice nav-step-one'>
+    <div class="gv-inner ">
+        <div class="gv-inner-content">
+        	<h5>{{{navOneTitle}}}</h5>
+        	<ul class="gv-nav-list">
+                {{#navsOne}}
+                <li class="nav-one-item unselected">                	
+                	<a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a>
+                </li>
+                {{/navsOne}}
+            </ul>
+        	
+        </div>
+    </div>
+</div>
 
-				</div>
-			</div>
-
-
-</div>	
-
-
-<div class='gv-slice header-slice'>
-			<div class="gv-inner">
-				<div class="gv-inner-content header-top-section">
-
-							<h5>{{{tagheadline}}}</h5>
-							<h1>{{{headline}}}</h1>
-
-							<div class="gv-share-container">
-								<button class="share-twitter"></button>
-								<button class="share-facebook"></button>
-							</div>
-
-
-
-				</div>
-			</div>
-			<!-- <div class="gv-inner nav-slice nav-slice-relative" style="padding-bottom:12px;">
-				<div class="gv-inner-content">
-					<h5>ways to contact us</h5>
-					<ul>
-
-						{{#slices}}
-
-						<li><a href="#{{{hed}}}">{{{hed}}}</a></li>
-					
-
-						{{/slices}}
-					</ul>	
-				
-
-							
-
-
-
-				</div>
-			</div> -->
+<div class='gv-slice nav-step-two'>
+    <div class="gv-inner">
+        <div class="gv-inner-content">
+        	<h5>{{{navTwoTitle}}}</h5>
+        	<ul>
+                {{#navsTwo}}
+                <li><a href="#{{{hed}}}">{{{hed}}}</a></li>
+                {{/navsTwo}}
+            </ul>
+        	
+        </div>
+    </div>
 </div>
 
 
-<div class='gv-slice standfirst-slice standy-two'>
-	<div class="gv-inner">
-				<div class="gv-inner-content">
-
-<p>{{{standfirstOtherCopy}}}</p>
-
-				</div>
-			</div>
-
-
-</div>	
-
-<div class='gv-slice nav-slice nav-slice-relative'>
-	<a name="anonConf"></a>
-			<div class="gv-inner nav-slice-inner">
-				<div class="gv-inner-content">
-						<h5>ways to contact us</h5>
-					<ul>
-
-						{{#slices}}
-
-						<li><a href="#{{{hed}}}">{{{hed}}}</a></li>
-					
-
-						{{/slices}}
-					</ul>	
-				
-
-							
-
-
-
-				</div>
-			</div>
-
-</div>
-
-
-<div class='gv-slice support-slice'>
-			<div class="gv-inner">
-				<div class="gv-section-title">
-					<h2>{{{sliceOneHead}}}</h2> <!-- <p>Brief introductory text why you'd want to use each method</p> -->
-				
-				
-				</div>
-				<div class="gv-inner-content">
-					<!--  -->
-					<div class="gv-inner-content-50pc">
-
-						<h4>{{{sliceOneConfHead}}}</h4>
-
-							<ul>
-								<li><span class="list-txt">{{{sliceOneConfBulletOne}}}</span></li>
-								<li><span class="list-txt">{{{sliceOneConfBulletTwo}}}</span></li>
-								<li><span class="list-txt">{{{sliceOneConfBulletThree}}}</span></li>
-							</ul>
-<!-- {{{sliceOneConfCopy}}} -->
-							<p>  
-								{{#slices}}
-									{{{#confidential}}}
-									<button><a href="#{{{hed}}}">{{{hed}}}</a></button>
-									{{{/confidential}}}
-								{{/slices}}
-							</p>
-
-					</div>		
-
-					<div class="gv-inner-content-50pc">
-
-						<h4>{{{sliceOneAnonHead}}}</h4>
-
-							<ul>
-								<li><span class="list-txt">{{{sliceOneAnonBulletOne}}}</span></li>
-								<li><span class="list-txt">{{{sliceOneAnonBulletTwo}}}</span></li>
-								<li><span class="list-txt">{{{sliceOneConfBulletThree}}}</span></li>
-							</ul>	
-							
-
-							<!-- <p>{{{sliceOneAnonCopy}}} </p> -->
-
-							<p>  
-								{{#slices}}
-									{{{#anon}}}
-									<button><a href="#{{{hed}}}">{{{hed}}}</a></button>
-									{{{/anon}}}
-								{{/slices}}
-							</p>
-
-					</div>	
-
-				</div>
-			</div>
-
-</div>
-
-{{#slices}}
 <div class='gv-slice'>
-			<div class="gv-inner">
-				
-				<div class="gv-section-title">
-					<a name="{{{hed}}}"></a><h2>{{{hed}}}</h2>
+    <div class="gv-inner gv-cards-wrapper">
+        <div class="gv-inner-content">
+        	<h5>{{{cardsTitle}}}</h5>
+        	<div class="gv-cards-holder">
+                {{#cards}}
+                <div class="gv-card">
+                	<div class="gv-card-left"><h4>{{{hed}}}</h4></div>
 
-					<!-- <a class="gv-back-to-top" href="#"> <span> <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14"><path fill="currentColor" d="M0.5,7 L5.75,2.5 L5.75,14 L7.25,14 L7.25,2.5 L12.5,7 L13,6 L7.25,0 L5.75,6e-17 L0,6 L0.5,7 L0.5,7 Z"></path></svg> </span> <span>Back to top</span> </a> -->
-				</div>
-				<div class="gv-inner-content gv-inner-top-border">
-					
-					<span class="opening-para gv-in-copy">{{{openingPara}}}</span>
-				
-				
+                	<div class="gv-card-main"> 
+                		<h6>Pros</h6>
+                		<ul>
+                		{{#pros}}  <li>{{{.}}}</li> {{/pros}}
+                		</ul>
 
-					<span class="other-paras gv-in-copy">{{{otherCopy}}}</span>
-							
-					<button class="btn-xpand show-more">show more</button>
+                		<h6>Cons</h6>
+                		<ul>
+                		{{#cons}}  <li>{{{.}}}</li> {{/cons}}
+                		</ul>
 
-				</div>
-			</div>
+                		<div class="gv-read-more inactive">
+                			{{{readMoreCopy}}}
 
+                		</div>	
+
+                	</div>	
+                </div>
+                {{/cards}}
+            </div>
+        	
+        </div>
+    </div>
 </div>
-{{/slices}}
-
-
-
-<div class='gv-slice nav-slice nav-slice-fixed inactive'>
-			<div class="gv-inner nav-slice-inner">
-				<div class="gv-inner-content">
-						<h5>ways to contact us</h5>
-					<ul>
-
-						{{#slices}}
-
-						<li><a href="#{{{hed}}}">{{{hed}}}</a></li>
-					
-
-						{{/slices}}
-					</ul>	
-				
-
-							
-
-
-
-				</div>
-			</div>
-
-</div>
-
-
-<div class="gv-back-top-button active-mobile">
-	<div class="gv-back-top-button-label">
-		<a href="#" class="back-top-label">
-			back to top
-		</a>
-	</div>
-	<!--<span class="svg-wrapper">-->
-	<!-- <svg width="24" height="18" viewBox="0 0 24 18" class="inline-arrow-up__svg inline-icon__svg">
-	<path d="M.4 15.3l10.5-8.4L12 6l1.1.9 10.5 8.4-.5.7L12 9.7.9 16l-.5-.7z"></path>
-	</svg> -->
-	<!--</span>-->
-</div>
-
-
-
-
