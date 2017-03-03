@@ -7,8 +7,7 @@ export function render() {
         uri: 'https://interactive.guim.co.uk/docsdata-test/1WLhHROz2EB2rW25ouywEmw_u-Bi_9W7UDoVlxTHy1Zs.json',
         json: true
     }).then((data) => {
-	       var html = Mustache.render(mainTemplate, data);
-           return html;
+	      return buildView(data)
     });
 
    
@@ -16,4 +15,8 @@ export function render() {
 
 
 
+function buildView(data){
+	var html = Mustache.render(mainTemplate, data);
 
+    return html;
+}

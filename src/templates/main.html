@@ -27,7 +27,7 @@
             <h5>{{{navTwoTitle}}}</h5>
             <ul class="gv-nav-list gv-nav-list-two">
                 {{#navsTwo}}
-                <li  class="nav-one-item unselected"><a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a></li>
+                <li class="nav-one-item unselected"><a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a></li>
                 {{/navsTwo}}
             </ul>
         </div>
@@ -43,18 +43,23 @@
                     <div class="gv-card-left">
                         <h4>{{{hed}}}</h4></div>
                     <div class="gv-card-main">
-                        <h6>Pros</h6>
-                        <ul>
-                            {{#pros}}
-                            <li>{{{.}}}</li> {{/pros}}
-                        </ul>
-                        <h6>Cons</h6>
-                        <ul>
-                            {{#cons}}
-                            <li>{{{.}}}</li> {{/cons}}
-                        </ul>
-                        <div class="gv-read-more inactive">
+                        <div class="gv-read-less active" div-data="{{{hed}}}">
+                            <h6>Pros</h6>
+                            <ul>
+                                {{#pros}}
+                                <li><span class="bullet">•</span>{{{.}}}</li> {{/pros}}
+                            </ul>
+                            <h6>Cons</h6>
+                            <ul>
+                                {{#cons}}
+                                <li><span class="bullet">•</span>{{{.}}}</li> {{/cons}}
+                            </ul>
+                        </div>
+                        <div class="gv-read-more inactive" div-data="{{{hed}}}">
                             {{{readMoreCopy}}}
+                        </div>
+                        <div class="gv-read-more-btn show-more" nav-data="{{{hed}}}">
+                            read more
                         </div>
                     </div>
                 </div>

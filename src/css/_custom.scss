@@ -3,11 +3,9 @@ $card-left-padding: $gs-gutter*0.5;
 h4,
 h5 {
     @include fs-header(3);
-    margin-top:$gs-gutter;
+    margin-top: $gs-gutter;
     padding-bottom: $gs-baseline;
 }
-
-
 
 .gv-head-slice {
     background-color: $bg-main;
@@ -20,12 +18,10 @@ h5 {
 
 .nav-one-inner {
     margin-top: -48px;
-
-    h5{
-    	padding-left: $card-left-padding;
-    	margin-top:0;
+    h5 {
+        padding-left: $card-left-padding;
+        margin-top: 0;
     }
-
 }
 
 .gv-standfirst {
@@ -61,19 +57,26 @@ h5 {
     background-color: #FFF;
     max-width: $card-width;
     margin: 0 0 gs-height(1) 0;
-
-    h1,h2,h3,h4,h5,h6{
-    	margin-top:$gs-baseline*0.5;
-    	margin-left:0;
+        padding-bottom: $gs-baseline;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $gs-baseline*0.5;
+        margin-left: 0;
     }
-
-    h6{
-    	@include fs-header(3);
+    h6 {
+        @include fs-header(3);
     }
+    ul {
+        margin: 0 0 gs-height(1);
+        list-style-type: none;
+        	li{
+        		margin: 0 0 $gs-baseline*0.5;
+        	}
 
-    ul{
-    	// margin:0;
-    	list-style-type: none;
     }
 }
 
@@ -95,6 +98,7 @@ h5 {
 
 .gv-card-main {
     margin-left: gs-span(2);
+
 }
 
 .gv-nav-list {
@@ -125,21 +129,20 @@ h5 {
     }
 }
 
-.gv-nav-list-two{
-	li:first-child {
+.gv-nav-list-two {
+    li:first-child {
         border: 0;
     }
-	 li {
+    li {
         float: left;
         width: gs-span(3);
         height: gs-height(4)-$gs-baseline;
         margin-right: $gs-gutter;
         border: none;
-      }
-
-      li:last-child {
+    }
+    li:last-child {
         margin-right: 0;
-       }
+    }
 }
 
 .nav-one-item:before {
@@ -205,15 +208,21 @@ h5 {
 }
 
 .unselected {
-	color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
     background-color: $inactive-fill;
 }
 
-// .unselected:before{
-// 	content:'';
-// 	background-image: url('<%= path %>/assets/arrow-right.svg');
-// 	background-position: right center;
-// 	background-repeat: no-repeat;
-// 	background-size: 24px;
-// 	margin-right: 6px;
-// }
+.gv-read-more-btn{
+	height:18px;
+	margin: $gs-baseline 0;
+	padding:6px $gs-gutter 6px;
+	background-color:$accent-main;
+	border-radius:1000px;
+	width:gs-span(1)+$gs-gutter;
+	text-align:right;
+	@include fs-textSans(3);
+	color:#FFF;
+	cursor:pointer;
+
+}
+
