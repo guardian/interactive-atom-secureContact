@@ -1,5 +1,6 @@
 $card-width:gs-span(9);
 $card-left-padding: $gs-gutter*0.5;
+$border-color:rgba(#FFF, 0.2);
 h4,
 h5 {
     @include fs-header(3);
@@ -57,7 +58,7 @@ h5 {
     background-color: #FFF;
     max-width: $card-width;
     margin: 0 0 gs-height(1) 0;
-        padding-bottom: $gs-baseline;
+    padding-bottom: $gs-baseline;
     h1,
     h2,
     h3,
@@ -73,10 +74,9 @@ h5 {
     ul {
         margin: 0 0 gs-height(1);
         list-style-type: none;
-        	li{
-        		margin: 0 0 $gs-baseline*0.5;
-        	}
-
+        li {
+            margin: 0 0 $gs-baseline*0.5;
+        }
     }
 }
 
@@ -97,8 +97,7 @@ h5 {
 }
 
 .gv-card-main {
-    margin-left: gs-span(2);
-
+    margin: 0 $gs-gutter 0 gs-span(2);
 }
 
 .gv-nav-list {
@@ -113,19 +112,17 @@ h5 {
         height: gs-height(2)+$gs-baseline;
     }
     li:first-child {
-        border-right: 1px solid #FFF;
+        border-right: 1px solid $border-color;
     }
-    li a {
+    .gv-nav-list-item {
         display: block;
-        color: white;
         text-align: left;
         margin: 0 $gs-gutter * 0.5 $gs-baseline*2 gs-span(1)+$gs-gutter;
         padding: $gs-baseline * 0.5 0 0 $gs-gutter;
         text-decoration: none;
         @include fs-header(3);
-        color: #FFF;
         height: gs-height(1);
-        border-left: 1px solid #FFF;
+        border-left: 1px solid $border-color;
     }
 }
 
@@ -145,21 +142,6 @@ h5 {
     }
 }
 
-.nav-one-item:before {
-    content: ' ';
-    margin: $gs-baseline $gs-gutter;
-    width: 36px;
-    height: 36px;
-    // background-color:$accent-main;
-    border-radius: 1000px;
-    border: 1px solid #FFF;
-    background-image: url('<%= path %>/assets/arrow-right.svg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 33px;
-    float: left;
-}
-
 .gv-nav-list-note {
     @include fs-textSans(3);
     color: #FFF;
@@ -171,6 +153,10 @@ h5 {
     h5 {
         color: #FFF;
     }
+}
+
+.nav-one-item{
+	cursor:pointer;
 }
 
 .show-more {
@@ -205,24 +191,50 @@ h5 {
 
 .selected {
     background-color: $accent-main;
+    color: #FFF;
+    span {
+        color: #FFF;
+    }
 }
 
 .unselected {
     color: rgba(255, 255, 255, 0.5);
     background-color: $inactive-fill;
+    span {
+        color: rgba(255, 255, 255, 0.5);
+    }
 }
 
-.gv-read-more-btn{
-	height:18px;
-	margin: $gs-baseline 0;
-	padding:6px $gs-gutter 6px;
-	background-color:$accent-main;
-	border-radius:1000px;
-	width:gs-span(1)+$gs-gutter;
-	text-align:right;
-	@include fs-textSans(3);
-	color:#FFF;
-	cursor:pointer;
-
+.unselected:before,
+.selected:before {
+    content: ' ';
+    margin: $gs-baseline $gs-gutter;
+    width: 36px;
+    height: 36px;
+    opacity: 0.5;
+    border-radius: 1000px;
+    border: 1px solid #FFF;
+    background-image: url('<%= path %>/assets/arrow-right.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 33px;
+    float: left;
 }
 
+.selected:before {
+    background-image: url('<%= path %>/assets/arrow-down.svg');
+    opacity: 1;
+}
+
+.gv-read-more-btn {
+    height: 18px;
+    margin: $gs-baseline 0;
+    padding: 6px $gs-gutter 6px;
+    background-color: $accent-main;
+    border-radius: 1000px;
+    width: gs-span(1)+$gs-gutter;
+    text-align: right;
+    @include fs-textSans(3);
+    color: #FFF;
+    cursor: pointer;
+}
