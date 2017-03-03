@@ -1,76 +1,65 @@
 <div class='gv-slice gv-head-slice standy-bg-img'>
     <div class="gv-inner gv-head-inner">
         <div class="gv-inner-content gv-standfirst">
-        
-        	<h4>{{{tagheadline}}}</h4>
-        	<h1>{{{headline}}}</h1>
+            <h4>{{{tagheadline}}}</h4>
+            <h1>{{{headline}}}</h1>
             <p>{{{standfirst}}}</p>
-    
         </div>
     </div>
 </div>
-
 <div class='gv-slice nav-step-one'>
     <div class="gv-inner ">
-        <div class="gv-inner-content">
-        	<h5>{{{navOneTitle}}}</h5>
-        	<ul class="gv-nav-list">
+        <div class="gv-inner-content nav-one-inner">
+            <h5>{{{navOneTitle}}}</h5>
+            <ul class="gv-nav-list">
                 {{#navsOne}}
-                <li class="nav-one-item unselected">                	
-                	<a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a>
+                <li class="nav-one-item unselected">
+                    <a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a>
                 </li>
                 {{/navsOne}}
             </ul>
-        	
         </div>
     </div>
 </div>
-
 <div class='gv-slice nav-step-two'>
     <div class="gv-inner">
         <div class="gv-inner-content">
-        	<h5>{{{navTwoTitle}}}</h5>
-        	<ul>
+            <h5>{{{navTwoTitle}}}</h5>
+            <ul class="gv-nav-list gv-nav-list-two">
                 {{#navsTwo}}
-                <li><a href="#{{{hed}}}">{{{hed}}}</a></li>
+                <li  class="nav-one-item unselected"><a href="#{{{hed}}}">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></a></li>
                 {{/navsTwo}}
             </ul>
-        	
         </div>
     </div>
 </div>
-
-
 <div class='gv-slice'>
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
-        	<h5>{{{cardsTitle}}}</h5>
-        	<div class="gv-cards-holder">
+            <h5>{{{cardsTitle}}}</h5>
+            <div class="gv-cards-holder">
                 {{#cards}}
                 <div class="gv-card">
-                	<div class="gv-card-left"><h4>{{{hed}}}</h4></div>
-
-                	<div class="gv-card-main"> 
-                		<h6>Pros</h6>
-                		<ul>
-                		{{#pros}}  <li>{{{.}}}</li> {{/pros}}
-                		</ul>
-
-                		<h6>Cons</h6>
-                		<ul>
-                		{{#cons}}  <li>{{{.}}}</li> {{/cons}}
-                		</ul>
-
-                		<div class="gv-read-more inactive">
-                			{{{readMoreCopy}}}
-
-                		</div>	
-
-                	</div>	
+                    <div class="gv-card-left">
+                        <h4>{{{hed}}}</h4></div>
+                    <div class="gv-card-main">
+                        <h6>Pros</h6>
+                        <ul>
+                            {{#pros}}
+                            <li>{{{.}}}</li> {{/pros}}
+                        </ul>
+                        <h6>Cons</h6>
+                        <ul>
+                            {{#cons}}
+                            <li>{{{.}}}</li> {{/cons}}
+                        </ul>
+                        <div class="gv-read-more inactive">
+                            {{{readMoreCopy}}}
+                        </div>
+                    </div>
                 </div>
                 {{/cards}}
             </div>
-        	
         </div>
     </div>
 </div>

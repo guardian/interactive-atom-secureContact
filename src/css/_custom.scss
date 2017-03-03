@@ -1,172 +1,212 @@
-.gv-head-slice{
-	background-color:$bg-main;padding-bottom: 0
-}
-
-.gv-head-inner{
-	padding:$gs-gutter 0;
-}
-
-
-.gv-standfirst{
-
-	background-color:$neutral-dark;
-	color:#FFF;
-	max-width: 720px;
-	padding: $gs-baseline $gs-gutter*0.5 gs-height(3);
+$card-width:gs-span(9);
+$card-left-padding: $gs-gutter*0.5;
+h4,
+h5 {
+    @include fs-header(3);
+    margin-top:$gs-gutter;
+    padding-bottom: $gs-baseline;
 }
 
 
-.gv-cards-wrapper{
-	background-color: $light-neutral;
+
+.gv-head-slice {
+    background-color: $bg-main;
+    padding-bottom: 0
 }
 
-.gv-inner{
-	background-color: $light-neutral;
+.gv-head-inner {
+    padding: $gs-gutter 0 0;
 }
 
-.gv-card{
-	background-color: #FFF;
-	max-width: 720px;
-	margin:0;
-}
+.nav-one-inner {
+    margin-top: -48px;
 
-.gv-card:before{
-	content:"";
-	display: block;
-	height: 3px;
-	width:gs-span(1);
-	background-color:$accent-main;
-	margin:0;
-	padding:0;
-}
-
-.gv-card-left{
-	width: gs-span(2);
-	padding: 0 0 0 $gs-gutter * 0.5;
-	float: left;
+    h5{
+    	padding-left: $card-left-padding;
+    	margin-top:0;
+    }
 
 }
 
-.gv-card-main{
-	margin-left: gs-span(2);
+.gv-standfirst {
+    background-color: $neutral-dark;
+    width: $card-width;
+    padding: $gs-baseline 0 gs-height(3);
+    p,
+    h1,
+    h4 {
+        padding-left: $card-left-padding;
+        color: #FFF;
+    }
+    h1 {
+        @include fs-headline(9);
+        font-weight: 200;
+        color: $accent-main;
+    }
+    p {
+        margin-right: gs-span(2);
+        @include fs-headline(3);
+    }
 }
 
-.gv-nav-list{
+.gv-cards-wrapper {
+    background-color: $light-neutral;
+}
 
-	list-style-type: none;
+.gv-inner {
+    background-color: $light-neutral;
+}
+
+.gv-card {
+    background-color: #FFF;
+    max-width: $card-width;
+    margin: 0 0 gs-height(1) 0;
+
+    h1,h2,h3,h4,h5,h6{
+    	margin-top:$gs-baseline*0.5;
+    	margin-left:0;
+    }
+
+    h6{
+    	@include fs-header(3);
+    }
+
+    ul{
+    	// margin:0;
+    	list-style-type: none;
+    }
+}
+
+.gv-card:before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: gs-span(1);
+    background-color: $accent-main;
+    margin: 0;
+    padding: 0;
+}
+
+.gv-card-left {
+    width: gs-span(1);
+    padding: 0 0 0 $gs-gutter * 0.5;
+    float: left;
+}
+
+.gv-card-main {
+    margin-left: gs-span(2);
+}
+
+.gv-nav-list {
+    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-	
-	max-width: gs-span(9) + $gs-gutter;
-
-
-
-	li{
-		float: left;
-		width: 49.9%;
-		height: gs-height(2);
-	}
-
-	li:first-child{
-		border-right:1px solid #FFF;
-	}
-
-	li a {
-	    display: block;
-	    color: white;
-	    text-align: left;
-	    margin: 0 $gs-gutter * 0.5 $gs-baseline $gs-gutter * 3;
-	    padding:$gs-baseline * 0.5 0 0 $gs-gutter * 0.5;
-	    text-decoration: none;
-	    @include fs-header(3);
-		color:#FFF;
-		height: gs-height(1);
-		border-left:1px solid #FFF;
-	}
-
-	// li:before{
-	// 	content:"";
-	// 	height: 30px !important;
-	// 	width: 30px;
-	// 	margin-left:-30px;
-	// 	padding:15px;
-	// 	border:1px solid #FFF;
-	// 	border-radius: 15px;
-		
-	// }
-	
+    max-width: $card-width;
+    li {
+        float: left;
+        width: 49.9%;
+        height: gs-height(2)+$gs-baseline;
+    }
+    li:first-child {
+        border-right: 1px solid #FFF;
+    }
+    li a {
+        display: block;
+        color: white;
+        text-align: left;
+        margin: 0 $gs-gutter * 0.5 $gs-baseline*2 gs-span(1)+$gs-gutter;
+        padding: $gs-baseline * 0.5 0 0 $gs-gutter;
+        text-decoration: none;
+        @include fs-header(3);
+        color: #FFF;
+        height: gs-height(1);
+        border-left: 1px solid #FFF;
+    }
 }
 
-.nav-one-item:before{
-	content:' ';
-	margin: $gs-baseline $gs-gutter*0.5;
-	width:36px;
-	height:36px;
-	background-color:$accent-main;
-	border-radius:1000px;
-	border: 1px solid #FFF;
-	background-image: url('<%= path %>/assets/arrow-right.svg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 36px;
-	float:left;
+.gv-nav-list-two{
+	li:first-child {
+        border: 0;
+    }
+	 li {
+        float: left;
+        width: gs-span(3);
+        height: gs-height(4)-$gs-baseline;
+        margin-right: $gs-gutter;
+        border: none;
+      }
+
+      li:last-child {
+        margin-right: 0;
+       }
 }
 
-.gv-nav-list-note{
-	@include fs-textSans(3);
-	color:#FFF;
-	width:100%;
-	display:block;
+.nav-one-item:before {
+    content: ' ';
+    margin: $gs-baseline $gs-gutter;
+    width: 36px;
+    height: 36px;
+    // background-color:$accent-main;
+    border-radius: 1000px;
+    border: 1px solid #FFF;
+    background-image: url('<%= path %>/assets/arrow-right.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 33px;
+    float: left;
 }
 
-
-
-.nav-step-one{
-	h5{
-		color:#FFF;
-	}
+.gv-nav-list-note {
+    @include fs-textSans(3);
+    color: #FFF;
+    width: 100%;
+    display: block;
 }
 
+.nav-step-one {
+    h5 {
+        color: #FFF;
+    }
+}
 
-.show-more{
-	background-image: url('<%= path %>/assets/plus.svg');
+.show-more {
+    background-image: url('<%= path %>/assets/plus.svg');
     background-position: 6px center;
     background-repeat: no-repeat;
     background-size: 18px;
 }
 
-.show-less{
-	background-image: url('<%= path %>/assets/cross.svg');
+.show-less {
+    background-image: url('<%= path %>/assets/cross.svg');
     background-position: 6px center;
     background-repeat: no-repeat;
     background-size: 18px;
 }
 
-.right-arrow{
-	background-image: url('<%= path %>/assets/arrow-right.svg');
-	background-position: right center;
-	background-repeat: no-repeat;
-	background-size: 24px;
-	margin-right: 6px;
+.right-arrow {
+    background-image: url('<%= path %>/assets/arrow-right.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    margin-right: 6px;
 }
 
-.left-arrow{
-	background-image: url('<%= path %>/assets/arrow-right.svg');
-	background-position: right center;
-	background-repeat: no-repeat;
-	background-size: 24px;
-	margin-right: 6px;
+.left-arrow {
+    background-image: url('<%= path %>/assets/arrow-right.svg');
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    margin-right: 6px;
 }
 
-
-.selected{
-	background-color: $accent-main;
+.selected {
+    background-color: $accent-main;
 }
 
-.unselected{
-	background-color:$inactive-fill;
-
+.unselected {
+	color: rgba(255,255,255,0.5);
+    background-color: $inactive-fill;
 }
 
 // .unselected:before{
@@ -177,5 +217,3 @@
 // 	background-size: 24px;
 // 	margin-right: 6px;
 // }
-
-
