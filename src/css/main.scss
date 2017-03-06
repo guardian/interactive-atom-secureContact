@@ -42,7 +42,7 @@ h4, h5{
 .interactive-atom {
     margin: 0 !important;
     background:#FFF;
-    margin-bottom: gs-height(2) !important;
+    margin-bottom: 0 !important;
     @include mq(tablet){
     	margin-bottom: 0 !important;
     }

@@ -4,18 +4,24 @@
 
 .gv-cards-head-holder {
     width: 100%;
-    padding-bottom: gs-height(1)+$gs-gutter;
+
+    padding-bottom: $gs-gutter;
+    @include mq(tablet){
+        padding-bottom: gs-height(1);
+    }
+    
     ul {
-        list-style: none;
+        list-style-type: none;
         margin: 0;
-        padding: 0 0 $gs-baseline;
+        padding:0;
+        overflow:hidden;
     }
     li {
-        display: block;
+   
         float: left;
-        width: auto;
+
         margin-right: $gs-gutter;
-        border: none;
+
     }
     .gv-chiclet {
         display: block;

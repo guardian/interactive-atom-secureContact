@@ -27,7 +27,10 @@ h5 {
 }
 
 .gv-head-inner {
-    padding: gs-height(3) 0 0;
+    padding: 0;
+    @include mq(tablet){
+        padding: gs-height(3) 0 0;
+    }
 }
 
 .nav-one-inner {
@@ -45,12 +48,11 @@ h5 {
 .gv-standfirst {
     background-color: $neutral-dark;
     width: 100%;
-    padding: $gs-baseline 10px gs-height(3);
+    padding: $gs-baseline 0 gs-height(3);
   
 
     @include mq(tablet){
         width: $card-width-tablet;
-        padding: $gs-baseline 0 gs-height(3);
       
     }
 
@@ -61,16 +63,19 @@ h5 {
     p,
     h1,
     h4 {
+        margin-top: 0;
         padding-left: $card-left-padding;
         color: #FFF;
     }
     h1 {
         @include fs-headline(7);
-        font-weight: 200;
+        
         color: $accent-main;
         @include mq(tablet){
             @include fs-headline(9);
+            font-weight: 200;
         }
+        font-weight: 200;
     }
     p {
           @include fs-textSans(3);
