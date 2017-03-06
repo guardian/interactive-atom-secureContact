@@ -103,6 +103,11 @@ function toggleActiveNavItem(a) {
         a.classList.remove("unselected");
         a.classList.add("selected");
 
+
+        console.log(a)
+
+        document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send "+a.getAttribute("list-ref")+"…";
+
         document.querySelector('.nav-step-three').classList.remove("inactive");
 
         document.getElementById("cardsHolder").scrollIntoView({block: "end", behavior: "smooth"});
