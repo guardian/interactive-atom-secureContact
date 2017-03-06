@@ -4,11 +4,13 @@
 @import "palette";
 
 //define global colors
-$bg-main:  $guardian-brand-dark;
+$bg-main:  $news-support-6;
+
 $bg-secondary:  $guardian-brand-light;
 $accent-main: $news-main-2;
 $active-fill:$accent-main;
 $inactive-fill:$news-support-6;
+$link-fill:$guardian-brand;
 $light-neutral: rgba($news-support-6, 0.18);
 $neutral-dark: $neutral-1;
 
@@ -100,12 +102,18 @@ h4, h5{
 
 .gv-inner-content{
 	position:relative;
-	margin: 0 $gs-gutter;
+	margin: 0;
+	padding: 0 $gs-gutter*0.5;
 
-	@media(min-width:1140px){
+	@include mq(tablet){
+		margin: 0 $gs-gutter;	
+		padding: 0;
+	}	
+
+	@include mq(desktop){
 			margin-left:160px;
 		}
-	@media(min-width:1300px){
+	@include mq(wide){
 			margin-left:240px;
 		}
 
@@ -130,4 +138,5 @@ active{
 // Project specific imports
 
 @import "custom";
+@import "cards";
 // @import "backTopButton";

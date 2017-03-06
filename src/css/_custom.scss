@@ -1,4 +1,17 @@
-$card-width:gs-span(9);
+$card-width-mobile:gs-span(4);
+$card-width-tablet:gs-span(9);
+$card-width-wide:gs-span(9);
+
+//look at making card-width sass var responsive on Monday
+@media(min-width:10px){
+	
+}
+
+@media(min-width:1140px){
+	
+}
+
+
 $card-left-padding: $gs-gutter*0.5;
 $border-color:rgba(#FFF, 0.2);
 h4,
@@ -14,11 +27,15 @@ h5 {
 }
 
 .gv-head-inner {
-    padding: $gs-gutter 0 0;
+    padding: gs-height(3) 0 0;
 }
 
 .nav-one-inner {
-    margin-top: -48px;
+    margin-top: -72px;
+
+    @include mq(mobileLandscape){
+        margin-top: -48px;
+    }
     h5 {
         padding-left: $card-left-padding;
         margin-top: 0;
@@ -27,8 +44,20 @@ h5 {
 
 .gv-standfirst {
     background-color: $neutral-dark;
-    width: $card-width;
-    padding: $gs-baseline 0 gs-height(3);
+    width: 100%;
+    padding: $gs-baseline 10px gs-height(3);
+  
+
+    @include mq(tablet){
+        width: $card-width-tablet;
+        padding: $gs-baseline 0 gs-height(3);
+      
+    }
+
+    @include mq(wide){
+        width: $card-width-wide;
+    }
+
     p,
     h1,
     h4 {
@@ -36,68 +65,25 @@ h5 {
         color: #FFF;
     }
     h1 {
-        @include fs-headline(9);
+        @include fs-headline(7);
         font-weight: 200;
         color: $accent-main;
-    }
-    p {
-        margin-right: gs-span(2);
-        @include fs-headline(3);
-    }
-}
-
-.gv-cards-wrapper {
-    background-color: $light-neutral;
-}
-
-.gv-inner {
-    background-color: $light-neutral;
-}
-
-.gv-card {
-    background-color: #FFF;
-    max-width: $card-width;
-    margin: 0 0 gs-height(1) 0;
-    padding-bottom: $gs-baseline;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: $gs-baseline*0.5;
-        margin-left: 0;
-    }
-    h6 {
-        @include fs-header(3);
-    }
-    ul {
-        margin: 0 0 gs-height(1);
-        list-style-type: none;
-        li {
-            margin: 0 0 $gs-baseline*0.5;
+        @include mq(tablet){
+            @include fs-headline(9);
         }
     }
+    p {
+          @include fs-textSans(3);
+          margin-right: $gs-gutter;
+        @include mq(tablet){
+            margin-right: gs-span(2);
+            @include fs-headline(3);
+        }
+        
+    }
 }
-
-.gv-card:before {
-    content: "";
-    display: block;
-    height: 3px;
-    width: gs-span(1);
-    background-color: $accent-main;
-    margin: 0;
-    padding: 0;
-}
-
-.gv-card-left {
-    width: gs-span(1);
-    padding: 0 0 0 $gs-gutter * 0.5;
-    float: left;
-}
-
-.gv-card-main {
-    margin: 0 $gs-gutter 0 gs-span(2);
+.gv-inner {
+    background-color: $light-neutral;
 }
 
 .gv-nav-list {
@@ -105,11 +91,28 @@ h5 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    max-width: $card-width;
+    width: 100%;
+    
+     @include mq(tablet){
+        width: $card-width-tablet;
+    }
+
+    @include mq(wide){
+        width: $card-width-wide;
+    }
+
+
     li {
         float: left;
-        width: 49.9%;
+        width: 100%;
+        
         height: gs-height(2)+$gs-baseline;
+        margin-bottom: $gs-baseline;
+
+        @include mq(tablet){
+            width: 49.9%;
+            max-width: none;
+        }
     }
     li:first-child {
         border-right: 1px solid $border-color;
@@ -123,6 +126,17 @@ h5 {
         @include fs-header(3);
         height: gs-height(1);
         border-left: 1px solid $border-color;
+        h5{
+            display:block;
+            margin: 0;
+            padding-bottom:0;
+            min-height:none;
+            @include mq(tablet){
+                padding-bottom: $gs-baseline;
+                min-height: 48px;
+            }
+            
+        }
     }
 }
 
@@ -132,10 +146,16 @@ h5 {
     }
     li {
         float: left;
-        width: gs-span(3);
-        height: gs-height(4)-$gs-baseline;
+        width: 100%;
+        height: gs-height(2);
+        padding-bottom:$gs-baseline;
         margin-right: $gs-gutter;
         border: none;
+
+        @include mq(tablet){
+           width: gs-span(3); 
+           height: gs-height(4)-$gs-baseline;
+        }
     }
     li:last-child {
         margin-right: 0;
@@ -147,6 +167,19 @@ h5 {
     color: #FFF;
     width: 100%;
     display: block;
+}
+
+.gv-nav-list-note-l2 {
+    @include fs-textSans(3);
+    color: #FFF;
+    width:100%;
+    display: block;
+    margin: 0;
+
+    @include mq(tablet){
+       width: gs-span(2)+$gs-gutter+$gs-gutter; 
+       margin: 0 0 0 -80px;
+    }
 }
 
 .nav-step-one {
@@ -192,7 +225,7 @@ h5 {
 .selected {
     background-color: $accent-main;
     color: #FFF;
-    span {
+    h5,span {
         color: #FFF;
     }
 }
@@ -200,7 +233,7 @@ h5 {
 .unselected {
     color: rgba(255, 255, 255, 0.5);
     background-color: $inactive-fill;
-    span {
+    h5,span {
         color: rgba(255, 255, 255, 0.5);
     }
 }

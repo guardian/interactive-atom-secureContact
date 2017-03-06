@@ -21,28 +21,37 @@
         </div>
     </div>
 </div>
-<div class='gv-slice nav-step-two'>
+<div class='gv-slice nav-step-two inactive'>
     <div class="gv-inner">
         <div class="gv-inner-content">
             <h5>{{{navTwoTitle}}}</h5>
             <ul class="gv-nav-list gv-nav-list-two">
                 {{#navsTwo}}
-                <li class="nav-one-item nav-two-item unselected" list-ref="{{{hed}}}" nav-level="L2" target-cards="{{#relatedCards}}{{{.}}}---{{/relatedCards}}">
-
-                    <div class="gv-nav-list-item">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></div>
+                <li class="nav-one-item nav-two-item unselected" list-ref="{{{hed}}}" nav-level="L2" target-cards="{{#relatedCards}}---{{{.}}}{{/relatedCards}}">
+                    <div class="gv-nav-list-item">
+                        <h5>{{{hed}}} </h5><span class="gv-nav-list-note-l2">{{{copy}}}</span></div>
                 </li>
                 {{/navsTwo}}
             </ul>
         </div>
     </div>
 </div>
-<div class='gv-slice'>
+<div class='gv-slice nav-step-three inactive'>
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
-            <h5>{{{cardsTitle}}}</h5>
+            <div class="gv-cards-head-holder">
+                <h5 class="gv-cards-heading">{{{cardsTitle}}}</h5>
+                <ul>
+                    {{#cards}}
+                    <li>
+                        <div class="gv-chiclet unselected" card-ref="{{{hed}}}">{{{hed}}}</div>
+                    </li>
+                    {{/cards}}
+                </ul>
+            </div>
             <div class="gv-cards-holder">
                 {{#cards}}
-                <div class="gv-card">
+                <div class="gv-card inactive" card-ref="{{{hed}}}">
                     <div class="gv-card-left">
                         <h4>{{{hed}}}</h4></div>
                     <div class="gv-card-main">

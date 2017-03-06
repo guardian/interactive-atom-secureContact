@@ -1,0 +1,132 @@
+.gv-cards-wrapper {
+    background-color: $light-neutral;
+}
+
+.gv-cards-head-holder {
+    width: 100%;
+    padding-bottom: gs-height(1)+$gs-gutter;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 $gs-baseline;
+    }
+    li {
+        display: block;
+        float: left;
+        width: auto;
+        margin-right: $gs-gutter;
+        border: none;
+    }
+    .gv-chiclet {
+        display: block;
+        @include fs-textSans(3);
+        line-height: 30px;
+        color: #FFF;
+        padding: $gs-baseline*0.5 3px $gs-baseline*0.5 0;
+        margin: 0 0 $gs-baseline;
+        border-radius: 1000px;
+        
+    }
+    .selected,
+    .unselected {
+        background: none !important;
+        color: $inactive-fill;
+    }
+    .selected {
+        color: $link-fill;
+        cursor: pointer;
+    }
+    .selected:hover {
+        text-decoration: underline;
+    }
+    .unselected:before,
+    .selected:before {
+        content: ' ';
+        margin: 0 6px 0;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        opacity: 0.5;
+        background-image: url('<%= path %>/assets/cross.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        float: left;
+        background-color: $inactive-fill;
+        border: none;
+    }
+    .selected:before {
+        background-image: url('<%= path %>/assets/tick.svg');
+        background-color: $active-fill;
+        opacity: 1;
+    }
+}
+
+.gv-card {
+    background-color: #FFF;  
+    margin: 0 0 gs-height(1) 0;
+    padding-bottom: $gs-baseline;
+
+
+    @include mq(tablet){
+        width: $card-width-tablet;
+    }
+
+    @include mq(wide){
+        width: $card-width-wide;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin-top: $gs-baseline*0.5;
+        margin-left: 0;
+    }
+    h6 {
+        @include fs-header(3);
+    }
+    ul {
+        margin: 0 0 gs-height(1);
+        list-style-type: none;
+        li {
+            margin: 0 0 $gs-baseline*0.5;
+        }
+    }
+}
+
+.gv-card:before {
+    content: " ";
+    display: block;
+    height: 3px;
+    width: gs-span(1);
+    background-color: $accent-main;
+    margin: 0;
+    padding: 0;
+}
+
+.gv-card-left {
+    width: 100%;
+    height: gs-height(1)+ $gs-baseline;
+    padding:0 0 0 $gs-gutter*0.5;
+    border: none;
+    margin-top: -3px;
+    float: left;
+    
+    @include mq(tablet){
+        width: gs-span(2);
+        padding: 0 0 0 $gs-gutter * 0.5;
+        border-right: 1px solid $neutral-5;
+    }
+   
+    
+}
+
+.gv-card-main {
+        margin: 0 $gs-gutter*0.5;
+    @include mq(tablet){
+        margin: 0 $gs-gutter 0 gs-span(2)+$gs-gutter;
+    }
+    
+}
