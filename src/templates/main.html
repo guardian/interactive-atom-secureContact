@@ -21,7 +21,7 @@
         </div>
     </div>
 </div>
-<div class='gv-slice nav-step-two inactive'>
+<div class='gv-slice nav-step-two inactive' id="levelTwoNavHolder">
     <div class="gv-inner">
         <div class="gv-inner-content">
             <h5>{{{navTwoTitle}}}</h5>
@@ -36,7 +36,7 @@
         </div>
     </div>
 </div>
-<div class='gv-slice nav-step-three inactive'>
+<div class='gv-slice nav-step-three inactive' id="cardsHolder">
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
             <div class="gv-cards-head-holder">
@@ -51,7 +51,7 @@
             </div>
             <div class="gv-cards-holder">
                 {{#cards}}
-                <div class="gv-card inactive" card-ref="{{{hed}}}">
+                <div class="gv-card inactive" card-ref="{{{hed}}}" id="cardHolder{{{hed}}}">
                     <div class="gv-card-left">
                         <h4>{{{hed}}}</h4></div>
                     <div class="gv-card-main">

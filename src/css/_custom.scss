@@ -1,17 +1,6 @@
 $card-width-mobile:gs-span(4);
 $card-width-tablet:gs-span(9);
 $card-width-wide:gs-span(9);
-
-//look at making card-width sass var responsive on Monday
-@media(min-width:10px){
-	
-}
-
-@media(min-width:1140px){
-	
-}
-
-
 $card-left-padding: $gs-gutter*0.5;
 $border-color:rgba(#FFF, 0.2);
 h4,
@@ -28,38 +17,38 @@ h5 {
 
 .gv-head-inner {
     padding: 0;
-    @include mq(tablet){
+    @include mq(tablet) {
         padding: gs-height(3) 0 0;
     }
 }
 
 .nav-one-inner {
-    margin-top: -72px;
-
-    @include mq(mobileLandscape){
+    margin-top: 12px;
+    @include mq(mobileLandscape) {
         margin-top: -48px;
     }
     h5 {
-        padding-left: $card-left-padding;
-        margin-top: 0;
+        margin-top: $gs-baseline;
+        color: $neutral-1 !important;
+        @include mq(mobileLandscape) {
+            color: #FFF  !important;
+            margin-top: -48px;
+            padding-left: $card-left-padding;
+        }
     }
 }
 
 .gv-standfirst {
     background-color: $neutral-dark;
     width: 100%;
-    padding: $gs-baseline 0 gs-height(3);
-  
-
-    @include mq(tablet){
+    padding: $gs-baseline 0 gs-height(2);
+    @include mq(tablet) {
         width: $card-width-tablet;
-      
+        padding: $gs-baseline 0 gs-height(3);
     }
-
-    @include mq(wide){
+    @include mq(wide) {
         width: $card-width-wide;
     }
-
     p,
     h1,
     h4 {
@@ -69,24 +58,23 @@ h5 {
     }
     h1 {
         @include fs-headline(7);
-        
         color: $accent-main;
-        @include mq(tablet){
+        @include mq(tablet) {
             @include fs-headline(9);
             font-weight: 200;
         }
         font-weight: 200;
     }
     p {
-          @include fs-textSans(3);
-          margin-right: $gs-gutter;
-        @include mq(tablet){
+        @include fs-textSans(3);
+        margin-right: $gs-gutter;
+        @include mq(tablet) {
             margin-right: gs-span(2);
             @include fs-headline(3);
         }
-        
     }
 }
+
 .gv-inner {
     background-color: $light-neutral;
 }
@@ -97,24 +85,18 @@ h5 {
     padding: 0;
     overflow: hidden;
     width: 100%;
-    
-     @include mq(tablet){
+    @include mq(tablet) {
         width: $card-width-tablet;
     }
-
-    @include mq(wide){
+    @include mq(wide) {
         width: $card-width-wide;
     }
-
-
     li {
         float: left;
         width: 100%;
-        
         height: gs-height(2)+$gs-baseline;
         margin-bottom: $gs-baseline;
-
-        @include mq(tablet){
+        @include mq(tablet) {
             width: 49.9%;
             max-width: none;
         }
@@ -131,16 +113,15 @@ h5 {
         @include fs-header(3);
         height: gs-height(1);
         border-left: 1px solid $border-color;
-        h5{
-            display:block;
+        h5 {
+            display: block;
             margin: 0;
-            padding-bottom:0;
-            min-height:none;
-            @include mq(tablet){
+            padding-bottom: 0;
+            min-height: none;
+            @include mq(tablet) {
                 padding-bottom: $gs-baseline;
                 min-height: 48px;
             }
-            
         }
     }
 }
@@ -153,13 +134,12 @@ h5 {
         float: left;
         width: 100%;
         height: gs-height(2);
-        padding-bottom:$gs-baseline;
+        padding-bottom: $gs-baseline;
         margin-right: $gs-gutter;
         border: none;
-
-        @include mq(tablet){
-           width: gs-span(3); 
-           height: gs-height(4)-$gs-baseline;
+        @include mq(tablet) {
+            width: gs-span(3);
+            height: gs-height(4)-$gs-baseline;
         }
     }
     li:last-child {
@@ -177,13 +157,12 @@ h5 {
 .gv-nav-list-note-l2 {
     @include fs-textSans(3);
     color: #FFF;
-    width:100%;
+    width: 100%;
     display: block;
     margin: 0;
-
-    @include mq(tablet){
-       width: gs-span(2)+$gs-gutter+$gs-gutter; 
-       margin: 0 0 0 -80px;
+    @include mq(tablet) {
+        width: gs-span(2)+$gs-gutter+$gs-gutter;
+        margin: 0 0 0 -80px;
     }
 }
 
@@ -193,8 +172,8 @@ h5 {
     }
 }
 
-.nav-one-item{
-	cursor:pointer;
+.nav-one-item {
+    cursor: pointer;
 }
 
 .show-more {
@@ -230,7 +209,8 @@ h5 {
 .selected {
     background-color: $accent-main;
     color: #FFF;
-    h5,span {
+    h5,
+    span {
         color: #FFF;
     }
 }
@@ -238,7 +218,8 @@ h5 {
 .unselected {
     color: rgba(255, 255, 255, 0.5);
     background-color: $inactive-fill;
-    h5,span {
+    h5,
+    span {
         color: rgba(255, 255, 255, 0.5);
     }
 }

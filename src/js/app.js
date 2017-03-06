@@ -17,7 +17,22 @@ function addListeners() {
         //var data = el.className.replace('share-','');
         el.addEventListener('click', () => toggleActiveNavItem(el));
     });
+
+    [].slice.apply(document.querySelectorAll('.gv-chiclet')).forEach(el => {
+        //var data = el.className.replace('share-','');
+        el.addEventListener('click', () => scrollCardIntoView(el));
+    });
 }
+
+
+function scrollCardIntoView(el){
+
+    if (el.classList.contains("selected")) {
+        document.getElementById("cardHolder"+el.getAttribute("card-ref")).scrollIntoView({block: "end", behavior: "smooth"})
+    }
+
+}
+
 
 function clickReadMore(a) {
 
@@ -60,13 +75,14 @@ function toggleActiveNavItem(a) {
         a.classList.add("selected");
         document.querySelector('.nav-step-two').classList.remove("inactive");
         document.querySelector('.nav-step-three').classList.add("inactive");
+
+        document.getElementById("levelTwoNavHolder").scrollIntoView({block: "end", behavior: "smooth"});
     }
 
     if (b == "L2") {
         [].slice.apply(document.querySelectorAll('.nav-one-item')).forEach(el => {
 
             let c = el.getAttribute("nav-level");
-
 
 
             if (c == b) {
@@ -80,6 +96,8 @@ function toggleActiveNavItem(a) {
         a.classList.add("selected");
 
         document.querySelector('.nav-step-three').classList.remove("inactive");
+
+        document.getElementById("cardsHolder").scrollIntoView({block: "end", behavior: "smooth"});
     }
 
 
