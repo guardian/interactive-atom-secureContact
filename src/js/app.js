@@ -41,6 +41,14 @@ function clickReadMore(a) {
     [].slice.apply(document.querySelectorAll('.gv-read-more')).forEach(c => {
         let d = c.getAttribute("div-ref");
         if (b == d) { toggleActive(c) }
+
+        if (a.classList.contains("show-more")) {
+            a.classList.remove("show-more");
+            a.classList.add("show-less");
+        } else if (a.classList.contains("show-less")) {
+            a.classList.remove("show-less");
+            a.classList.add("show-more");
+        }    
     });
 }
 

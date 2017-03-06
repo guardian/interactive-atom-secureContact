@@ -181,6 +181,7 @@ h5 {
     background-position: 6px center;
     background-repeat: no-repeat;
     background-size: 18px;
+    background-color:$active-fill;
 }
 
 .show-less {
@@ -188,6 +189,16 @@ h5 {
     background-position: 6px center;
     background-repeat: no-repeat;
     background-size: 18px;
+    background-color:$inactive-fill;
+}
+
+.show-more:before, .show-less:before{
+    content:'show more';
+}
+
+.show-less:before {
+    content:'show less';
+    
 }
 
 .right-arrow {
@@ -248,11 +259,10 @@ h5 {
 .gv-read-more-btn {
     height: 18px;
     margin: $gs-baseline 0;
-    padding: 6px $gs-gutter 6px;
-    background-color: $accent-main;
+    padding: 6px 0 6px 36px;
     border-radius: 1000px;
     width: gs-span(1)+$gs-gutter;
-    text-align: right;
+    text-align: left;
     @include fs-textSans(3);
     color: #FFF;
     cursor: pointer;
