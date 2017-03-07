@@ -6,10 +6,8 @@ const globalTimer = 1000;
 function init() {
 
     addListeners();
-
-    textAni("navOneTitle");
-
-    revealButtons(".nav-zero-item", "opacity-low");
+    textAni("navOneTitle", revealButtons(".nav-zero-item", "opacity-low"));
+    
 
 
 }
@@ -32,25 +30,28 @@ function addListeners() {
     });
 }
 
-function textAni(s) {
+function textAni(s, callback) {
     let a = document.getElementById(s);
     let b = a.getAttribute("str");
     a.innerHTML = "";
 
-    showText(a, b, 0);
+    showText(a, b, 0, callback);
 }
 
-let showText = function(target, message, index) {
+let showText = function(target, message, index, callback) {
     let interval = globalTimer / message.length;
 
     if (index < message.length) {
         target.append(message[index++]);
         setTimeout(function() { showText(target, message, index, interval); }, interval);
     }
+
+    setTimeout(callback(), globalTimer);
+    
 }
 
 let revealButtons = function(target, removeClass) {
-    let delay = globalTimer * 2;
+    let delay = globalTimer;
     let shim = globalTimer / 3;
     let i = 1;
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
@@ -74,7 +75,6 @@ function scrollCardIntoView(el) {
                 console.log('done!')
             }
         );
-        //document.getElementById("cardHolder" + el.getAttribute("card-ref")).scrollIntoView({ block: "end", behavior: "smooth" })
     }
 
 }
@@ -134,22 +134,8 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.add("active");
         document.querySelector('.cards-placeholder').classList.remove("inactive");
 
-        animatedScrollTo(
-            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
-            document.getElementById("levelTwoNavHolder").offsetTop, // target scrollY (0 means top of the page)
-            globalTimer/3, // duration in ms
-            function() { // callback function that runs after the animation (optional)
-                console.log('done!')
-            }
-        );
-
-
-
-        //document.getElementById("levelTwoNavHolder").scrollIntoView({ block: "end", behavior: "smooth" });
-
-        textAni("navTwoTitle")
-
-        revealButtons(".nav-two-item", "opacity-low");
+        animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer/3);
+        textAni("navTwoTitle", revealButtons(".nav-two-item", "opacity-low"))
     }
 
     if (b == "L2") {
@@ -173,20 +159,16 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.remove("active");
         document.querySelector('.cards-placeholder').classList.add("inactive");
 
-
-        animatedScrollTo(
-            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
-            document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
-            globalTimer/3, // duration in ms
-            function() { // callback function that runs after the animation (optional)
-                console.log('done!')
-            }
-        );
-
-
-        //document.getElementById("cardsHolder").scrollIntoView({ block: "end", behavior: "smooth" });
+        animatedScrollTo( document.body, document.getElementById("cardsHolder").offsetTop, globalTimer/3 );
+        //allCardsTitle
     }
 
+}
+
+
+
+function revealCards(){
+    console.log("cards")
 }
 
 function getCardsArr(a) {

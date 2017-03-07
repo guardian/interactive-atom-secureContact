@@ -182,6 +182,7 @@ h5 {
     background-repeat: no-repeat;
     background-size: 18px;
     background-color:$active-fill;
+    width: gs-span(2)+$gs-baseline !important;
 }
 
 .show-less {
@@ -193,7 +194,7 @@ h5 {
 }
 
 .show-more:before, .show-less:before{
-    content:'show more';
+    content:'read full instructions';
 }
 
 .show-less:before {
