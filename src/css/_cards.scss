@@ -136,3 +136,31 @@
     }
     
 }
+
+.dummy-card{
+
+    height: gs-height(2);
+    background-color:$neutral-5;
+
+    margin: 0 0 gs-height(1) 0;
+    padding-bottom: $gs-baseline;
+
+
+    @include mq(tablet){
+        width: $card-width-tablet;
+    }
+
+    @include mq(wide){
+        width: $card-width-wide;
+    }
+}
+
+.dummy-card:before {
+    content: " ";
+    display: block;
+    height: 3px;
+    width: gs-span(1);
+    background-color: $neutral-3;
+    margin: 0;
+    padding: 0;
+}

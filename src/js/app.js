@@ -1,9 +1,17 @@
-console.log("app running");
+import animatedScrollTo from "animated-scrollto";
 
 var cardsArr;
+const globalTimer = 1000;
 
 function init() {
+
     addListeners();
+
+    textAni("navOneTitle");
+
+    revealButtons(".nav-zero-item", "opacity-low");
+
+
 }
 
 function addListeners() {
@@ -24,11 +32,49 @@ function addListeners() {
     });
 }
 
+function textAni(s) {
+    let a = document.getElementById(s);
+    let b = a.getAttribute("str");
+    a.innerHTML = "";
 
-function scrollCardIntoView(el){
+    showText(a, b, 0);
+}
+
+let showText = function(target, message, index) {
+    let interval = globalTimer / message.length;
+
+    if (index < message.length) {
+        target.append(message[index++]);
+        setTimeout(function() { showText(target, message, index, interval); }, interval);
+    }
+}
+
+let revealButtons = function(target, removeClass) {
+    let delay = globalTimer * 2;
+    let shim = globalTimer / 3;
+    let i = 1;
+    [].slice.apply(document.querySelectorAll(target)).forEach(el => {
+        setTimeout(function() { el.classList.remove(removeClass) }, delay + (i * shim));
+        i++;
+    });
+}
+
+
+
+
+function scrollCardIntoView(el) {
 
     if (el.classList.contains("selected")) {
-        document.getElementById("cardHolder"+el.getAttribute("card-ref")).scrollIntoView({block: "end", behavior: "smooth"})
+        console.log(document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop)
+        animatedScrollTo(
+            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
+            document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop+document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
+            globalTimer/3, // duration in ms
+            function() { // callback function that runs after the animation (optional)
+                console.log('done!')
+            }
+        );
+        //document.getElementById("cardHolder" + el.getAttribute("card-ref")).scrollIntoView({ block: "end", behavior: "smooth" })
     }
 
 }
@@ -48,7 +94,7 @@ function clickReadMore(a) {
         } else if (a.classList.contains("show-less")) {
             a.classList.remove("show-less");
             a.classList.add("show-more");
-        }    
+        }
     });
 }
 
@@ -79,12 +125,31 @@ function toggleActiveNavItem(a) {
             el.classList.remove("selected");
             el.classList.add("unselected");
         });
+
         a.classList.remove("unselected");
         a.classList.add("selected");
-        document.querySelector('.nav-step-two').classList.remove("inactive");
-        document.querySelector('.nav-step-three').classList.add("inactive");
 
-        document.getElementById("levelTwoNavHolder").scrollIntoView({block: "end", behavior: "smooth"});
+        //document.querySelector('.nav-step-two').classList.remove("inactive");
+        document.querySelector('.nav-step-three').classList.add("inactive");
+        document.querySelector('.cards-placeholder').classList.add("active");
+        document.querySelector('.cards-placeholder').classList.remove("inactive");
+
+        animatedScrollTo(
+            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
+            document.getElementById("levelTwoNavHolder").offsetTop, // target scrollY (0 means top of the page)
+            globalTimer/3, // duration in ms
+            function() { // callback function that runs after the animation (optional)
+                console.log('done!')
+            }
+        );
+
+
+
+        //document.getElementById("levelTwoNavHolder").scrollIntoView({ block: "end", behavior: "smooth" });
+
+        textAni("navTwoTitle")
+
+        revealButtons(".nav-two-item", "opacity-low");
     }
 
     if (b == "L2") {
@@ -92,27 +157,35 @@ function toggleActiveNavItem(a) {
 
             let c = el.getAttribute("nav-level");
 
-
             if (c == b) {
                 el.classList.remove("selected");
                 el.classList.add("unselected");
             }
 
         });
+
         getCardsArr(a.getAttribute("target-cards"))
         a.classList.remove("unselected");
         a.classList.add("selected");
 
-
-        console.log(a)
-
-        document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send "+a.getAttribute("list-ref")+"…";
-
+        document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send " + a.getAttribute("list-ref") + "…";
         document.querySelector('.nav-step-three').classList.remove("inactive");
+        document.querySelector('.cards-placeholder').classList.remove("active");
+        document.querySelector('.cards-placeholder').classList.add("inactive");
 
-        document.getElementById("cardsHolder").scrollIntoView({block: "end", behavior: "smooth"});
+
+        animatedScrollTo(
+            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
+            document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
+            globalTimer/3, // duration in ms
+            function() { // callback function that runs after the animation (optional)
+                console.log('done!')
+            }
+        );
+
+
+        //document.getElementById("cardsHolder").scrollIntoView({ block: "end", behavior: "smooth" });
     }
-
 
 }
 
@@ -152,12 +225,7 @@ function displayCards(a) {
                 b[d].classList.add("active");
 
             }
-
-
         }
-
-
-
     }
 
     displayPips(a)
@@ -174,12 +242,9 @@ function displayPips(a) {
         b[d].classList.add("unselected");
     }
 
-
     for (var c = 0; c < a.length; c++) {
         console.log(a[c]);
         for (var d = 0; d < b.length; d++) {
-            //console.log(b[d])
-
             if (a[c] == b[d].getAttribute("card-ref")) {
                 console.log(b[d])
 
@@ -188,13 +253,9 @@ function displayPips(a) {
 
             }
 
-
         }
 
-
-
     }
-
 
 
 }

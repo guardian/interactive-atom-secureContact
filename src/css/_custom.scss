@@ -256,6 +256,13 @@ h5 {
     opacity: 1;
 }
 
+
+.opacity-low{
+    opacity:0.6;
+    background-color: $bg-secondary;
+    pointer-events:none;
+}
+
 .gv-read-more-btn {
     height: 18px;
     margin: $gs-baseline 0;
