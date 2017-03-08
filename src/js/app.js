@@ -4,15 +4,36 @@ var cardsArr;
 const globalTimer = 1000;
 
 function init() {
-
+    removeTagWhiteSpace('.gv-chiclet',"card-ref");
+    removeTagWhiteSpace('.nav-two-item',"list-ref");
+    removeTagWhiteSpace('.nav-two-item',"target-cards");
+    removeTagWhiteSpace('.gv-card',"card-ref");
+    removeTagWhiteSpace('.gv-card',"id");
     addListeners();
-    textAni("navOneTitle", revealButtons(".nav-zero-item", "opacity-low"));
+    textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealButtons);
     
 
 
 }
 
-function addListeners() {
+
+
+let removeTagWhiteSpace = function (target, tagName){
+    [].slice.apply(document.querySelectorAll(target)).forEach(el => {
+        let b = el.getAttribute(tagName);
+        let c = b.replace(/ /g,"-");
+        // if (tagName == "id"){
+        //         c = "cardHolder"+c;
+        // }
+
+        el.setAttribute(tagName, c);
+    });
+
+
+
+}
+
+function addListeners() { 
 
     [].slice.apply(document.querySelectorAll('.gv-read-more-btn')).forEach(el => {
         //var data = el.className.replace('share-','');
@@ -30,13 +51,14 @@ function addListeners() {
     });
 }
 
-function textAni(s, callback) {
+let textAni = function(s, d, e, callback) {
     let a = document.getElementById(s);
     let b = a.getAttribute("str");
     a.innerHTML = "";
 
-    showText(a, b, 0, callback);
+    showText(a, b, 0, callback(d,e));
 }
+
 
 let showText = function(target, message, index, callback) {
     let interval = globalTimer / message.length;
@@ -50,18 +72,16 @@ let showText = function(target, message, index, callback) {
     
 }
 
+
 let revealButtons = function(target, removeClass) {
     let delay = globalTimer;
     let shim = globalTimer / 3;
     let i = 1;
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
-        setTimeout(function() { el.classList.remove(removeClass) }, delay + (i * shim));
+        setTimeout(function() { el.classList.remove(removeClass); el.classList.add('opacity-up') }, delay + (i * shim));
         i++;
     });
 }
-
-
-
 
 function scrollCardIntoView(el) {
 
@@ -135,7 +155,7 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.remove("inactive");
 
         animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer/3);
-        textAni("navTwoTitle", revealButtons(".nav-two-item", "opacity-low"))
+        textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealButtons)
     }
 
     if (b == "L2") {
@@ -149,6 +169,8 @@ function toggleActiveNavItem(a) {
             }
 
         });
+
+        console.log(a)
 
         getCardsArr(a.getAttribute("target-cards"))
         a.classList.remove("unselected");

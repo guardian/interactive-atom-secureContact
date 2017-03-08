@@ -6,6 +6,17 @@
     width: 100%;
 
     padding-bottom: $gs-gutter;
+
+
+    @include mq(tablet) {
+        width: $card-width-tablet;
+    }
+    @include mq(wide) {
+        width: $card-width-wide;
+    }
+
+
+
     @include mq(tablet){
         padding-bottom: gs-height(1);
     }
@@ -15,6 +26,8 @@
         margin: 0;
         padding:0;
         overflow:hidden;
+
+
     }
     li {
    
@@ -48,7 +61,7 @@
     .unselected:before,
     .selected:before {
         content: ' ';
-        margin: 0 6px 0;
+        margin: 0 6px 0 0;
         padding: 0;
         width: 30px;
         height: 30px;
@@ -133,6 +146,11 @@
         margin: 0 $gs-gutter*0.5;
     @include mq(tablet){
         margin: 0 $gs-gutter 0 gs-span(2)+$gs-gutter;
+    }
+
+    h4{
+        padding: $gs-baseline 0 0;
+        margin-bottom: 0;
     }
     
 }

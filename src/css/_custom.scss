@@ -3,6 +3,8 @@ $card-width-tablet:gs-span(9);
 $card-width-wide:gs-span(9);
 $card-left-padding: $gs-gutter*0.5;
 $border-color:rgba(#FFF, 0.2);
+$ani-time:0.8s;
+
 h4,
 h5 {
     @include fs-header(3);
@@ -262,6 +264,14 @@ h5 {
     opacity:0.6;
     background-color: $bg-secondary;
     pointer-events:none;
+}
+
+.opacity-up{
+    opacity: 1;
+    transition: opacity $ani-time ease-in;
+    -ms-transition: opacity $ani-time ease-in;
+    -moz-transition: opacity $ani-time ease-in;
+    -webkit-transition: opacity $ani-time ease-in;
 }
 
 .gv-read-more-btn {
