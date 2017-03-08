@@ -1,7 +1,7 @@
 export function scrollTo(x, y, scrollDuration) {
     x = Math.abs(x || 0);
     y = Math.abs(y || 0);
-    scrollDuration = scrollDuration || 1500;
+    scrollDuration = scrollDuration || 2000;
 
     var currentScrollY = window.scrollY,
         currentScrollX = window.scrollX,

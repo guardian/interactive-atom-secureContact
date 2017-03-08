@@ -13,7 +13,12 @@ h5 {
 }
 
 .gv-head-slice {
-    background-color: $bg-main;
+    background:  -moz-linear-gradient(top, rgba($bg-main,0.95) 0%, rgba($bg-main,0.98) 47%, rgba($bg-main,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba($bg-main,0.95) 0%, rgba($bg-main,0.98) 47%, rgba($bg-main,1)  100%); /* Chrome10-25,Safari5.1-6 */
+    background:  linear-gradient(to bottom, rgba($bg-main,0.95) 0%, rgba($bg-main,0.98) 47%, rgba($bg-main,1)  100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    //background: url('PATH-TO-IMG') center center no-repeat, -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    //background: url('PATH-TO-IMG') center center no-repeat, linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
     padding-bottom: 0
 }
 
@@ -40,8 +45,24 @@ h5 {
     }
 }
 
+
+.header-bg-img{
+
+    background: url('<%= path %>/assets/headImg.jpg') center center no-repeat, -moz-linear-gradient(top, rgba($bg-main,1) 0%, rgba($bg-secondary,1) 47%, rgba($accent-main,1) 100%); /* FF3.6-15 */
+    background: url('<%= path %>/assets/headImg.jpg') center center no-repeat, -webkit-linear-gradient(top, rgba($bg-main,1) 0%,rgba($bg-secondary,1) 47%,rgba($accent-main,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: url('<%= path %>/assets/headImg.jpg') center center no-repeat, linear-gradient(to bottom, rgba($bg-main,1) 0%,rgba($bg-secondary,1) 47%,rgba($accent-main,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    //background: url('PATH-TO-IMG') center center no-repeat, -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+    //background: url('PATH-TO-IMG') center center no-repeat, linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
+
+    background-blend-mode: multiply;
+
+
+
+    
+}
 .gv-standfirst {
-    background-color: $neutral-dark;
+    background-color: rgba(#000, 0.6);
     width: 100%;
     padding: $gs-baseline 0 gs-height(2);
     @include mq(tablet) {
@@ -268,10 +289,10 @@ h5 {
 
 .opacity-up{
     opacity: 1;
-    transition: opacity $ani-time ease-in;
-    -ms-transition: opacity $ani-time ease-in;
-    -moz-transition: opacity $ani-time ease-in;
-    -webkit-transition: opacity $ani-time ease-in;
+    transition: opacity $ani-time ease-out;
+    -ms-transition: opacity $ani-time ease-out;
+    -moz-transition: opacity $ani-time ease-out;
+    -webkit-transition: opacity $ani-time ease-out;
 }
 
 .gv-read-more-btn {

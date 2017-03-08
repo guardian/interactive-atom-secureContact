@@ -112,6 +112,17 @@
         li {
             margin: 0 0 $gs-baseline*0.5;
         }
+
+        .gv-pros-cons-item{
+            display:inline-block;
+            width: calc(100% - 80px);
+            // max-width: gs-span(6);
+        }
+        .bullet{
+            display:inline-block;
+            vertical-align: top;
+            margin-top: $gs-baseline*0.5;
+        }
     }
 }
 
@@ -151,6 +162,15 @@
     h4{
         padding: $gs-baseline 0 0;
         margin-bottom: 0;
+    }
+
+    .gv-read-more, .gv-read-less{
+        margin-right: $gs-gutter;
+        margin-bottom: gs-height(1);
+    }
+
+    .gv-card-intro {
+        margin:4px 0 $gs-baseline;
     }
     
 }

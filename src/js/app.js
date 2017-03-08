@@ -4,24 +4,26 @@ var cardsArr;
 const globalTimer = 1000;
 
 function init() {
-    removeTagWhiteSpace('.gv-chiclet',"card-ref");
-    removeTagWhiteSpace('.nav-two-item',"list-ref");
-    removeTagWhiteSpace('.nav-two-item',"target-cards");
-    removeTagWhiteSpace('.gv-card',"card-ref");
-    removeTagWhiteSpace('.gv-card',"id");
+    removeTagWhiteSpace('.gv-chiclet', "card-ref");
+    removeTagWhiteSpace('.nav-two-item', "list-ref");
+    removeTagWhiteSpace('.nav-two-item', "target-cards");
+    removeTagWhiteSpace('.gv-card', "card-ref");
+    removeTagWhiteSpace('.gv-card', "id");
+    removeTagWhiteSpace('.gv-read-more',"div-ref");
+    removeTagWhiteSpace('.gv-read-more-btn',"target-div");
     addListeners();
-    textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealButtons);
-    
+    textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls);
+
 
 
 }
 
 
 
-let removeTagWhiteSpace = function (target, tagName){
+let removeTagWhiteSpace = function(target, tagName) {
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
         let b = el.getAttribute(tagName);
-        let c = b.replace(/ /g,"-");
+        let c = b.replace(/ /g, "-");
         // if (tagName == "id"){
         //         c = "cardHolder"+c;
         // }
@@ -33,7 +35,7 @@ let removeTagWhiteSpace = function (target, tagName){
 
 }
 
-function addListeners() { 
+function addListeners() {
 
     [].slice.apply(document.querySelectorAll('.gv-read-more-btn')).forEach(el => {
         //var data = el.className.replace('share-','');
@@ -56,7 +58,7 @@ let textAni = function(s, d, e, callback) {
     let b = a.getAttribute("str");
     a.innerHTML = "";
 
-    showText(a, b, 0, callback(d,e));
+    showText(a, b, 0, callback(d, e));
 }
 
 
@@ -69,16 +71,17 @@ let showText = function(target, message, index, callback) {
     }
 
     setTimeout(callback(), globalTimer);
-    
+
 }
 
 
-let revealButtons = function(target, removeClass) {
+let revealEls = function(target, removeClass) {
     let delay = globalTimer;
     let shim = globalTimer / 3;
     let i = 1;
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
-        setTimeout(function() { el.classList.remove(removeClass); el.classList.add('opacity-up') }, delay + (i * shim));
+        setTimeout(function() { el.classList.remove(removeClass);
+            el.classList.add('opacity-up') }, delay + (i * shim));
         i++;
     });
 }
@@ -89,8 +92,8 @@ function scrollCardIntoView(el) {
         console.log(document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop)
         animatedScrollTo(
             document.body, // element to scroll with (most of times you want to scroll with whole <body>)
-            document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop+document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
-            globalTimer/3, // duration in ms
+            document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop + document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
+            globalTimer / 3, // duration in ms
             function() { // callback function that runs after the animation (optional)
                 console.log('done!')
             }
@@ -102,20 +105,30 @@ function scrollCardIntoView(el) {
 
 function clickReadMore(a) {
 
+    console.log(a.classList);
+ 
     let b = a.getAttribute("target-div");
 
     [].slice.apply(document.querySelectorAll('.gv-read-more')).forEach(c => {
         let d = c.getAttribute("div-ref");
-        if (b == d) { toggleActive(c) }
+        
+        if (b == d) { 
+            toggleActive(c) 
 
         if (a.classList.contains("show-more")) {
             a.classList.remove("show-more");
             a.classList.add("show-less");
-        } else if (a.classList.contains("show-less")) {
+            console.log(a.classList);
+        }else if (a.classList.contains("show-less")) {
             a.classList.remove("show-less");
             a.classList.add("show-more");
+            console.log(a.classList);
         }
+    }
     });
+
+    
+   
 }
 
 function toggleActive(a) {
@@ -154,8 +167,8 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.add("active");
         document.querySelector('.cards-placeholder').classList.remove("inactive");
 
-        animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer/3);
-        textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealButtons)
+        animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer / 3);
+        textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls)
     }
 
     if (b == "L2") {
@@ -181,7 +194,7 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.remove("active");
         document.querySelector('.cards-placeholder').classList.add("inactive");
 
-        animatedScrollTo( document.body, document.getElementById("cardsHolder").offsetTop, globalTimer/3 );
+        animatedScrollTo(document.body, document.getElementById("cardsHolder").offsetTop, globalTimer / 3);
         //allCardsTitle
     }
 
@@ -189,7 +202,7 @@ function toggleActiveNavItem(a) {
 
 
 
-function revealCards(){
+function revealCards() {
     console.log("cards")
 }
 
@@ -223,10 +236,11 @@ function displayCards(a) {
             //console.log(b[d])
 
             if (a[c] == b[d].getAttribute("card-ref")) {
-                console.log(b[d])
 
                 b[d].classList.remove("inactive");
                 b[d].classList.add("active");
+
+
 
             }
         }
@@ -238,7 +252,7 @@ function displayCards(a) {
 
 
 function displayPips(a) {
-
+    
     let b = document.querySelectorAll(".gv-chiclet");
 
     for (var d = 0; d < b.length; d++) {

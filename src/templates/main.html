@@ -1,5 +1,5 @@
-<div class='gv-slice gv-head-slice standy-bg-img'>
-    <div class="gv-inner gv-head-inner">
+<div class='gv-slice gv-head-slice'>
+    <div class="gv-inner gv-head-inner header-bg-img">
         <div class="gv-inner-content gv-standfirst">
             <h4 style="padding-bottom:0">{{{tagheadline}}}</h4>
             <h1>{{{headline}}}</h1>
@@ -56,22 +56,24 @@
                         <h4>{{{hed}}}</h4></div>
                     <div class="gv-card-main">
                         <div class="gv-read-less active" divData="{{{hed}}}">
+                            <div class="gv-card-intro">
+                            {{{introSentence}}}
+                            </div>
                             <h6>Pros</h6>
                             <ul>
                                 {{#pros}}
-                                <li><span class="bullet">•</span>{{{.}}}</li> {{/pros}}
+                                <li><span class="bullet">•</span><span class="gv-pros-cons-item">{{{.}}}</span></li> {{/pros}}
                             </ul>
                             <h6>Cons</h6>
                             <ul>
                                 {{#cons}}
-                                <li><span class="bullet">•</span>{{{.}}}</li> {{/cons}}
+                                <li><span class="bullet">•</span><span class="gv-pros-cons-item">{{{.}}}</span></li> {{/cons}}
                             </ul>
                         </div>
                         <div class="gv-read-more inactive" div-ref="{{{hed}}}">
                             {{{readMoreCopy}}}
                         </div>
                         <div class="gv-read-more-btn show-more" target-div="{{{hed}}}">
-                             
                         </div>
                     </div>
                 </div>
@@ -80,9 +82,6 @@
         </div>
     </div>
 </div>
-
-
-
 <div class='gv-slice cards-placeholder'>
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
@@ -99,7 +98,6 @@
             <div class="gv-cards-holder">
                 {{#cards}}
                 <div class="dummy-card opacity-low">
-                  
                 </div>
                 {{/cards}}
             </div>
