@@ -6,12 +6,13 @@
 //define global colors
 $bg-main:  $guardian-brand-dark;
 
-$bg-secondary:  $guardian-brand-light;
+$bg-secondary:  $news-support-2;
 $accent-main: $news-main-2;
 $active-fill:$accent-main;
-$inactive-fill:$news-support-6;
+$inactive-fill:$bg-secondary;
 $link-fill:$guardian-brand;
-$light-neutral: rgba($news-support-6, 0.18);
+$neutral-light: $neutral-6;
+$neutral-mid: $neutral-4;
 $neutral-dark: $neutral-1;
 
 // Uncomment for embeds
@@ -51,7 +52,7 @@ h4, h5{
 .gv-slice {
 	width:100%;
 	margin:0 auto;
-	background:#FEFEFE;
+	background:rgba($neutral-mid,0.5);
 }
 
 .gv-inner, .nav-slice-inner{
