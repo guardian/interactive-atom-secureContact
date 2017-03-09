@@ -29,6 +29,9 @@ h5 {
     @include mq(tablet) {
         padding: gs-height(3) 0 0;
     }
+    @include mq(wide) {
+        padding: gs-height(5) 0 0;
+    }
 }
 
 .nav-one-inner {
@@ -75,7 +78,7 @@ h5 {
     padding: $gs-baseline 0 gs-height(2);
     @include mq(tablet) {
         width: $card-width-tablet;
-        padding: $gs-baseline 0 gs-height(3);
+        padding: $gs-baseline 0 gs-height(2);
     }
     @include mq(wide) {
         width: $card-width-wide;
@@ -92,10 +95,8 @@ h5 {
         color: $accent-main;
         @include mq(tablet) {
             @include fs-headline(9);
-            font-size: 48px;
-            font-weight: 200;
         }
-        font-weight: 200;
+        
     }
     p {
         @include fs-textSans(3);
