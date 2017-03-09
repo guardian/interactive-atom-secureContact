@@ -49,7 +49,7 @@
     .selected,
     .unselected {
         background: none !important;
-        color: $inactive-fill;
+        color:  $neutral-3;
     }
     .selected {
         color: $link-fill;
@@ -71,7 +71,7 @@
         background-repeat: no-repeat;
         background-size: 18px;
         float: left;
-        background-color: $inactive-fill;
+        background-color: $neutral-3;
         border: none;
     }
     .selected:before {

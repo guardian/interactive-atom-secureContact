@@ -5,11 +5,11 @@
 
 //define global colors
 $bg-main:  $guardian-brand-dark;
-
+$guardian-brand-darkest: hsl(204,100%,18%);
 $bg-secondary:  $news-support-2;
 $accent-main: $news-main-2;
 $active-fill:$accent-main;
-$inactive-fill:$bg-secondary;
+$inactive-fill:$guardian-brand-dark;
 $link-fill:$guardian-brand;
 $neutral-light: $neutral-6;
 $neutral-mid: $neutral-4;
