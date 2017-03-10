@@ -115,7 +115,11 @@
 
         .gv-pros-cons-item{
             display:inline-block;
-            width: calc(100% - 80px);
+            width: calc(100% - 20px);
+            @include mq(tablet){
+                 width: calc(100% - 80px);
+            }
+           
             // max-width: gs-span(6);
         }
         .bullet{
@@ -165,12 +169,15 @@
     }
 
     .gv-read-more, .gv-read-less{
-        margin-right: $gs-gutter;
+        margin-right: 0;
         margin-bottom: gs-height(1);
+        @include mq(tablet){
+           margin-right: gs-width(1); 
+        }
     }
 
     .gv-card-intro {
-        margin:4px 0 $gs-baseline;
+        margin:$gs-gutter*0.5 0 $gs-baseline;
     }
     
 }

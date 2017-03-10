@@ -4,6 +4,9 @@ $card-width-wide:gs-span(9);
 $card-left-padding: $gs-gutter;
 $border-color:rgba(#FFF, 0.2);
 $ani-time:0.8s;
+$aniOneTime:3s;
+$aniOneStartOp:0;
+$aniOneEndOp:0.1;
 
 h4,
 h5 {
@@ -53,7 +56,9 @@ h5 {
     }
 }
 
-
+.head-slice{
+        float:left;
+    }
 .header-bg-img{
    
    //  background: url('<%= path %>/assets/headImgMob.png');
@@ -70,6 +75,8 @@ h5 {
 
     // background-blend-mode: screen;
 
+
+
 }
 
 .gv-img-holder{
@@ -78,19 +85,42 @@ h5 {
     width:100%;
     max-width: 1300px;
     height:600px;
-    
-    //background-color: $guardian-brand-darkest !important;
-    background-image: url('<%= path %>/assets/headImgMob.png');
-   @include mq(tablet){
-    background-image: url('<%= path %>/assets/headImgLoNogradOpt.png');
-
-   }
-   background-color:$guardian-brand-darkest;
-   background-blend-mode:screen;
-   opacity:0.1;
-   // display:none;
+   // opacity:$aniOneEndOp;
 }
 
+
+@keyframes aniOne {
+    from {
+        opacity:$aniOneStartOp;
+    }
+    to {
+        opacity:$aniOneEndOp;
+    }
+}
+@-moz-keyframes aniOne { /* Firefox */
+    from {
+        opacity:$aniOneStartOp;
+    }
+    to {
+        opacity:$aniOneEndOp;
+    }
+}
+@-webkit-keyframes aniOne { /* Safari and Chrome */
+    from {
+        opacity:$aniOneStartOp;
+    }
+    to {
+        opacity:$aniOneEndOp;
+    }
+}
+@-o-keyframes aniOne { /* Opera */
+    from {
+        opacity:$aniOneStartOp;
+    }
+    to {
+        opacity:$aniOneEndOp;
+    }
+}
 
 .gv-standfirst {
     background-color: rgba(#000, 0.6);

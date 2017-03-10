@@ -12,10 +12,8 @@ function init() {
     removeTagWhiteSpace('.gv-read-more',"div-ref");
     removeTagWhiteSpace('.gv-read-more-btn',"target-div");
     addListeners();
-    textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls);
 
-
-
+    setTimeout(function(){textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls)}, 1800);
 }
 
 
