@@ -25,13 +25,16 @@ h5 {
 }
 
 .gv-head-inner {
+    position:relative;
     padding: 0;
+    overflow:hidden;
     @include mq(tablet) {
         padding: gs-height(3) 0 0;
     }
     @include mq(wide) {
         padding: gs-height(5) 0 0;
     }
+    background-color: $guardian-brand-darkest !important;
 }
 
 .nav-one-inner {
@@ -52,11 +55,11 @@ h5 {
 
 
 .header-bg-img{
-   background-color: $guardian-brand-darkest !important;
-    background: url('<%= path %>/assets/headImgMob.png');
-   @include mq(tablet){
-    background: url('<%= path %>/assets/headImg10pc.png');
-   }
+   
+   //  background: url('<%= path %>/assets/headImgMob.png');
+   // @include mq(tablet){
+   //  // background: url('<%= path %>/assets/headImgLoNogradOpt.png');
+   // }
    
     // background: url('<%= path %>/assets/headImg.jpg') center center no-repeat, -moz-linear-gradient(top, rgba($bg-main,1) 0%, rgba($bg-secondary,1) 47%, rgba($accent-main,1) 100%); /* FF3.6-15 */
     // background: url('<%= path %>/assets/headImg.jpg') center center no-repeat, -webkit-linear-gradient(top, rgba($bg-main,1) 0%,rgba($bg-secondary,1) 47%,rgba($accent-main,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -65,11 +68,28 @@ h5 {
     //background: url('PATH-TO-IMG') center center no-repeat, linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
     //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=0 ); /* IE6-9 */
 
-    background-blend-mode: screen;
+    // background-blend-mode: screen;
 
 }
 
+.gv-img-holder{
+    position:absolute;
+    top: 0;
+    width:100%;
+    max-width: 1300px;
+    height:600px;
+    
+    //background-color: $guardian-brand-darkest !important;
+    background-image: url('<%= path %>/assets/headImgMob.png');
+   @include mq(tablet){
+    background-image: url('<%= path %>/assets/headImgLoNogradOpt.png');
 
+   }
+   background-color:$guardian-brand-darkest;
+   background-blend-mode:screen;
+   opacity:0.1;
+   // display:none;
+}
 
 
 .gv-standfirst {
