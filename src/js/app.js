@@ -9,11 +9,11 @@ function init() {
     removeTagWhiteSpace('.nav-two-item', "target-cards");
     removeTagWhiteSpace('.gv-card', "card-ref");
     removeTagWhiteSpace('.gv-card', "id");
-    removeTagWhiteSpace('.gv-read-more',"div-ref");
-    removeTagWhiteSpace('.gv-read-more-btn',"target-div");
+    removeTagWhiteSpace('.gv-read-more', "div-ref");
+    removeTagWhiteSpace('.gv-read-more-btn', "target-div");
     addListeners();
 
-    setTimeout(function(){textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls)}, 1800);
+    setTimeout(function() { textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls) }, 1800);
 }
 
 
@@ -67,8 +67,10 @@ let showText = function(target, message, index, callback) {
         target.append(message[index++]);
         setTimeout(function() { showText(target, message, index, interval); }, interval);
     }
-
-    setTimeout(callback(), globalTimer);
+    if(callback){
+        setTimeout(callback, globalTimer);
+    }
+    
 
 }
 
@@ -78,8 +80,10 @@ let revealEls = function(target, removeClass) {
     let shim = globalTimer / 3;
     let i = 1;
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
-        setTimeout(function() { el.classList.remove(removeClass);
-            el.classList.add('opacity-up') }, delay + (i * shim));
+        setTimeout(function() {
+            el.classList.remove(removeClass);
+            el.classList.add('opacity-up')
+        }, delay + (i * shim));
         i++;
     });
 }
@@ -87,13 +91,13 @@ let revealEls = function(target, removeClass) {
 function scrollCardIntoView(el) {
 
     if (el.classList.contains("selected")) {
-        console.log(document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop)
+       
         animatedScrollTo(
             document.body, // element to scroll with (most of times you want to scroll with whole <body>)
             document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop + document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
             globalTimer / 3, // duration in ms
             function() { // callback function that runs after the animation (optional)
-                console.log('done!')
+                console.log('scrolled cards in')
             }
         );
     }
@@ -104,29 +108,29 @@ function scrollCardIntoView(el) {
 function clickReadMore(a) {
 
     console.log(a.classList);
- 
+
     let b = a.getAttribute("target-div");
 
     [].slice.apply(document.querySelectorAll('.gv-read-more')).forEach(c => {
         let d = c.getAttribute("div-ref");
-        
-        if (b == d) { 
-            toggleActive(c) 
 
-        if (a.classList.contains("show-more")) {
-            a.classList.remove("show-more");
-            a.classList.add("show-less");
-            console.log(a.classList);
-        }else if (a.classList.contains("show-less")) {
-            a.classList.remove("show-less");
-            a.classList.add("show-more");
-            console.log(a.classList);
+        if (b == d) {
+            toggleActive(c)
+
+            if (a.classList.contains("show-more")) {
+                a.classList.remove("show-more");
+                a.classList.add("show-less");
+                console.log(a.classList);
+            } else if (a.classList.contains("show-less")) {
+                a.classList.remove("show-less");
+                a.classList.add("show-more");
+                console.log(a.classList);
+            }
         }
-    }
     });
 
-    
-   
+
+
 }
 
 function toggleActive(a) {
@@ -181,8 +185,6 @@ function toggleActiveNavItem(a) {
 
         });
 
-        console.log(a)
-
         getCardsArr(a.getAttribute("target-cards"))
         a.classList.remove("unselected");
         a.classList.add("selected");
@@ -229,7 +231,6 @@ function displayCards(a) {
     }
 
     for (var c = 0; c < a.length; c++) {
-        console.log(a[c]);
         for (var d = 0; d < b.length; d++) {
             //console.log(b[d])
 
@@ -250,7 +251,7 @@ function displayCards(a) {
 
 
 function displayPips(a) {
-    
+
     let b = document.querySelectorAll(".gv-chiclet");
 
     for (var d = 0; d < b.length; d++) {
@@ -259,10 +260,8 @@ function displayPips(a) {
     }
 
     for (var c = 0; c < a.length; c++) {
-        console.log(a[c]);
         for (var d = 0; d < b.length; d++) {
             if (a[c] == b[d].getAttribute("card-ref")) {
-                console.log(b[d])
 
                 b[d].classList.remove("unselected");
                 b[d].classList.add("selected");

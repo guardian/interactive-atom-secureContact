@@ -3,6 +3,9 @@ import mainEdit from './src/templates/mainEdit.html!text'
 import Mustache from 'mustache'
 import rp from 'request-promise'
 
+const regex = /[\r\n]+/g;
+const subst = `<p/><p>`;
+
 export async function render() {
 
 	let data = formatData(await rp({
@@ -32,6 +35,7 @@ function formatData(data) {
 
 
 function whitespaceFix(card) {
-    let text = card.readMoreCopy.replace(/\t\r/g, "").replace(/\n\s*\n/g, '</p><p>');
+    let text = card.readMoreCopy.replace(regex, subst);
+
     return `<p>${text}</p>`
 }
