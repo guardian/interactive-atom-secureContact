@@ -190,6 +190,7 @@ h5 {
         padding: $gs-baseline * 0.5 0 0 $gs-gutter;
         text-decoration: none;
         @include fs-header(3);
+        line-height:22px;
         height: gs-height(1);
         border-left: 1px solid $border-color;
         h5 {
