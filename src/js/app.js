@@ -1,19 +1,27 @@
 import animatedScrollTo from "animated-scrollto";
 
 var cardsArr;
+var anonConf;
+
 const globalTimer = 1000;
+const mobilePreloadTime = 600;
+const desktopPreloadTime = 1800;
 
 function init() {
     removeTagWhiteSpace('.gv-chiclet', "card-ref");
     removeTagWhiteSpace('.nav-two-item', "list-ref");
-    removeTagWhiteSpace('.nav-two-item', "target-cards");
+    removeTagWhiteSpace('.nav-two-item', "target-cards-anon");
+    removeTagWhiteSpace('.nav-two-item', "target-cards-conf");
     removeTagWhiteSpace('.gv-card', "card-ref");
     removeTagWhiteSpace('.gv-card', "id");
     removeTagWhiteSpace('.gv-read-more', "div-ref");
     removeTagWhiteSpace('.gv-read-more-btn', "target-div");
     addListeners();
 
-    setTimeout(function() { textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls) }, 1800);
+
+
+
+    setTimeout(function() { textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls) }, desktopPreloadTime);
 }
 
 
@@ -22,9 +30,6 @@ let removeTagWhiteSpace = function(target, tagName) {
     [].slice.apply(document.querySelectorAll(target)).forEach(el => {
         let b = el.getAttribute(tagName);
         let c = b.replace(/ /g, "-");
-        // if (tagName == "id"){
-        //         c = "cardHolder"+c;
-        // }
 
         el.setAttribute(tagName, c);
     });
@@ -161,16 +166,18 @@ function toggleActiveNavItem(a) {
             el.classList.add("unselected");
         });
 
+        anonConf = a.getAttribute("list-ref")
         a.classList.remove("unselected");
         a.classList.add("selected");
 
-        //document.querySelector('.nav-step-two').classList.remove("inactive");
         document.querySelector('.nav-step-three').classList.add("inactive");
         document.querySelector('.cards-placeholder').classList.add("active");
         document.querySelector('.cards-placeholder').classList.remove("inactive");
 
         animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer / 3);
-        textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls)
+        textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls);
+
+        resetPips();
     }
 
     if (b == "L2") {
@@ -185,7 +192,7 @@ function toggleActiveNavItem(a) {
 
         });
 
-        getCardsArr(a.getAttribute("target-cards"))
+        anonConf == "confidential" ? getCardsArr(a.getAttribute("target-cards-conf")) : getCardsArr(a.getAttribute("target-cards-anon"));
         a.classList.remove("unselected");
         a.classList.add("selected");
 
@@ -195,7 +202,6 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.add("inactive");
 
         animatedScrollTo(document.body, document.getElementById("cardsHolder").offsetTop, globalTimer / 3);
-        //allCardsTitle
     }
 
 }
@@ -246,6 +252,18 @@ function displayCards(a) {
     }
 
     displayPips(a)
+
+}
+
+
+function resetPips() {
+
+    let b = document.querySelectorAll(".gv-chiclet");
+
+        for (var d = 0; d < b.length; d++) {
+                    b[d].classList.remove("selected");
+                    b[d].classList.add("unselected");
+        }
 
 }
 

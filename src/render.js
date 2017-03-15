@@ -1,10 +1,9 @@
-import mainTemplate from './src/templates/main.html!text'
 import mainEdit from './src/templates/mainEdit.html!text'
 import Mustache from 'mustache'
 import rp from 'request-promise'
 
 const regex = /[\r\n]+/g;
-const subst = `<p/><p>`;
+const subst = `</p><p>`;
 
 export async function render() {
 
@@ -36,6 +35,5 @@ function formatData(data) {
 
 function whitespaceFix(card) {
     let text = card.readMoreCopy.replace(regex, subst);
-
     return `<p>${text}</p>`
 }
