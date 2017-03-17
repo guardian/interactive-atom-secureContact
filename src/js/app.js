@@ -196,7 +196,7 @@ function toggleActiveNavItem(a) {
         a.classList.remove("unselected");
         a.classList.add("selected");
 
-        document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send " + a.getAttribute("list-ref") + "…";
+        document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send " + a.getAttribute("list-ref").split("-").join(" ") + "…";
         document.querySelector('.nav-step-three').classList.remove("inactive");
         document.querySelector('.cards-placeholder').classList.remove("active");
         document.querySelector('.cards-placeholder').classList.add("inactive");

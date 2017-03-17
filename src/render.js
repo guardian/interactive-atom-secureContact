@@ -8,7 +8,7 @@ const subst = `</p><p>`;
 export async function render() {
 
 	let data = formatData(await rp({
-        uri: "https://interactive.guim.co.uk/docsdata-test/1WLhHROz2EB2rW25ouywEmw_u-Bi_9W7UDoVlxTHy1Zs.json",
+        uri: "https://interactive.guim.co.uk/docsdata-test/1Ye7YZB0jFMeUeko-TCJ2X5aXPeFNGKqy5B3jusZssM4.json",
         json: true
     }));
 
@@ -37,3 +37,5 @@ function whitespaceFix(card) {
     let text = card.readMoreCopy.replace(regex, subst);
     return `<p>${text}</p>`
 }
+
+//https://interactive.guim.co.uk/docsdata-test/1WLhHROz2EB2rW25ouywEmw_u-Bi_9W7UDoVlxTHy1Zs.json
