@@ -47,5 +47,10 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "animated-scrollto": "^1.1.0",
+    "mustache": "^2.3.0",
+    "request-promise": "^4.2.2",
+    "smoothscroll-polyfill": "^0.4.3"
+  }
 }

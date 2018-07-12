@@ -1,4 +1,9 @@
-import animatedScrollTo from "animated-scrollto";
+ import { polyfill } from 'smoothscroll-polyfill'; polyfill();
+
+// import smoothscroll from 'smoothscroll-polyfill';
+
+// // // kick off the polyfill!
+// // smoothscroll.polyfill();
 
 var cardsArr;
 var anonConf;
@@ -96,15 +101,9 @@ let revealEls = function(target, removeClass) {
 function scrollCardIntoView(el) {
 
     if (el.classList.contains("selected")) {
+
+        document.getElementById("cardHolder" + el.getAttribute("card-ref")).scrollIntoView({ behavior: 'smooth' });
        
-        animatedScrollTo(
-            document.body, // element to scroll with (most of times you want to scroll with whole <body>)
-            document.getElementById("cardHolder" + el.getAttribute("card-ref")).offsetTop + document.getElementById("cardsHolder").offsetTop, // target scrollY (0 means top of the page)
-            globalTimer / 3, // duration in ms
-            function() { // callback function that runs after the animation (optional)
-                console.log('scrolled cards in')
-            }
-        );
     }
 
 }
@@ -173,8 +172,8 @@ function toggleActiveNavItem(a) {
         document.querySelector('.nav-step-three').classList.add("inactive");
         document.querySelector('.cards-placeholder').classList.add("active");
         document.querySelector('.cards-placeholder').classList.remove("inactive");
+        document.getElementById("levelTwoNavHolder").scrollIntoView({ behavior: 'smooth' });
 
-        animatedScrollTo(document.body, document.getElementById("levelTwoNavHolder").offsetTop, globalTimer / 3);
         textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls);
 
         resetPips();
@@ -201,7 +200,7 @@ function toggleActiveNavItem(a) {
         document.querySelector('.cards-placeholder').classList.remove("active");
         document.querySelector('.cards-placeholder').classList.add("inactive");
 
-        animatedScrollTo(document.body, document.getElementById("cardsHolder").offsetTop, globalTimer / 3);
+        document.getElementById("allCardsTitle").scrollIntoView({ behavior: 'smooth' });
     }
 
 }
