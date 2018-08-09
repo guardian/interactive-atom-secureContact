@@ -2,7 +2,7 @@ $card-width-mobile:gs-span(4);
 $card-width-tablet:gs-span(9);
 $card-width-wide:gs-span(9);
 $card-left-padding: $gs-gutter;
-$border-color:rgba(#FFF, 0.2);
+$border-color:rgba($neutral-7, 0.2);
 $ani-time:0.8s;
 $aniOneTime:3s;
 $aniOneStartOp:0;
@@ -11,7 +11,7 @@ $aniOneEndOp:0.1;
 h4,
 h5 {
     @include fs-header(3);
-    margin-top: $gs-gutter;
+    // padding-top: $gs-gutter;
     padding-bottom: $gs-baseline;
 }
 
@@ -28,10 +28,10 @@ h5 {
     padding: 0;
     overflow:hidden;
     @include mq(tablet) {
-        padding: gs-height(3) 0 0;
+        // padding: gs-height(3) 0 0;
     }
     @include mq(wide) {
-        padding: gs-height(5) 0 0;
+        // padding: gs-height(5) 0 0;
     }
     background-color: $guardian-brand-darkest !important;
 }
@@ -43,7 +43,7 @@ h5 {
     }
     h5 {
         margin-top: $gs-baseline;
-        color: $neutral-1 !important;
+        color: $neutral-light !important;
         @include mq(mobileLandscape) {
             color: #FFF  !important;
             margin-top: -48px;
@@ -119,12 +119,12 @@ h5 {
 }
 
 .gv-standfirst {
-    background-color: rgba(#000, 0.6);
+    // background-color: rgba(#000, 0.6);
     width: 100%;
     padding: $gs-baseline 0 gs-height(2);
     @include mq(tablet) {
         width: $card-width-tablet;
-        padding: $gs-baseline 0 gs-height(2);
+        padding: gs-height(3) () 0 gs-height(2);  
     }
     @include mq(wide) {
         width: $card-width-wide;
@@ -155,12 +155,12 @@ h5 {
 }
 
 .gv-inner {
-    background-color: $neutral-light;
+    background-color: white;
 }
 
 .gv-nav-list {
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 0 10px;
     padding: 0;
     overflow: hidden;
     width: 100%;
@@ -204,6 +204,10 @@ h5 {
             }
         }
     }
+
+    @include mq(desktop){
+        margin: 0 0 0 20px;
+        }
 }
 
 .gv-nav-list-two {
@@ -300,19 +304,19 @@ h5 {
 
 .selected {
     background-color: $accent-main;
-    color: #FFF;
+    color: $neutral-7;
     h5,
     span {
-        color: #FFF;
+        color: $neutral-7;
     }
 }
 
 .unselected {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba($neutral-mid, 0.8);
     background-color: $inactive-fill;
     h5,
     span {
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba($neutral-mid, 0.8);
     }
 }
 
@@ -324,7 +328,7 @@ h5 {
     height: 36px;
     opacity: 0.5;
     border-radius: 1000px;
-    border: 1px solid #FFF;
+    border: 1px solid $neutral-7;
     background-image: url('<%= path %>/assets/arrow-right.svg');
     background-position: center center;
     background-repeat: no-repeat;

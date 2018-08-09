@@ -1,8 +1,7 @@
 <div class='gv-slice gv-head-slice'>
     <div class="gv-inner gv-head-inner">
-        <div class="gv-img-holder">
+        <div class="gv-img-holder active-none-mobile">
 
-            
                     <div class="head-slice head-slice-1">
                         <img src="<%= path %>/assets/slices-opt/cols_01.png" width="131" height="800" alt=""></td>
                     </div>
@@ -36,7 +35,7 @@
             <ul class="gv-nav-list">
                 {{#navsOne}}
                 <li class="nav-zero-item nav-one-item unselected opacity-low" list-ref="{{{hed}}}" nav-level="L1">
-                    <div class="gv-nav-list-item">{{{hed}}}<span class="gv-nav-list-note">{{{copy}}}</span></div>
+                    <div class="gv-nav-list-item">{{{hedCopy}}}<span class="gv-nav-list-note">{{{copy}}}</span></div>
                 </li>
                 {{/navsOne}}
             </ul>
@@ -46,10 +45,10 @@
 <div class='gv-slice nav-step-two' id="levelTwoNavHolder">
     <div class="gv-inner">
         <div class="gv-inner-content">
-            <h5 id="navTwoTitle" str="{{{navTwoTitle}}}"></h5>
+            <h5 id="navTwoTitle" str="{{{navTwoTitle}}}" class="section-header">&nbsp;</h5>
             <ul class="gv-nav-list gv-nav-list-two">
                 {{#navsTwo}}
-                <li class="nav-one-item nav-two-item unselected opacity-low" list-ref="{{{hed}}}" nav-level="L2" target-cards="{{#relatedCards}}---{{{.}}}{{/relatedCards}}">
+                <li class="nav-one-item nav-two-item unselected opacity-low" list-ref="{{{hed}}}" nav-level="L2"  target-cards-anon="{{#relatedCardsAnon}}---{{{.}}}{{/relatedCardsAnon}}" target-cards-conf="{{#relatedCardsConf}}---{{{.}}}{{/relatedCardsConf}}">
                     <div class="gv-nav-list-item">
                         <h5>{{{hed}}} </h5><span class="gv-nav-list-note-l2">{{{copy}}}</span></div>
                 </li>
@@ -93,7 +92,7 @@
                             </ul>
                         </div>
                         <div class="gv-read-more inactive" div-ref="{{{hed}}}">
-                            {{{readMoreCopy}}}
+                            {{{formattedReadMore}}}
                         </div>
                         <div class="gv-read-more-btn show-more" target-div="{{{hed}}}">
                         </div>

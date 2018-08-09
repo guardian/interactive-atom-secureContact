@@ -1,4 +1,4 @@
-import mainEdit from './src/templates/mainEdit.html!text'
+import mainEdit from './src/templates/main.html!text'
 import Mustache from 'mustache'
 import rp from 'request-promise'
 

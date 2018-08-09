@@ -213,7 +213,6 @@ function revealCards() {
 
 function getCardsArr(a) {
     var b = a.split("---");
-
     var c = [];
 
     for (var d = 0; d < b.length; d++) {
@@ -221,9 +220,7 @@ function getCardsArr(a) {
             c.push(b[d]);
         }
     }
-
     displayCards(c)
-
 }
 
 function displayCards(a) {

@@ -1,0 +1,30 @@
+<div class="gv-cards-holder">
+                {{#cards}}
+                <div class="gv-card inactive" card-ref="{{{hed}}}" id="cardHolder{{{hed}}}">
+                    <div class="gv-card-left">
+                        <h4>{{{hed}}}</h4></div>
+                    <div class="gv-card-main">
+                        <div class="gv-read-less active" divData="{{{hed}}}">
+                            <div class="gv-card-intro">
+                            {{{introSentence}}}
+                            </div>
+                            <h6>Pros</h6>
+                            <ul>
+                                {{#pros}}
+                                <li><span class="bullet">•</span><span class="gv-pros-cons-item">{{{.}}}</span></li> {{/pros}}
+                            </ul>
+                            <h6>Cons</h6>
+                            <ul>
+                                {{#cons}}
+                                <li><span class="bullet">•</span><span class="gv-pros-cons-item">{{{.}}}</span></li> {{/cons}}
+                            </ul>
+                        </div>
+                        <div class="gv-read-more inactive" div-ref="{{{hed}}}">
+                            {{{formattedReadMore}}}
+                        </div>
+                        <div class="gv-read-more-btn show-more" target-div="{{{hed}}}">
+                        </div>
+                    </div>
+                </div>
+                {{/cards}}
+</div>
