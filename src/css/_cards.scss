@@ -16,7 +16,6 @@
     }
 
 
-
     @include mq(tablet){
         padding-bottom: gs-height(1);
     }
@@ -24,7 +23,7 @@
     ul {
         list-style-type: none;
         margin: 0;
-        padding:0;
+        padding:0 0 0 20px;
         overflow:hidden;
 
 
@@ -49,10 +48,10 @@
     .selected,
     .unselected {
         background: none !important;
-        color:  $neutral-mid;
+        color:  rgba($neutral-mid, 0.8);
     }
     .selected {
-        color: $link-fill;
+        color: $neutral-7;
         cursor: pointer;
     }
     .selected:hover {
@@ -82,18 +81,19 @@
 }
 
 .gv-card {
-    background-color: #FFF;  
+    border-top:1px solid #222;
+    // background-color: rgba($accent-main,0.3);  
     margin: 0 0 gs-height(1) 0;
     padding-bottom: $gs-baseline;
 
 
-    @include mq(tablet){
-        width: $card-width-tablet;
-    }
+    // @include mq(tablet){
+    //     width: $card-width-tablet;
+    // }
 
-    @include mq(wide){
-        width: $card-width-wide;
-    }
+    // @include mq(wide){
+    //     width: $card-width-wide;
+    // }
     h1,
     h2,
     h3,
@@ -158,13 +158,22 @@
 
 .gv-card-main {
         margin: 0 $gs-gutter*0.5;
-    @include mq(tablet){
-        margin: 0 $gs-gutter 0 gs-span(2)+$gs-gutter;
+    // @include mq(tablet){
+    //     margin: 0 $gs-gutter 0 gs-span(2)+$gs-gutter;
+    // }
+
+    @include mq(desktop){
+        margin-left: 160px;
+    }
+
+    @include mq(wide){
+        margin-left: 260px;
     }
 
     h4{
         padding: $gs-baseline 0 0;
         margin-bottom: 0;
+        
     }
 
     .gv-read-more, .gv-read-less{
@@ -179,6 +188,17 @@
         margin:$gs-gutter*0.5 0 $gs-baseline;
     }
     
+}
+
+.gv-card-main:before{
+    content:'';
+    position:absolute;
+    height: $gs-gutter*3;
+    width:1px;
+    background-color:$neutral-7;
+    left: 240px;
+    margin-top:-14px
+
 }
 
 .dummy-card{

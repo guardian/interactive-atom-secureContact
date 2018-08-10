@@ -170,8 +170,10 @@ function toggleActiveNavItem(a) {
         a.classList.add("selected");
 
         document.querySelector('.nav-step-three').classList.add("inactive");
-        document.querySelector('.cards-placeholder').classList.add("active");
-        document.querySelector('.cards-placeholder').classList.remove("inactive");
+         document.querySelector('.cards-placeholder-head').classList.add("active");
+        document.querySelector('.cards-placeholder-head').classList.remove("inactive");
+        document.querySelector('.cards-placeholder-cards').classList.add("active");
+        document.querySelector('.cards-placeholder-cards').classList.remove("inactive");
         document.getElementById("levelTwoNavHolder").scrollIntoView({ behavior: 'smooth' });
 
         textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls);
@@ -197,9 +199,11 @@ function toggleActiveNavItem(a) {
 
         document.querySelector('.gv-cards-heading').innerHTML = "Here's how to send " + a.getAttribute("list-ref").split("-").join(" ") + "…";
         document.querySelector('.nav-step-three').classList.remove("inactive");
-        document.querySelector('.cards-placeholder').classList.remove("active");
-        document.querySelector('.cards-placeholder').classList.add("inactive");
-
+        document.querySelector('.nav-step-three-cards').classList.remove("inactive");
+        document.querySelector('.cards-placeholder-head').classList.remove("active");
+        document.querySelector('.cards-placeholder-head').classList.add("inactive");
+        document.querySelector('.cards-placeholder-cards').classList.remove("active");
+        document.querySelector('.cards-placeholder-cards').classList.add("inactive");
         document.getElementById("allCardsTitle").scrollIntoView({ behavior: 'smooth' });
     }
 

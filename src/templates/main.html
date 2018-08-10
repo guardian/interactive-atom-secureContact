@@ -1,8 +1,36 @@
 <div class='gv-slice gv-head-slice'>
     <div class="gv-inner gv-head-inner">
+
+        <div class="eyes">
+            <div class="target" id="securedrop-eyes-target"></div>
+            <div class="eye">
+            <div class="outside">
+            <svg width="25" height="16" viewBox="13 5 25 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.5 5C32.05 5 38 12.33 38 12.33v1.34S32.03 21 25.5 21 13 13.67 13 13.67v-1.34S18.95 5 25.5 5z" fill="#FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+            </div>
+            <div class="inside left" style="left: 51%; top: -12%;">
+            <svg width="10" height="10" viewBox="21 7 10 10" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#121212" fill-rule="evenodd" cx="26" cy="12" r="5"></circle>
+            </svg>
+            </div>
+            </div>
+            <div class="eye">
+            <div class="outside">
+            <svg width="25" height="16" viewBox="13 5 25 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.5 5C32.05 5 38 12.33 38 12.33v1.34S32.03 21 25.5 21 13 13.67 13 13.67v-1.34S18.95 5 25.5 5z" fill="#FFFFFF" fill-rule="evenodd"></path>
+            </svg>
+            </div>
+            <div class="inside right" style="left: 51%; top: -12%;">
+            <svg width="10" height="10" viewBox="21 7 10 10" xmlns="http://www.w3.org/2000/svg">
+            <circle fill="#121212" fill-rule="evenodd" cx="26" cy="12" r="5"></circle>
+            </svg>
+            </div>
+            </div>
+        </div>
         <div class="gv-img-holder active-none-mobile">
 
-                    <div class="head-slice head-slice-1">
+                    <!-- <div class="head-slice head-slice-1">
                         <img src="<%= path %>/assets/slices-opt/cols_01.png" width="131" height="800" alt=""></td>
                     </div>
                     <div class="head-slice head-slice-2">
@@ -16,22 +44,30 @@
                     </div>
                     <div class="head-slice head-slice-5">
                         <img src="<%= path %>/assets/slices-opt/cols_05.png" width="88" height="800" alt="">
-                    </div>
+                    </div> -->
             
         </div>
+        <div class='header-bg-img'>
 
+        </div>    
 
         <div class="gv-inner-content gv-standfirst">
+
+
             <h4 style="padding-bottom:0">{{{tagheadline}}}</h4>
-            <h1>{{{headline}}}</h1>
+            <div class="headline-wrapper">
+                <div class="gv-head-title" str-data="{{{headline}}}">How to contact the guardian securely</div>
+            </div>
+            <div class="standy-wrapper">
             <p>{{{standfirst}}}</p>
+            </div>
         </div>
     </div>
 </div>
 <div class='gv-slice nav-step-one'>
     <div class="gv-inner ">
         <div class="gv-inner-content nav-one-inner">
-            <h5 id="navOneTitle" str="{{{navOneTitle}}}">&nbsp;</h5>
+            <h5 id="navOneTitle" str="{{{navOneTitle}}}" class="section-header">&nbsp;</h5>
             <ul class="gv-nav-list">
                 {{#navsOne}}
                 <li class="nav-zero-item nav-one-item unselected opacity-low" list-ref="{{{hed}}}" nav-level="L1">
@@ -57,11 +93,13 @@
         </div>
     </div>
 </div>
+
+
 <div class='gv-slice nav-step-three inactive' id="cardsHolder">
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
             <div class="gv-cards-head-holder">
-                <h5 id="allCardsTitle" class="gv-cards-heading">{{{cardsTitle}}}</h5>
+                <h5 id="allCardsTitle" class="section-header">{{{cardsTitle}}}&nbsp;</h5>
                 <ul>
                     {{#cards}}
                     <li>
@@ -70,6 +108,16 @@
                     {{/cards}}
                 </ul>
             </div>
+    
+        </div>
+    </div>
+</div>
+
+
+<div class='gv-slice nav-step-three-cards inactive' id="cardsHolder">
+    <div class="gv-inner gv-cards-wrapper">
+        <div class="gv-inner-content cards-content">
+            
             <div class="gv-cards-holder">
                 {{#cards}}
                 <div class="gv-card inactive" card-ref="{{{hed}}}" id="cardHolder{{{hed}}}">
@@ -103,11 +151,13 @@
         </div>
     </div>
 </div>
-<div class='gv-slice cards-placeholder'>
+
+
+<div class='gv-slice cards-placeholder-head'>
     <div class="gv-inner gv-cards-wrapper">
         <div class="gv-inner-content">
             <div class="gv-cards-head-holder">
-                <h5 class="gv-cards-heading"> </h5>
+                <h5 class="gv-cards-heading">&nbsp;</h5>
                 <ul>
                     {{#cards}}
                     <li>
@@ -116,6 +166,16 @@
                     {{/cards}}
                 </ul>
             </div>
+     
+        </div>
+    </div>
+</div>
+
+
+<div class='gv-slice cards-placeholder-cards'>
+    <div class="gv-inner gv-cards-wrapper">
+        <div class="gv-inner-content cards-content">
+            
             <div class="gv-cards-holder">
                 {{#cards}}
                 <div class="dummy-card opacity-low">
