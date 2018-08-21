@@ -81,7 +81,7 @@
 }
 
 .gv-card {
-    border-top:1px solid #222;
+    // border-top:1px solid #222;
     // background-color: rgba($accent-main,0.3);  
     margin: 0 0 gs-height(1) 0;
     padding-bottom: $gs-baseline;
@@ -132,11 +132,12 @@
 
 .gv-card:before {
     content: " ";
+    position:absolute;
     display: block;
-    height: 3px;
-    width: gs-span(1);
+    height: 36px;
+    width: 2px;
     background-color: $accent-main;
-    margin: 0;
+    margin: 1px 0 0;
     padding: 0;
 }
 
@@ -163,11 +164,12 @@
     // }
 
     @include mq(desktop){
+        padding-left:20px;
         margin-left: 160px;
     }
 
     @include mq(wide){
-        margin-left: 260px;
+        margin-left: 240px;
     }
 
     h4{
@@ -190,21 +192,33 @@
     
 }
 
-.gv-card-main:before{
-    content:'';
-    position:absolute;
-    height: $gs-gutter*3;
-    width:1px;
-    background-color:$neutral-7;
-    left: 240px;
-    margin-top:-14px
+// .gv-card-main:before{
+//     content:'';
+//     position:absolute;
+//     height: 48px;
+//     width:1px;
+//     background-color:$neutral-7;
+//     left: 240px;
+//     margin-top:-14px;
+//     display:none;
 
-}
+//     @include mq(desktop){
+//         display:block;
+//         left: 160px;
+//     }
+
+//     @include mq(wide){
+//         display:block;
+//         left: 240px;
+//     }
+
+
+// }
 
 .dummy-card{
 
-    height: gs-height(2);
-    background-color:$neutral-light;
+    height: gs-height(1);
+    background-color: #EFEFEF;
 
     margin: 0 0 gs-height(1) 0;
     padding-bottom: $gs-baseline;
@@ -214,17 +228,23 @@
         width: $card-width-tablet;
     }
 
+    @include mq(leftCol){
+        margin-left:160px;
+        width: $card-width-wide;
+    }
+
     @include mq(wide){
+        margin-left:260px;
         width: $card-width-wide;
     }
 }
 
-.dummy-card:before {
-    content: " ";
-    display: block;
-    height: 3px;
-    width: gs-span(1);
-    background-color: $neutral-mid;
-    margin: 0;
-    padding: 0;
-}
+// .dummy-card:before {
+//     content: " ";
+//     display: block;
+//     height: 3px;
+//     width: gs-span(1);
+//     background-color: $neutral-mid;
+//     margin: 0;
+//     padding: 0;
+// }

@@ -1,7 +1,36 @@
+<div class="page-wrapper">
+
 <div class='gv-slice gv-head-slice'>
     <div class="gv-inner gv-head-inner">
 
-        <div class="eyes">
+       
+        <div class="gv-img-holder active-none-mobile">
+
+                    <!-- <div class="head-slice head-slice-1">
+                        <img src="<%= path %>/assets/slices-opt/cols_01.png" width="131" height="800" alt=""></td>
+                    </div>
+                    <div class="head-slice head-slice-2">
+                        <img src="<%= path %>/assets/slices-opt/cols_02.png" width="354" height="800" alt="">
+                    </div>
+                    <div class="head-slice head-slice-3">
+                        <img src="<%= path %>/assets/slices-opt/cols_03.png" width="404" height="800" alt="">
+                    </div>
+                    <div class="head-slice head-slice-4">
+                        <img src="<%= path %>/assets/slices-opt/cols_04.png" width="323" height="800" alt="">
+                    </div>
+                    <div class="head-slice head-slice-5">
+                        <img src="<%= path %>/assets/slices-opt/cols_05.png" width="88" height="800" alt="">
+                    </div> -->
+            
+        </div>
+        <div class='header-bg-img'>
+
+        </div>    
+
+       
+
+        <div class="gv-inner-content gv-standfirst">
+             <div class="eyes">
             <div class="target" id="securedrop-eyes-target"></div>
             <div class="eye">
             <div class="outside">
@@ -28,33 +57,8 @@
             </div>
             </div>
         </div>
-        <div class="gv-img-holder active-none-mobile">
 
-                    <!-- <div class="head-slice head-slice-1">
-                        <img src="<%= path %>/assets/slices-opt/cols_01.png" width="131" height="800" alt=""></td>
-                    </div>
-                    <div class="head-slice head-slice-2">
-                        <img src="<%= path %>/assets/slices-opt/cols_02.png" width="354" height="800" alt="">
-                    </div>
-                    <div class="head-slice head-slice-3">
-                        <img src="<%= path %>/assets/slices-opt/cols_03.png" width="404" height="800" alt="">
-                    </div>
-                    <div class="head-slice head-slice-4">
-                        <img src="<%= path %>/assets/slices-opt/cols_04.png" width="323" height="800" alt="">
-                    </div>
-                    <div class="head-slice head-slice-5">
-                        <img src="<%= path %>/assets/slices-opt/cols_05.png" width="88" height="800" alt="">
-                    </div> -->
-            
-        </div>
-        <div class='header-bg-img'>
-
-        </div>    
-
-        <div class="gv-inner-content gv-standfirst">
-
-
-            <h4 style="padding-bottom:0">{{{tagheadline}}}</h4>
+            <!-- <h4 style="padding-bottom:0">{{{tagheadline}}}</h4> -->
             <div class="headline-wrapper">
                 <div class="gv-head-title" str-data="{{{headline}}}">How to contact the guardian securely</div>
             </div>
@@ -62,8 +66,28 @@
             <p>{{{standfirst}}}</p>
             </div>
         </div>
+
+         <div class="share-buttons">
+            <div class="breaker breaker--short"></div>
+            <div class="breaker breaker--short"></div>
+            <div class="breaker breaker--short"></div>
+            <div class="breaker breaker--short"></div>
+            <a href="https://www.facebook.com/dialog/share?app_id=180444840287&amp;href=https://gu.com/p/836p6?CMP=share_btn_fb" target="_blank" title="Facebook"> <img src="<%= path %>/assets/facebook.png" alt=""> </a>
+            <a href="https://twitter.com/intent/tweet?text=Winter%20Olympics%3A%20latest%20medal%20table%20for%20Pyeongchang%202018&amp;url=https://gu.com/p/836p6?CMP=share_btn_tw" target="_blank" title="Twitter"> <img src="<%= path %>/assets/twitter.png" alt=""> </a>
+            <a href="https://mail.google.com/mail/u/0/?view=cm&amp;fs=1&amp;tf=1&amp;source=mailto&amp;su=Winter%20Olympics%3A%20latest%20medal%20table%20for%20Pyeongchang%202018&amp;body=href=https://gu.com/p/836p6" target="_blank" title="Email"> <img src="<%= path %>/assets/email.png" alt=""> </a>
+        </div>
+
+
+
     </div>
 </div>
+
+<div class="breaker"></div>
+<div class="breaker"></div>
+<div class="breaker"></div>
+<div class="breaker"></div>
+
+
 <div class='gv-slice nav-step-one'>
     <div class="gv-inner ">
         <div class="gv-inner-content nav-one-inner">
@@ -120,7 +144,9 @@
             
             <div class="gv-cards-holder">
                 {{#cards}}
+
                 <div class="gv-card inactive" card-ref="{{{hed}}}" id="cardHolder{{{hed}}}">
+                    <div class="breaker solid-border"></div>
                     <div class="gv-card-left">
                         <h4>{{{hed}}}</h4></div>
                     <div class="gv-card-main">
@@ -184,4 +210,7 @@
             </div>
         </div>
     </div>
+</div>
+
+
 </div>

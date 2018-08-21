@@ -5,10 +5,12 @@
 
 
 //define global colors
+$highlight-blue: #00b2ff;
 $bg-main:  $neutral-86;
 $guardian-brand-darkest: hsl(204,100%,18%);
 $bg-secondary:  $neutral-60;
 $accent-main: $highlight-yellow;
+
 $active-fill:$accent-main;
 $inactive-fill:$neutral-92;
 $link-fill:$accent-main;
@@ -16,21 +18,51 @@ $neutral-light: $neutral-7;
 $neutral-mid: $neutral-46;
 $neutral-dark: $neutral-96;
 
+$border-color: $neutral-60;
 
-@import "eyes";
 
 // Uncomment for embeds
 //@import "embed";
 
-// Uncomment for full screen (including immersive article main media)
+//Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+.element-atom,
+.interactive-atom {
+    overflow: hidden;
+}
+
+.page-wrapper{
+	position: relative;
+	width:100%;
+	max-width:1300px;
+	margin: auto;
+}
+
+.page-wrapper::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0;
+    position: absolute;
+    top: 0;
+    @include mq(leftCol){
+
+	    left: 160px;
+	    border-right: 1px solid $border-color;
+	}
+
+	@include mq(wide){
+	    left: 240px;
+	    border-right: 1px solid $border-color;
+	}
+
+}
 
 
 button:focus {
 	outline:0 !important;
 }
-
 
 h2{
 	@include fs-header(4);
@@ -79,7 +111,7 @@ h4, h5{
 	max-width:620px;
 	margin: 0;
 	//padding:$gs-baseline 0;
-	background: #FFF;
+	// background: #FFF;
 
 	@media(min-width:480px){
 
@@ -99,9 +131,6 @@ h4, h5{
 		max-width:1300px;
 	}
 }
-
-
-
 
 .gv-section-title {
 	width:100%;
@@ -142,7 +171,7 @@ h4, h5{
 	    	max-width: 620px;
 	 	}
 
-	border-left:1px solid;
+
 
 	&.cards-content{
 		margin:0;
@@ -165,10 +194,75 @@ active{
 }
 
 
+.breaker {
+    border-top: 1px dotted $border-color;
+    margin-bottom: 3px;
+    width: 200vw;
+    margin-left: -100%;
+
+    &--short {
+        @include mq(mobile) {
+            display: none;
+        }
+
+        @include mq(leftCol) {
+            display: block;
+            width: 140px;
+            margin-left: 0px;
+        }
+
+        @include mq(wide) {
+            width: 220px;
+        }
+    }
+
+    &.solid-border{
+    	border-top: 1px solid $border-color;
+    }
+}
+
+.share-buttons {
+	@include mq(mobile) {
+		position: relative;
+		padding-top: 10px;
+		padding-bottom: 40px;
+		margin-left: 10px;
+	}
+
+	@include mq(leftCol) {
+		padding-top: 0;
+		padding-bottom: 0;
+		top: 262px;
+		position: absolute;
+		left: 10px;
+		margin-left: 0;
+	}
+
+	@include mq(wide) {
+		top: 272px;
+	}
+
+	img {
+		display: inline;
+		height: 32px;
+		cursor: pointer;
+    	margin-top: 6px;
+	}
+
+	a {
+		color:$neutral-7;
+		text-decoration: none;
+	}
+}
+
 
 // Project specific imports
 
 @import "custom";
 @import "cards";
 @import "headAnimate";
+@import "eyes";
+
 // @import "backTopButton";
+
+
