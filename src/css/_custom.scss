@@ -334,6 +334,8 @@ h5 {
 
 }
 
+
+
 .show-less {
     background-image: url('<%= path %>/assets/cross.svg');
     background-position: 6px center;
@@ -350,6 +352,7 @@ h5 {
     content:'show less';
     
 }
+
 
 .right-arrow {
     background-image: url('<%= path %>/assets/arrow-right.svg');
@@ -430,8 +433,9 @@ h5 {
 }
 
 .gv-read-more-btn {
+    position: absolute;
     height: 18px;
-    margin: $gs-baseline 0;
+    margin: -12px 0;
     padding: 6px 0 6px 36px;
     border-radius: 1000px;
     width: gs-span(1)+$gs-gutter;

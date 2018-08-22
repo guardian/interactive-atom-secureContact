@@ -81,9 +81,10 @@
 }
 
 .gv-card {
-    // border-top:1px solid #222;
+    position: relative;
     background-color: #eaeaea;  
     margin: 0 0 gs-height(1) 0;
+    padding-bottom: $gs-baseline;
 
 
 
@@ -181,7 +182,7 @@
    
 
     h4{
-        padding: $gs-baseline 0 0;
+        padding: 0 0 0;
         margin-bottom: 0;
         
     }
@@ -199,6 +200,8 @@
     }
     
 }
+
+
 
 // .gv-card-main:before{
 //     content:'';
