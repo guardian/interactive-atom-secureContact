@@ -219,6 +219,12 @@ active{
     &.solid-border{
     	border-top: 1px solid $border-color;
     }
+
+    &.card{
+    	width:100%;
+    	margin-left: 0;
+    	border-top: 1px solid $border-color;
+    }
 }
 
 .share-buttons {

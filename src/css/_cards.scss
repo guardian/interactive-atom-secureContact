@@ -82,9 +82,24 @@
 
 .gv-card {
     // border-top:1px solid #222;
-    // background-color: rgba($accent-main,0.3);  
+    background-color: #eaeaea;  
     margin: 0 0 gs-height(1) 0;
-    padding-bottom: $gs-baseline;
+
+
+
+    @include mq(tablet){
+        width: $card-width-tablet;
+    }
+
+    @include mq(leftCol){
+        margin-left:160px;
+        width: $card-width-wide;
+    }
+
+    @include mq(wide){
+        margin-left:260px;
+        width: $card-width-wide;
+    }
 
 
     // @include mq(tablet){
@@ -163,14 +178,7 @@
     //     margin: 0 $gs-gutter 0 gs-span(2)+$gs-gutter;
     // }
 
-    @include mq(desktop){
-        padding-left:20px;
-        margin-left: 160px;
-    }
-
-    @include mq(wide){
-        margin-left: 240px;
-    }
+   
 
     h4{
         padding: $gs-baseline 0 0;
@@ -238,6 +246,9 @@
         width: $card-width-wide;
     }
 }
+
+
+
 
 // .dummy-card:before {
 //     content: " ";
