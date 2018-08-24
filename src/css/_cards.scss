@@ -23,8 +23,12 @@
     ul {
         list-style-type: none;
         margin: 0;
-        padding:0 0 0 20px;
+        padding:0;
         overflow:hidden;
+
+        @include mq(tablet){
+            padding:0 0 0 20px;
+        }
 
 
     }
@@ -82,23 +86,28 @@
 
 .gv-card {
     position: relative;
-    background-color: #eaeaea;  
+    background-color: $inactive-fill;  
     margin: 0 0 gs-height(1) 0;
-    padding-bottom: $gs-baseline;
-
-
+    padding-bottom: gs-height(1);
 
     @include mq(tablet){
         width: $card-width-tablet;
+        margin: 0 0 gs-height(1)+$gs-baseline 20px;
+        
+    }
+
+    @include mq(desktop){
+        margin-left:172px;
+        width: $card-width-wide;
     }
 
     @include mq(leftCol){
-        margin-left:160px;
+        margin-left:172px;
         width: $card-width-wide;
     }
 
     @include mq(wide){
-        margin-left:260px;
+        margin-left:252px;
         width: $card-width-wide;
     }
 
@@ -118,13 +127,14 @@
     h6 {
         margin-top: $gs-baseline*0.5;
         margin-left: 0;
-    }
-    h6 {
         @include fs-header(3);
+        line-height:22px;
     }
+
     ul {
-        margin: 0 0 gs-height(1);
+        margin: 0;
         list-style-type: none;
+        padding-bottom: 3px;
         li {
             margin: 0 0 $gs-baseline*0.5;
         }
@@ -146,16 +156,16 @@
     }
 }
 
-.gv-card:before {
-    content: " ";
-    position:absolute;
-    display: block;
-    height: 36px;
-    width: 2px;
-    background-color: $accent-main;
-    margin: 1px 0 0;
-    padding: 0;
-}
+// .gv-card:before {
+//     content: " ";
+//     position:absolute;
+//     display: block;
+//     height: 36px;
+//     width: 2px;
+//     background-color: $accent-main;
+//     margin: 1px 0 0;
+//     padding: 0;
+// }
 
 .gv-card-left {
     width: 100%;
@@ -189,14 +199,14 @@
 
     .gv-read-more, .gv-read-less{
         margin-right: 0;
-        margin-bottom: gs-height(1);
+        margin-bottom: $gs-baseline;
         @include mq(tablet){
            margin-right: gs-width(1); 
         }
     }
 
     .gv-card-intro {
-        margin:$gs-gutter*0.5 0 $gs-baseline;
+        margin:0 0 $gs-baseline;
     }
     
 }

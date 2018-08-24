@@ -12,7 +12,7 @@ $bg-secondary:  $neutral-60;
 $accent-main: $highlight-yellow;
 
 $active-fill:$accent-main;
-$inactive-fill:$neutral-92;
+$inactive-fill:$neutral-96;
 $link-fill:$accent-main;
 $neutral-light: $neutral-7;
 $neutral-mid: $neutral-46;
@@ -35,9 +35,22 @@ $border-color: $neutral-60;
 .page-wrapper{
 	position: relative;
 	width:100%;
-	max-width:1300px;
 	margin: auto;
 	padding: 0 0 30px;
+	@include mq(desktop){
+		max-width:980px;
+	}
+
+	@include mq(leftCol){
+		max-width:1140px;
+	}
+
+	@include mq(wide){
+		max-width:1300px;
+	}
+
+
+	
 }
 
 .page-wrapper::before {
@@ -47,15 +60,14 @@ $border-color: $neutral-60;
     width: 0;
     position: absolute;
     top: 0;
-    @include mq(leftCol){
-
+    @include mq(desktop){
 	    left: 160px;
-	    border-right: 1px solid $border-color;
+	    border-right: 1px solid  $border-color;
 	}
+
 
 	@include mq(wide){
 	    left: 240px;
-	    border-right: 1px solid $border-color;
 	}
 
 }
@@ -77,19 +89,26 @@ h4, h5{
 	color: $neutral-7;
 }
 .section-header{
-	padding-top: $gs-gutter;
-	padding-left:20px;
+	padding: $gs-baseline 0;
 	color: $neutral-7;
+	@include mq(desktop){
+		padding-left:13px;
+	}
 }
 .section-header:before{
 	content:'';
 	position: absolute;
-	top:27px;
+	top:18px;
 	left:-5px;
-	height:10px;
-	width:10px;
+	height:12px;
+	width:12px;
 	background-color:$neutral-7;
 	border-radius:200px;
+	display: none;
+
+	@include mq(desktop){
+		display:block;
+	}
 	
 }
 
@@ -236,10 +255,17 @@ active{
 		margin-left: 10px;
 	}
 
+	@include mq(tablet) {
+		position: relative;
+		padding-top: 10px;
+		padding-bottom: 40px;
+		margin-left: 20px;
+	}
+
 	@include mq(leftCol) {
 		padding-top: 0;
 		padding-bottom: 0;
-		top: 262px;
+		top: 272px;
 		position: absolute;
 		left: 10px;
 		margin-left: 0;

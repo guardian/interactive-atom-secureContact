@@ -23,9 +23,6 @@ function init() {
     removeTagWhiteSpace('.gv-read-more-btn', "target-div");
     addListeners();
 
-
-
-
     setTimeout(function() { textAni("navOneTitle", ".nav-zero-item", "opacity-low", revealEls) }, desktopPreloadTime);
 }
 
@@ -162,7 +159,7 @@ function toggleActiveNavItem(a) {
     if (b == "L1") {
         [].slice.apply(document.querySelectorAll('.nav-one-item')).forEach(el => {
             el.classList.remove("selected");
-            el.classList.add("unselected");
+            el.classList.add("unselected");  
         });
 
         anonConf = a.getAttribute("list-ref")
@@ -170,11 +167,21 @@ function toggleActiveNavItem(a) {
         a.classList.add("selected");
 
         document.querySelector('.nav-step-three').classList.add("inactive");
-         document.querySelector('.cards-placeholder-head').classList.add("active");
+        document.querySelector('.cards-placeholder-head').classList.add("active");
         document.querySelector('.cards-placeholder-head').classList.remove("inactive");
         document.querySelector('.cards-placeholder-cards').classList.add("active");
         document.querySelector('.cards-placeholder-cards').classList.remove("inactive");
         document.getElementById("levelTwoNavHolder").scrollIntoView({ behavior: 'smooth' });
+
+        [].slice.apply(document.querySelectorAll('.gv-card')).forEach(el => {
+            el.classList.remove("active");
+            el.classList.add("inactive");  
+        });
+
+        document.querySelector('.gv-cards-heading').innerHTML = "&nbsp;";
+
+
+    
 
         textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls);
 
