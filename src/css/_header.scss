@@ -1,0 +1,354 @@
+.header-bg-img{
+    display: block;
+    position: absolute;
+
+
+    &.one{
+    	height: 270px;
+	    width: 405px;
+	    bottom: 0;
+	    left: 180px;
+	    background-image: url('<%= path %>/assets/headZuckerberg.png');
+	    background-repeat: no-repeat;
+	    background-size:contain;
+
+
+	    @include mq(mobileLandscape) {
+	        bottom: 0;
+	        left: 240px;
+	    }
+	    @include mq(tablet) {
+	        width: 320px;
+	        left: 370px;
+	    }
+	    @include mq(desktop) {
+	        width: 360px;
+	        left: 520px;
+	        background-size:cover;
+	    }
+	    @include mq(leftCol) {
+	        width: 480px;
+	    }
+	    @include mq(wide) {
+	        height: 270px;
+	    	width: 405px;
+	        left: 720px;
+	    }
+    }
+
+    &.two{
+    	height: 270px;
+	    width: 405px;
+	    top: 0;
+	    left: 180px;
+	    background-image: url('<%= path %>/assets/headSnowden.png');
+	    background-repeat: no-repeat;
+	    background-size:contain;
+
+
+
+	    @include mq(mobileLandscape) {
+	        bottom: 0;
+	        left: 240px;
+	    }
+	    @include mq(tablet) {
+	        width: 320px;
+	        left: 370px;
+	    }
+	    @include mq(desktop) {
+	        width: 360px;
+	        left: 520px;
+	        background-size:cover;
+	    }
+	    @include mq(leftCol) {
+	        width: 480px;
+	    }
+	    @include mq(wide) {
+	        height: 150px;
+	    	width: 250px;
+	    	top:54px;
+	        left: 800px;
+	    }
+    }
+
+
+    &.three{
+    	height: 270px;
+	    width: 405px;
+	    top: 0;
+	    left: 180px;
+	    background-image: url('<%= path %>/assets/headHamilton.png');
+	    background-repeat: no-repeat;
+	    background-size:contain;
+
+
+
+	    @include mq(mobileLandscape) {
+	        bottom: 0;
+	        left: 240px;
+	    }
+	    @include mq(tablet) {
+	        width: 320px;
+	        left: 370px;
+	    }
+	    @include mq(desktop) {
+	        width: 360px;
+	        left: 520px;
+	        background-size:cover;
+	    }
+	    @include mq(leftCol) {
+	        width: 480px;
+	    }
+	    @include mq(wide) {
+	        height: 204px;
+	    	width: 341px;
+	    	top:0px;
+	        left: 1056px;
+	    }
+    }
+
+   	&.four{
+    	height: 270px;
+	    width: 405px;
+	    bottom: 0;
+	    left: 180px;
+	    background-image: url('<%= path %>/assets/headCameron.png');
+	    background-repeat: no-repeat;
+	    background-size:contain;
+
+	    @include mq(mobileLandscape) {
+	        bottom: 0;
+	        left: 240px;
+	    }
+	    @include mq(tablet) {
+	        width: 320px;
+	        left: 370px;
+	    }
+	    @include mq(desktop) {
+	        width: 360px;
+	        left: 520px;
+	        background-size:cover;
+	    }
+	    @include mq(leftCol) {
+	        width: 480px;
+	    }
+	    @include mq(wide) {
+	        height: 150px;
+	    	width: 250px;
+	    	top:210px;
+	        left: 1133px;
+	    }
+    }
+    
+}
+
+
+.header-bg-tint{
+    background-color: $accent-main;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.75;
+   
+
+    &.one{
+    	 	height: 232px;
+		    width: 232px;
+		    top: 148px;
+		    left: 180px;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        height: 340px;
+		        width: 340px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        height: 360px;
+		        width: 210px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		            height: 150px;
+				    width: 270px;
+				    top: 240px;
+				    left:951px;
+		    }
+
+    }
+
+    &.two{
+    	 	height: 90px;
+		    width: 150px;
+		    top: 148px;
+		    left: 240px;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        width: 150px;
+		    top: 148px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        width: 150px;
+		    top: 148px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		            width: 150px;
+		            height: 90px;
+		    		top: 160px;
+    				left: 1310px;
+		    }
+
+    }
+
+
+    &.three{
+    	 	height: 90px;
+		    width: 150px;
+		    top: 148px;
+		    left: 240px;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        width: 150px;
+		    top: 148px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        width: 150px;
+		    	top: 148px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		            width: 100px;
+		            height: 60px;
+		    		top: 330px;
+    				left: 1310px;
+		    }
+
+    }
+
+
+    &.four{
+    	 	height: 120px;
+		    width: 200px;
+		    top: 148px;
+		    left: 240px;
+		    opacity: 0.5;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        width: 150px;
+		    top: 148px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        width: 150px;
+		    	top: 148px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		        height: 72px;
+			    width: 120px;
+			    top: 20px;
+			    left: 1123px;
+		    }
+
+    }
+
+
+    &.five{
+    	 	height: 120px;
+		    width: 200px;
+		    top: 148px;
+		    left: 240px;
+		    opacity: 0.5;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        width: 150px;
+		    top: 148px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        width: 150px;
+		    	top: 148px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		        height: 135px;
+			    width: 220px;
+			    top: 20px;
+			    left: 768px;
+		    }
+
+    }
+
+
+    &.six{
+    	 	height: 120px;
+		    width: 200px;
+		    top: 148px;
+		    left: 240px;
+		    opacity: 0.75;
+			@include mq(mobileLandscape) {
+		        left: 240px;
+		    }
+
+		    @include mq(tablet) {
+		        width: 150px;
+		    top: 148px;
+		        top: -20px;
+		        left: 370px;
+		    }
+
+		    @include mq(desktop) {
+		        width: 150px;
+		    	top: 148px;
+		        top: 120px;
+		        left: 500px;
+		    }
+
+		    @include mq(wide) {
+		        height: 120px;
+			    width: 200px;
+			    top: 270px;
+			    left: 700px;
+		    }
+
+    }
+   
+
+}

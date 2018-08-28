@@ -58,7 +58,7 @@ h5 {
 .gv-head-inner {
     position:relative;
     padding: 0;
-    overflow:hidden;
+    // overflow:hidden;
     @include mq(tablet) {
         // padding: gs-height(3) 0 0;
     }
@@ -98,75 +98,6 @@ h5 {
     float:left;
 }
 
-
-.header-bg-circle{
-    background-color: $accent-main;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    z-index: 0;
-    height: 232px;
-    width: 232px;
-    top: 148px;
-    left: 180px;
-
-    @include mq(mobileLandscape) {
-        left: 240px;
-    }
-    @include mq(tablet) {
-        height: 340px;
-        width: 340px;
-        top: -20px;
-        left: 370px;
-    }
-    @include mq(desktop) {
-        height: 472px;
-        width: 472px;
-        top: -36px;
-        left: 500px;
-    }
-    // @include mq(leftCol) {
-    //     left: 650px;
-    // }
-    @include mq(wide) {
-        left: 740px;
-    }
-
-}
-
-.header-bg-img{
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 500px;
-    top: 60px;
-    left: 180px;
-    background-image: url('<%= path %>/assets/papers.png');
-    background-repeat: no-repeat;
-    background-size:contain;
-
-
-    @include mq(mobileLandscape) {
-        top: 0;
-        left: 240px;
-    }
-    @include mq(tablet) {
-        width: 320px;
-        left: 370px;
-    }
-    @include mq(desktop) {
-        width: 360px;
-        left: 520px;
-        background-size:cover;
-    }
-    @include mq(leftCol) {
-        width: 480px;
-    }
-    @include mq(wide) {
-        width: 480px;
-        left: 740px;
-    }
-}
 
 .gv-img-holder{
     position:absolute;
