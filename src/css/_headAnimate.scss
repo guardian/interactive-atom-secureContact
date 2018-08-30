@@ -1,232 +1,54 @@
-$globalAniTime: 0.85s;
+$globalAniTime: 0.5s;
 $globalStartYPos: 150px;
 
 
-$sliceAniOneTime: $globalAniTime;
-$sliceAniOneDelay: $globalAniTime*1;
-$sliceOneStartY: $globalStartYPos;
-
-$sliceAniTwoTime: $globalAniTime;
-$sliceAniTwoDelay: $globalAniTime*2;
-$sliceTwoStartY: -$globalStartYPos;
-
-$sliceAniThreeTime: $globalAniTime;
-$sliceAniThreeDelay: $globalAniTime*0.5;
-$sliceThreeStartY: $globalStartYPos;
-
-$sliceAniFourTime: $globalAniTime;
-$sliceAniFourDelay: $globalAniTime*1.5;
-$sliceFourStartY: -$globalStartYPos;
-
-$sliceAniFiveTime: $globalAniTime;
-$sliceAniFiveDelay: 0;
-$sliceFiveStartY: $globalStartYPos;
-$sliceFiveStartX: 1280px;
-
-$endFrameOpacity:0.075;
-
-
-.head-slice{
-    opacity:0.1;
-}
 
 //Slice 1
 .head-slice-1 {
     opacity: 0;
     //margin-top: $sliceOneStartY;
-    -webkit-animation: sliceAniOne $sliceAniOneTime forwards;
-       -moz-animation: sliceAniOne $sliceAniOneTime infinite;
-        -ms-animation: sliceAniOne $sliceAniOneTime infinite;
-         -o-animation: sliceAniOne $sliceAniOneTime infinite;
-            animation: sliceAniOne $sliceAniOneTime forwards;
-            animation-delay: $sliceAniOneDelay;
+    -webkit-animation: sliceAniOne $globalAniTime forwards;
+       -moz-animation: sliceAniOne $globalAniTime infinite;
+        -ms-animation: sliceAniOne $globalAniTime infinite;
+         -o-animation: sliceAniOne $globalAniTime infinite;
+            animation: sliceAniOne $globalAniTime forwards;
+            // animation-delay: $sliceAniOneDelay;
 }
 
-@-webkit-keyframes sliceAniOne {
-   from { opacity: 0; } //margin-top: $sliceOneStartY; 
-     to { opacity: $endFrameOpacity; } //margin-top: 0;
+
+
+
+@keyframes fadeinOne{
+    0% { opacity:0; }
+    16% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes fadeinTwo{
+    0% { opacity:0; }
+    32% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes fadeinTwo{
+    0% { opacity:0; }
+    48% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes fadeinTwo{
+    0% { opacity:0; }
+    64% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes fadeinTwo{
+    0% { opacity:0; }
+    72% { opacity:1; }
+    100% { opacity:1; }
+}
+@keyframes fadeinSix{
+    0% { opacity:0; }
+    86% { opacity:1; }
+    100% { opacity:1; }
 }
 
-@-moz-keyframes sliceAniOne {
-   from { opacity: 0; margin-top:    $sliceOneStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-ms-keyframes sliceAniOne {
-   from { opacity: 0; margin-top:    $sliceOneStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-o-keyframes sliceAniOne {
-   from { opacity: 0; margin-top:    $sliceOneStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@keyframes sliceAniOne {
-   from { opacity: 0;  } //margin-top: $sliceOneStartY;
-     to { opacity: $endFrameOpacity; } //margin-top: 0; 
-}
-//Slice 1 end
-
-
-
-//Slice 2
-.head-slice-2 {
-    opacity: 0;
-    margin-top: $sliceTwoStartY;
-    -webkit-animation: sliceAniTwo $sliceAniTwoTime forwards;
-       -moz-animation: sliceAniTwo $sliceAniTwoTime infinite;
-        -ms-animation: sliceAniTwo $sliceAniTwoTime infinite;
-         -o-animation: sliceAniTwo $sliceAniTwoTime infinite;
-            animation: sliceAniTwo $sliceAniTwoTime forwards;
-            animation-delay: $sliceAniTwoDelay;
-}
-
-@-webkit-keyframes sliceAniTwo {
-   from { opacity: 0; margin-top: $sliceTwoStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-moz-keyframes sliceAniTwo {
-   from { opacity: 0; margin-top:    $sliceTwoStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-ms-keyframes sliceAniTwo {
-   from { opacity: 0; margin-top:    $sliceTwoStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-o-keyframes sliceAniTwo {
-   from { opacity: 0; margin-top:    $sliceTwoStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@keyframes sliceAniTwo {
-   from { opacity: 0; margin-top:    $sliceTwoStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-//Slice 2 end
-
-
-
-//Slice 3
-.head-slice-3 {
-    opacity: 0;
-    margin-top: $sliceThreeStartY;
-    -webkit-animation: sliceAniThree $sliceAniThreeTime forwards;
-       -moz-animation: sliceAniThree $sliceAniThreeTime infinite;
-        -ms-animation: sliceAniThree $sliceAniThreeTime infinite;
-         -o-animation: sliceAniThree $sliceAniThreeTime infinite;
-            animation: sliceAniThree $sliceAniThreeTime forwards;
-            animation-delay: $sliceAniThreeDelay;
-}
-
-@-webkit-keyframes sliceAniThree {
-   from { opacity: 0; margin-top: $sliceThreeStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-moz-keyframes sliceAniThree {
-   from { opacity: 0; margin-top:    $sliceThreeStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-ms-keyframes sliceAniThree {
-   from { opacity: 0; margin-top:    $sliceThreeStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-o-keyframes sliceAniThree {
-   from { opacity: 0; margin-top:    $sliceThreeStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@keyframes sliceAniThree {
-   from { opacity: 0; margin-top:    $sliceThreeStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-//Slice 3 end
-
-
-
-//Slice 4
-.head-slice-4 {
-    opacity: 0;
-    margin-top: $sliceFourStartY;
-    -webkit-animation: sliceAniFour $sliceAniFourTime forwards;
-       -moz-animation: sliceAniFour $sliceAniFourTime infinite;
-        -ms-animation: sliceAniFour $sliceAniFourTime infinite;
-         -o-animation: sliceAniFour $sliceAniFourTime infinite;
-            animation: sliceAniFour $sliceAniFourTime forwards;
-            animation-delay: $sliceAniFourDelay;
-}
-
-@-webkit-keyframes sliceAniFour {
-   from { opacity: 0; margin-top: $sliceFourStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-moz-keyframes sliceAniFour {
-   from { opacity: 0; margin-top:    $sliceFourStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-ms-keyframes sliceAniFour {
-   from { opacity: 0; margin-top:    $sliceFourStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@-o-keyframes sliceAniFour {
-   from { opacity: 0; margin-top:    $sliceFourStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-
-@keyframes sliceAniFour {
-   from { opacity: 0; margin-top:    $sliceFourStartY; }
-     to { opacity: $endFrameOpacity; margin-top: 0; }
-}
-//Slice 4 end
-
-
-//Slice 5
-.head-slice-5 {
-    opacity: 0;
-    //margin-left:$sliceFiveStartX;
-    //margin-top: $sliceFiveStartY;
-    -webkit-animation: sliceAniFive $sliceAniFiveTime forwards;
-       -moz-animation: sliceAniFive $sliceAniFiveTime infinite;
-        -ms-animation: sliceAniFive $sliceAniFiveTime infinite;
-         -o-animation: sliceAniFive $sliceAniFiveTime infinite;
-            animation: sliceAniFive $sliceAniFiveTime forwards;
-            animation-delay: $sliceAniFiveDelay;
-}
-
-@-webkit-keyframes sliceAniFive {
-   from { opacity: 0; }
-     to { opacity: $endFrameOpacity; }
-}
-
-@-moz-keyframes sliceAniFive {
-   from { opacity: 0; }
-     to { opacity: $endFrameOpacity; }
-}
-
-@-ms-keyframes sliceAniFive {
-   from { opacity: 0; }
-     to { opacity: $endFrameOpacity; }
-}
-
-@-o-keyframes sliceAniFive {
-   from { opacity: 0; }
-     to { opacity: $endFrameOpacity; }
-}
-
-@keyframes sliceAniFive {
-   from { opacity: 0; }
-     to { opacity: $endFrameOpacity; }
-}
-//Slice 5 end
 
 
 

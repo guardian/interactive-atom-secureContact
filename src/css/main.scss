@@ -48,10 +48,7 @@ $border-color: $neutral-60;
 
 	@include mq(wide){
 		max-width:1300px;
-	}
-
-
-	
+	}	
 }
 
 .page-wrapper::before {
@@ -287,6 +284,10 @@ active{
 		color:$neutral-7;
 		text-decoration: none;
 	}
+}
+
+.prose ul>li:before{
+	display:none !important;
 }
 
 

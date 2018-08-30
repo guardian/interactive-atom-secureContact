@@ -149,7 +149,7 @@ h5 {
 .gv-standfirst {
     // background-color: rgba(#000, 0.6);
     width: 100%;
-    padding: gs-height(2) 0 gs-height(1);
+    padding: 36px 0 gs-height(1);
     @include mq(tablet) {
         width: $card-width-tablet;
         padding: gs-height(2) 0 gs-height(2);  
@@ -320,23 +320,26 @@ h5 {
 
 .show-more {
     background-image: url('<%= path %>/assets/plus.svg');
-    background-position: 6px center;
+    background-position: 8px center;
     background-repeat: no-repeat;
     background-size: 18px;
     background-color:$active-fill;
-    width: gs-span(2)+$gs-baseline !important;
-
+    width: 100px !important;
 }
 
 
 
 
 .show-more:before, .show-less:before{
-    content:'read full instructions';
+    content:'SHOW MORE';
+    position: absolute; 
+    top: 9px;
 }
 
 .show-less:before {
-    content:'show less';
+    content:'SHOW LESS';
+    position: absolute; 
+    top: 9px;
     
 }
 
@@ -421,9 +424,9 @@ h5 {
 
 .gv-read-more-btn {
     position: absolute;
-    height: 18px;
+    height: 36px;
     margin: 18px 0;
-    padding: 6px 0 6px 36px;
+    padding: 0 0 0 36px !important;
     border-radius: 1000px;
     width: gs-span(1)+$gs-gutter;
     text-align: left;
@@ -434,9 +437,10 @@ h5 {
 
 .show-less {
     background-image: url('<%= path %>/assets/cross.svg');
-    background-position: 6px center;
+    background-position: 8px center;
     background-repeat: no-repeat;
     background-size: 18px;
     color: #FFF;
+    width: 100px;
     background-color:$neutral-7;
 }

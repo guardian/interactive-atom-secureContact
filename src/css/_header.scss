@@ -1,3 +1,6 @@
+$rectAniTime: 2s;
+
+
 .header-bg-img{
     display: block;
     position: absolute;
@@ -12,25 +15,44 @@
 	    background-repeat: no-repeat;
 	    background-size: contain;
 
+	    @include mq(tablet) {
+	        height: 180px;
+	    	width: 300px;
+	        top:210px;
+	        right: -60px;
+	    }
+
 	    @include mq(desktop) {
+	     
+	        right: -30px;
+	    }
+
+	    @include mq(leftCol) {
 	        height: 270px;
 	    	width: 405px;
+	    	top:210px;
 	        left: 720px;
 	    }
+
     }
 
     &.two{
     	height: 54px;
 	    width: 90px;
-	    bottom: 0px;
-	    right: 154px;
+	    bottom: 136px;
+	    right: 0px;
 	    background-image: url('<%= path %>/assets/headSnowden.png');
 	    background-repeat: no-repeat;
 	    background-size:contain;
 
-
+	    @include mq(tablet) {
+	        height: 90px;
+		    width: 150px;
+		    top: 396px;
+		    right: 180px;
+	    }
 	    
-	    @include mq(desktop) {
+	    @include mq(leftCol) {
 	        height: 150px;
 	    	width: 250px;
 	    	top:54px;
@@ -42,15 +64,21 @@
     &.three{
     	height: 60px;
 	    width: 100px;
-	    bottom: 136px;
+	    bottom: 194px;
 	    right: -40px;
 	    background-image: url('<%= path %>/assets/headHamilton.png');
 	    background-repeat: no-repeat;
 	    background-size:contain;
 
+	    @include mq(tablet) {
+	        height: 120px;
+	    	width: 200px;
+	    	top:84px;
+	        right: -30px;
+	    }
 
 
-	    @include mq(desktop) {
+	    @include mq(leftCol) {
 	        height: 204px;
 	    	width: 341px;
 	    	top:0px;
@@ -61,15 +89,20 @@
    	&.four{
     	height: 72px;
 	    width: 120px;
-	    bottom: 200px;
-	    right: -40px;
+	    top: 396px;
+	    right: -38px;
 	    background-image: url('<%= path %>/assets/headCameron.png');
 	    background-repeat: no-repeat;
 	    background-size:contain;
 
+	    @include mq(tablet) {
+	        height: 72px;
+		    width: 120px;
+		    top: 466px;
+		    right: 52px;
+	    }
 
-
-	    @include mq(desktop) {
+	    @include mq(leftCol) {
 	        height: 150px;
 	    	width: 250px;
 	    	top:210px;
@@ -90,53 +123,96 @@
     @include mq(wide) {
 		    	display: block;
 	}
-   
 
-    &.one{
-    	 	height: 30px;
-		    width: 50px;
-		    bottom: 116px;
-		    right: 130px;
-			
+	&.one{
+    	 	height: 45px;
+		    width: 75px;
+		    bottom: 10px;
+		    right: -12px;
+		    
 
-		    @include mq(desktop) {
-		            height: 150px;
-				    width: 270px;
-				    top: 240px;
-				    left:951px;
+		    @include mq(tablet) {
+	            width: 100px;
+	            height: 60px;
+	    		bottom: 60px;
+	    		right: 20px;
 		    }
 
-    }
+		    @include mq(leftCol) {
+		        height: 135px;
+			    width: 220px;
+			    top: 20px;
+			    left: 768px;
+		    }
+		   	
+		    animation-timing-function:ease-out;
 
-    &.two{
+		    -webkit-animation: fadeinOne $rectAniTime forwards;
+		       -moz-animation: fadeinOne $rectAniTime infinite;
+		        -ms-animation: fadeinOne $rectAniTime infinite;
+		         -o-animation: fadeinOne $rectAniTime infinite;
+		            animation: fadeinOne $rectAniTime forwards;
+
+    }
+   
+	&.two{
+    	 	height: 30px;
+		    width: 50px;
+		    bottom: 40px;
+		    right: 130px;
+		    opacity: 0.5;
+
+		     @include mq(tablet) {
+		            height: 99px;
+			    width: 165px;
+			    bottom: 206px;
+		    	right: -120px;
+		    }
+			
+		    @include mq(leftCol) {
+		        height: 72px;
+			    width: 120px;
+			    top: 20px;
+			    left: 1123px;
+		    }
+		   
+		     -webkit-animation: fadeinTwo $rectAniTime forwards;
+		       -moz-animation: fadeinTwo $rectAniTime infinite;
+		        -ms-animation: fadeinTwo $rectAniTime infinite;
+		         -o-animation: fadeinTwo $rectAniTime infinite;
+		            animation: fadeinTwo $rectAniTime forwards;
+
+    }
+    
+
+    &.three{
     	 	height: 30px;
 		    width: 50px;
 		    bottom: 258px;
 		    right: -20px;
+
+		    @include mq(tablet) {
+		            width: 120px;
+		            height: 72px;
+		    		bottom: 338px;
+		    		right: -10px;
+		    }
 			
 
-		    @include mq(desktop) {
+		    @include mq(leftCol) {
 		            width: 150px;
 		            height: 90px;
 		    		top: 160px;
     				left: 1310px;
 		    }
 
-    }
-
-
-    &.three{
-    	 	height: 30px;
-		    width: 50px;
-		    bottom: 10px;
-		    right: 220px;
-			
-		    @include mq(desktop) {
-		            width: 100px;
-		            height: 60px;
-		    		top: 330px;
-    				left: 1310px;
-		    }
+		
+		    //margin-top: $sliceOneStartY;
+		    -webkit-animation: fadeinThree $rectAniTime forwards;
+		       -moz-animation: fadeinThree $rectAniTime infinite;
+		        -ms-animation: fadeinThree $rectAniTime infinite;
+		         -o-animation: fadeinThree $rectAniTime infinite;
+		            animation: fadeinThree $rectAniTime forwards;
 
     }
 
@@ -144,33 +220,59 @@
     &.four{
     	 	height: 30px;
 		    width: 50px;
-		    bottom: 40px;
-		    right: 130px;
-		    opacity: 0.5;
-			
-		    @include mq(desktop) {
-		        height: 72px;
-			    width: 120px;
-			    top: 20px;
-			    left: 1123px;
+		    bottom: 10px;
+		    right: 220px;
+
+		    @include mq(tablet) {
+		            width: 100px;
+		            height: 60px;
+		    		bottom: 60px;
+		    		right: 280px;
 		    }
+			
+		    @include mq(leftCol) {
+		            width: 100px;
+		            height: 60px;
+		    		top: 330px;
+    				left: 1310px;
+		    }
+		   
+		    -webkit-animation: fadeinFour $rectAniTime forwards;
+		       -moz-animation: fadeinFour $rectAniTime infinite;
+		        -ms-animation: fadeinFour $rectAniTime infinite;
+		         -o-animation: fadeinFour $rectAniTime infinite;
+		            animation: fadeinFour $rectAniTime forwards;
 
     }
 
-
     &.five{
-    	 	height: 45px;
-		    width: 75px;
-		    bottom: 10px;
-		    right: -12px;
-		    opacity: 0.5;
+    	 	height: 30px;
+		    width: 50px;
+		    bottom: 116px;
+		    right: 130px;
 			
-		    @include mq(desktop) {
-		        height: 135px;
-			    width: 220px;
-			    top: 20px;
-			    left: 768px;
+		    @include mq(tablet) {
+		            height: 90px;
+				    width: 150px;
+				    top: 60px;
+		    		right: 110px;
 		    }
+
+
+		    @include mq(leftCol) {
+		            height: 150px;
+				    width: 270px;
+				    top: 240px;
+				    left:951px;
+		    }
+
+		   
+		    //margin-top: $sliceOneStartY;
+		    -webkit-animation: fadeinFive $rectAniTime forwards;
+		       -moz-animation: fadeinFive $rectAniTime infinite;
+		        -ms-animation: fadeinFive $rectAniTime infinite;
+		         -o-animation: fadeinFive $rectAniTime infinite;
+		            animation: fadeinFive $rectAniTime forwards;
 
     }
 
@@ -182,14 +284,63 @@
 		    right: 60px;
 		    opacity: 0.75;
 
-		    @include mq(desktop) {
+		    @include mq(tablet) {
+		        height: 99px;
+			    width: 165px;
+			    bottom: 206px;
+		    	right: 180px;
+		    }
+
+		    @include mq(leftCol) {
 		        height: 120px;
 			    width: 200px;
 			    top: 270px;
 			    left: 700px;
 		    }
+		     
+		     -webkit-animation: fadeinSix $rectAniTime forwards;
+		       -moz-animation: fadeinSix $rectAniTime infinite;
+		        -ms-animation: fadeinSix $rectAniTime infinite;
+		         -o-animation: fadeinSix $rectAniTime infinite;
+		            animation: fadeinSix $rectAniTime forwards;
 
     }
    
 
+}
+
+
+@keyframes fadeinOne{
+    0% { opacity:0; }
+    14% { opacity:0.75; } 
+}
+
+@keyframes fadeinTwo{
+    0% { opacity:0; }
+    14% { opacity:0; }
+    28% { opacity:0.75; }
+}
+
+@keyframes fadeinThree{
+    0% { opacity:0; }
+    28% { opacity:0; }
+    42% { opacity:0.75; }
+}
+
+@keyframes fadeinFour{
+    0% { opacity:0; }
+    42% { opacity:0; }
+    56% { opacity:0.75; }
+}
+
+@keyframes fadeinFive{
+    0% { opacity:0; }
+    70% { opacity:0; }
+    84% { opacity:0.75; }
+}
+
+@keyframes fadeinSix{
+    0% { opacity:0; }
+    84% { opacity:0; }
+    100% { opacity:0.75; }
 }
