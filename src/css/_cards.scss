@@ -136,17 +136,30 @@
         list-style-type: none;
         padding-bottom: 3px;
         li {
-            margin: 0 0 $gs-baseline*0.5;
+            margin: 0 0 1px;
         }
 
         .gv-pros-cons-item{
             display:inline-block;
             width: calc(100% - 20px);
+            margin-left: 15px;
             @include mq(tablet){
                  width: calc(100% - 80px);
             }
            
             // max-width: gs-span(6);
+        }
+
+        .gv-pros-cons-item:before{
+            content:'';
+            position: absolute;
+            left: 11px;
+            height:10px;
+            width:10px;
+            border-radius:1000px;
+            margin-top:7px;
+            background-color: $neutral-46;
+
         }
         .bullet{
             display:inline-block;

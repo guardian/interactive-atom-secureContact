@@ -10,7 +10,7 @@ $rectAniTime: 2s;
     	height: 132px;
 	    width: 220px;
 	    bottom: 0;
-	    right: -70px;
+	    right: -40px;
 	    background-image: url('<%= path %>/assets/headZuckerberg.png');
 	    background-repeat: no-repeat;
 	    background-size: contain;
@@ -62,9 +62,9 @@ $rectAniTime: 2s;
 
 
     &.three{
-    	height: 60px;
-	    width: 100px;
-	    bottom: 194px;
+    	height: 72px;
+	    width: 120px;
+	    top: 236px;
 	    right: -40px;
 	    background-image: url('<%= path %>/assets/headHamilton.png');
 	    background-repeat: no-repeat;
@@ -87,10 +87,10 @@ $rectAniTime: 2s;
     }
 
    	&.four{
-    	height: 72px;
-	    width: 120px;
-	    top: 396px;
-	    right: -38px;
+    	height: 60px;
+	    width: 100px;
+	    bottom: 194px;
+	    right: -48px;
 	    background-image: url('<%= path %>/assets/headCameron.png');
 	    background-repeat: no-repeat;
 	    background-size:contain;
@@ -139,10 +139,10 @@ $rectAniTime: 2s;
 		    }
 
 		    @include mq(leftCol) {
-		        height: 135px;
-			    width: 220px;
+		        height: 120px;
+			    width: 200px;
 			    top: 20px;
-			    left: 768px;
+			    left: 750px;
 		    }
 		   	
 		    animation-timing-function:ease-out;
@@ -156,11 +156,11 @@ $rectAniTime: 2s;
     }
    
 	&.two{
-    	 	height: 30px;
-		    width: 50px;
-		    bottom: 40px;
-		    right: 130px;
-		    opacity: 0.5;
+    	 	height: 45px;
+		    width: 75px;
+		    bottom: 144px;
+		    right: 60px;
+		    opacity: 0.75;
 
 		     @include mq(tablet) {
 		            height: 99px;
@@ -188,7 +188,7 @@ $rectAniTime: 2s;
     &.three{
     	 	height: 30px;
 		    width: 50px;
-		    bottom: 258px;
+		    bottom: 239px;
 		    right: -20px;
 
 		    @include mq(tablet) {
@@ -219,23 +219,22 @@ $rectAniTime: 2s;
 
     &.four{
     	 	height: 30px;
-		    width: 50px;
-		    bottom: 10px;
-		    right: 220px;
-
-		    @include mq(tablet) {
-		            width: 100px;
-		            height: 60px;
-		    		bottom: 60px;
-		    		right: 280px;
-		    }
+			width: 50px;
+			top: 230px;
+			right: 40px;
+			    @include mq(tablet) {
+			            width: 100px;
+			            height: 60px;
+			    		bottom: 60px;
+			    		right: 280px;
+			    }
 			
-		    @include mq(leftCol) {
-		            width: 100px;
-		            height: 60px;
-		    		top: 330px;
-    				left: 1310px;
-		    }
+			    @include mq(leftCol) {
+			            width: 100px;
+			            height: 60px;
+			    		top: 330px;
+	    				left: 1310px;
+			    }
 		   
 		    -webkit-animation: fadeinFour $rectAniTime forwards;
 		       -moz-animation: fadeinFour $rectAniTime infinite;
@@ -248,8 +247,8 @@ $rectAniTime: 2s;
     &.five{
     	 	height: 30px;
 		    width: 50px;
-		    bottom: 116px;
-		    right: 130px;
+		    bottom: 115px;
+    		right: 150px;
 			
 		    @include mq(tablet) {
 		            height: 90px;
@@ -278,11 +277,11 @@ $rectAniTime: 2s;
 
 
     &.six{
-    	 	height: 45px;
-		    width: 75px;
-		    bottom: 144px;
-		    right: 60px;
-		    opacity: 0.75;
+    	 	height: 30px;
+		    width: 50px;
+		    bottom: 40px;
+		    right: 150px;
+		    opacity: 0.5;
 
 		    @include mq(tablet) {
 		        height: 99px;
@@ -294,8 +293,8 @@ $rectAniTime: 2s;
 		    @include mq(leftCol) {
 		        height: 120px;
 			    width: 200px;
-			    top: 270px;
-			    left: 700px;
+			    top: 352px;
+			    left: 693px;
 		    }
 		     
 		     -webkit-animation: fadeinSix $rectAniTime forwards;

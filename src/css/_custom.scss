@@ -149,7 +149,7 @@ h5 {
 .gv-standfirst {
     // background-color: rgba(#000, 0.6);
     width: 100%;
-    padding: 36px 0 gs-height(1);
+    padding: 72px 0 gs-height(1);
     @include mq(tablet) {
         width: $card-width-tablet;
         padding: gs-height(2) 0 gs-height(2);  
