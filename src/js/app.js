@@ -77,7 +77,7 @@ let showText = function(target, message, index, callback) {
     if(callback){
         setTimeout(callback, globalTimer);
     }
-    
+
 
 }
 
@@ -100,7 +100,7 @@ function scrollCardIntoView(el) {
     if (el.classList.contains("selected")) {
 
         document.getElementById("cardHolder" + el.getAttribute("card-ref")).scrollIntoView({ behavior: 'smooth' });
-       
+
     }
 
 }
@@ -159,7 +159,7 @@ function toggleActiveNavItem(a) {
     if (b == "L1") {
         [].slice.apply(document.querySelectorAll('.nav-one-item')).forEach(el => {
             el.classList.remove("selected");
-            el.classList.add("unselected");  
+            el.classList.add("unselected");
         });
 
         anonConf = a.getAttribute("list-ref")
@@ -175,13 +175,13 @@ function toggleActiveNavItem(a) {
 
         [].slice.apply(document.querySelectorAll('.gv-card')).forEach(el => {
             el.classList.remove("active");
-            el.classList.add("inactive");  
+            el.classList.add("inactive");
         });
 
         document.querySelector('.gv-cards-heading').innerHTML = "&nbsp;";
 
 
-    
+
 
         textAni("navTwoTitle", ".nav-two-item", "opacity-low", revealEls);
 
@@ -200,7 +200,7 @@ function toggleActiveNavItem(a) {
 
         });
 
-        anonConf == "confidential" ? getCardsArr(a.getAttribute("target-cards-conf")) : getCardsArr(a.getAttribute("target-cards-anon"));
+        anonConf == "Confidential" ? getCardsArr(a.getAttribute("target-cards-conf")) : getCardsArr(a.getAttribute("target-cards-anon"));
         a.classList.remove("unselected");
         a.classList.add("selected");
 

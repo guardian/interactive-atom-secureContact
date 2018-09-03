@@ -11,6 +11,7 @@ $bg-main:  $neutral-86;
 $guardian-brand-darkest: hsl(204,100%,18%);
 $bg-secondary:  $neutral-60;
 $accent-main: $highlight-yellow;
+$highlight-dark: #ffbb50;
 
 $active-fill:$accent-main;
 $inactive-fill:$neutral-96;
@@ -22,6 +23,8 @@ $neutral-dark: $neutral-96;
 $border-color: $neutral-60;
 
 
+
+
 // Uncomment for embeds
 //@import "embed";
 
@@ -31,6 +34,16 @@ $border-color: $neutral-60;
 .element-atom,
 .interactive-atom {
     overflow: hidden;
+
+    a {
+      color: $neutral-7;
+      text-decoration: none;
+      border-bottom: 0.0625rem solid $highlight-dark;
+      transition: border-color .15s ease-out;
+    }
+    a:hover {
+      border-bottom: 0.0625rem solid #121212;
+    }
 }
 
 .page-wrapper{
@@ -48,7 +61,7 @@ $border-color: $neutral-60;
 
 	@include mq(wide){
 		max-width:1300px;
-	}	
+	}
 }
 
 .page-wrapper::before {
@@ -107,7 +120,7 @@ h4, h5{
 	@include mq(desktop){
 		display:block;
 	}
-	
+
 }
 
 .element-atom,
@@ -135,7 +148,7 @@ h4, h5{
 
 	}
 	@media(min-width:740px){
-		margin:0 auto;	
+		margin:0 auto;
 		//padding: $gs-baseline 0;
 		max-width:740px;
 	}
@@ -174,9 +187,9 @@ h4, h5{
 	padding: 0 $gs-gutter*0.5;
 
 	@include mq(tablet){
-		margin: 0 $gs-gutter;	
+		margin: 0 $gs-gutter;
 		padding: 0;
-	}	
+	}
 
 	@include mq(desktop){
 			margin-left:160px;
@@ -207,7 +220,7 @@ active{
 
 
 .l-footer {
-    display: block !important; 
+    display: block !important;
     position: relative;
 }
 
@@ -299,5 +312,3 @@ active{
 @import "eyes";
 @import "header";
 // @import "backTopButton";
-
-
