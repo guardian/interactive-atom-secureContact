@@ -35,14 +35,16 @@ $border-color: $neutral-60;
 .interactive-atom {
     overflow: hidden;
 
-    a {
-      color: $neutral-7;
-      text-decoration: none;
-      border-bottom: 0.0625rem solid $highlight-dark;
-      transition: border-color .15s ease-out;
-    }
-    a:hover {
-      border-bottom: 0.0625rem solid #121212;
+    p {
+      a {
+        color: $neutral-7;
+        text-decoration: none;
+        border-bottom: 0.0625rem solid $highlight-dark;
+        transition: border-color .15s ease-out;
+      }
+      a:hover {
+        border-bottom: 0.0625rem solid #121212;
+      }
     }
 }
 
@@ -296,6 +298,7 @@ active{
 	a {
 		color:$neutral-7;
 		text-decoration: none;
+    // border-bottom: none;
 	}
 }
 
