@@ -1,0 +1,170 @@
+{
+  "tagheadline": "contact us",
+  "headline": "Contact the Guardian securely",
+  "standfirst": "Some of the most important stories published by the Guardian have come from anonymous or confidential tipoffs. If you have something sensitive to share with us, here’s how to get in touch.",
+  "navOneTitle": "First, choose the degree of security you require…",
+  "navsOne": [
+    {
+      "hed": "Confidential",
+      "hedCopy": "Confidential",
+      "copy": "You don’t want anyone else to see what you will be sharing with us"
+    },
+    {
+      "hed": "Anonymous",
+      "hedCopy": "Anonymous",
+      "copy": "You need to hide your identity as well as keep things confidential"
+    }
+  ],
+  "navTwoTitle": "OK, now what kind of material do you want to share…",
+  "navsTwo": [
+    {
+      "hed": "Words",
+      "copy": "Initially at least, you just want to speak to someone",
+      "relatedCardsConf": [
+        "SecureDrop",
+        "Encrypted email",
+        "Mobile messaging",
+        "Phone",
+        "Post"
+      ],
+      "relatedCardsAnon": [
+        "SecureDrop",
+        "Encrypted email",
+        "Post"
+      ]
+    },
+    {
+      "hed": "Electronic documents",
+      "copy": "You have files that you would like to send to the Guardian electronically",
+      "relatedCardsConf": [
+        "SecureDrop",
+        "Encrypted email",
+        "Mobile messaging",
+        "Secure FTP"
+      ],
+      "relatedCardsAnon": [
+        "SecureDrop",
+        "Encrypted email",
+        "Secure FTP"
+      ]
+    },
+    {
+      "hed": "Physical material",
+      "copy": "You have papers, disks or other physical media that you want to give us",
+      "relatedCardsConf": [
+        "Post"
+      ],
+      "relatedCardsAnon": [
+        "Post"
+      ]
+    }
+  ],
+  "cardsTitle": "How to send material…",
+  "cards": [
+    {
+      "hed": "SecureDrop",
+      "introSentence": "SecureDrop is the most secure way to contact the Guardian.",
+      "relatedMaterials": [
+        "Words",
+        "Electronic documents"
+      ],
+      "pros": [
+        "SecureDrop does not record where things come from.",
+        "All material is encrypted automatically.",
+        "We read your submissions on secure computers."
+      ],
+      "cons": [
+        "You will need to download Tor software to access our SecureDrop system.",
+        "If you are being watched, the very act of using Tor may arouse suspicion."
+      ],
+      "readMoreCopy": "SecureDrop allows you to safely send us messages and documents, and to follow up with us later if you wish. All we get is what you send us, and a codename that allows us to reply to you. SecureDrop records nothing else about you. To prevent interception at our end, we decrypt what you send us on a computer that is kept <a href='https://en.wikipedia.org/wiki/Air_gap_(networking)' target='_blank'>completely offline</a>. \r\n                <h4>Get started</h4>\r\n                On a computer that you are confident is <a href='https://theguardian.com/help/2017/mar/15/computer-security-tips-for-whistleblowers-and-sources' target='_blank'>not being monitored</a>, install <a href='https://www.torproject.org/' target='_blank'>TorBrowser</a>. Then go to <a href='https://theguardian.com/securedrop' target='_blank'>theguardian.com/securedrop</a> and follow the instructions there.  \r\n                <h4>After that</h4>\r\n                When you first visit our SecureDrop site, take a note of the passphrase that the service generates for you. This phrase allows you to come back as the same “source” to view replies from us and to correspond securely.   \r\n                You don’t have to give us a way to contact you, but it can be useful for us to be able to do so. It can also help us if you are able to provide some background about what is in the documents, and why you think they might be of interest to us. We can correspond with you on SecureDrop, or you can use SecureDrop to confidentially provide us with other contact information.\r\n                SecureDrop is an <a href='https://securedrop.org/' target='_blank'>open source project</a> managed by the <a href='https://freedom.press/' target='_blank'>Freedom of the Press Foundation</a>."
+    },
+    {
+      "hed": "Encrypted email",
+      "introSentence": "Use a tailor-made email account with PGP encryption to help protect your messages and attachments against prying eyes.",
+      "relatedMaterials": [
+        "words",
+        "electronic documents"
+      ],
+      "pros": [
+        "Encrypted emails and documents are protected by both encryption “keys” and passwords. The bad guys would need to know both to read your stuff.",
+        "You can send long messages and attachments, which is difficult using phone apps.",
+        "It’s easy to communicate directly with a specific Guardian journalist."
+      ],
+      "cons": [
+        "PGP requires a bit of technical know-how to set up.",
+        "If you lose your “keys” or forget your password, you won’t be able to read your own communication."
+      ],
+      "readMoreCopy": "If you plan to write an email to a Guardian journalist about a sensitive matter, look into <a href='https://ssd.eff.org/en/module/introduction-public-key-cryptography-and-pgp' target='_blank'>PGP encryption</a>. Used properly, PGP should make a message or document unreadable to anyone except the person who sent it and the person for whom it was encrypted. You will use a “public key” that belongs to the person you are writing to, but is freely available on the internet. This key turns your message into an unreadable jumble. Your recipient – and no one else – has a corresponding “private key” which can unlock messages that were encrypted by their public key.\r\n                <h4>Get started</h4>\r\n                Don’t use your regular email address. Create a new email account solely for corresponding with the Guardian. Do it on a computer that <a href='https://theguardian.com/help/2017/mar/15/computer-security-tips-for-whistleblowers-and-sources' target='_blank'>isn’t being monitored</a>, and make sure the sign-up information you provide doesn’t tie the account back to you. \r\n                If you’re using a browser-based service such as Gmail, Yahoo! Mail or GMX webmail, look into <a href='https://www.mailvelope.com/en' target='_blank'>Mailvelope</a> for encrypting messages in your browser. Two popular applications for encrypting text and documents, which you can then paste or attach to emails, are <a href='https://www.gpg4win.org/' target='_blank'>Gpg4win</a> for Windows and <a href='https://gpgtools.org/' target='_blank'>GPGSuite</a> for Mac. \r\nOnce you have installed one of these tools you can use it to create your own PGP keys. Keep your private key and password safe and don’t store the two together. \r\n                <h4>After that</h4>\r\n                You should encrypt your messages and attachments using both your public key and that of the person you are writing to. All being well, this means that only you and the journalist will be able to decrypt them. You can find Guardian journalists’ keys at <a href='https://pgp.theguardian.com' target='_blank'>pgp.theguardian.com</a>. \r\n                Information carried with an email message can reveal your <a href='https://en.wikipedia.org/wiki/IP_address' target='_blank'>IP address</a>. If you don’t want the location you’ll send from to be traceable, connect to your email service over the <a href='https://en.wikipedia.org/wiki/Tor_(anonymity_network)' target='_blank'>Tor network</a>.\r\n                Email your encrypted material to us, along with a copy of your public key so we can reply to you also under encryption. Don’t encrypt the public key itself. \r\n                Remember to log out after sending the message. You may also wish to delete the history of the correspondence from your browser or email software. <a href='https://theguardian.com/help/2017/mar/15/computer-security-tips-for-whistleblowers-and-sources' target='_blank'>Keep your computer secure</a>."
+    },
+    {
+      "hed": "Mobile messaging",
+      "introSentence": "Secure messaging apps are the easiest way to start a confidential dialogue with a Guardian journalist.",
+      "relatedMaterials": [
+        "Words",
+        "Electronic documents"
+      ],
+      "pros": [
+        "Apps such as Signal and Threema are encrypted in transit and on the providers’ servers, so only the sender and recipient can read them.",
+        "Once you have set them up, they’re as easy to use as regular text messaging."
+      ],
+      "cons": [
+        "All phone communication involves the phone disclosing its identity and location, so mobile apps aren’t great for anonymity.",
+        "Mobile apps often rely on the phone’s own security to protect messages stored on the phone. So if someone gets your phone and manages to unlock it, they’ll be able to read undeleted messages.",
+        "Long messages and attachments are tricky."
+      ],
+      "readMoreCopy": "Secure messaging apps are easy to use and the journalist is likely to see your message very quickly. They can be useful as a way to discuss what might be the best strategy for ongoing communication. But you should avoid them if you wish to remain completely anonymous or don’t want anyone to know you’re speaking to the Guardian.\r\n                <h4>Get started</h4>\r\n                Decide whether you want to do this on your normal phone or if you want to buy a less easily traceable phone for this purpose. Then install an app such as <a href='https://whispersystems.org/' target='_blank'>Signal</a> (which has excellent security but requires you to disclose your phone number) or <a href='https://threema.ch/en' target='_blank'>Threema</a>. If the app has a disappearing messages feature, consider activating it so your messages self-destruct after a predetermined time. Before you use the app for anything serious, familiarise yourself with it by sending innocuous test messages to someone.\r\n                <h4>After that</h4>\r\n                Add the Guardian investigations teams’ Signal accounts to your phone contacts:\r\n                <span class=\"bullet\">•</span>London: +44 7584 640566\r\n<span class=\"bullet\">•</span>Sydney: +61 459 653 750\r\n                <span class=\"bullet\">•</span>New York: +1 646 926 0436\r\nYou will then be able to message those accounts using Signal. The London and Sydney numbers can also be used for WhatsApp messaging.\r\nPlease don’t phone or send ordinary text messages to those numbers. You won’t get a reply.\r\n                Check our journalists’ profile pages for other contact details. Google their name and “the Guardian” and you should find it. If you can’t find the right contact details for the journalist, you could message one of the above numbers using Signal or WhatsApp and ask for your details to be passed on to the person you have in mind. Please provide a brief explanation."
+    },
+    {
+      "hed": "Secure FTP",
+      "introSentence": "We can provide you with a unique user account to upload documents.",
+      "relatedMaterials": [
+        "electronic documents"
+      ],
+      "pros": [
+        "Very secure (relatively speaking).",
+        "Good for sending a series of documents over time.",
+        "Good for very large document sets (gigabytes)."
+      ],
+      "cons": [
+        "You’ll need to correspond with us beforehand so we can supply you with access keys and passphrases.",
+        "You’ll need to know how to use FTP software."
+      ],
+      "readMoreCopy": "We have a private Secure FTP server that uses password-protected keypair authentication. We can provide you with a unique user account to upload documents. On receipt, these documents are automatically moved to an isolated environment. \r\n                <h4>Get started</h4>\r\n                Contact us using one of the other methods to let us know what you want to send us. We will provide you with a keyfile and password, plus instructions for how to access the SFTP site. You will need to install some FTP software such as <a href='https://cyberduck.io/?l=en' target='_blank'>Cyberduck</a> or <a href='https://filezilla-project.org/' target='_blank'>FileZilla</a> on a computer. <a href='https://theguardian.com/help/2017/mar/15/computer-security-tips-for-whistleblowers-and-sources' target='_blank'>Read up on computer security</a> before sending us anything. \r\n                <h4>After that</h4>\r\n                Connect to the site and send us documents, then let us know they’ve arrived. The documents will disappear from the destination after your transmission is complete. Don’t worry: they’ve just been moved somewhere even more secure. Remember to tidy up on your computer: remove copies of files you don’t want lying around etc."
+    },
+    {
+      "hed": "Phone",
+      "introSentence": "Although telephone communication is far from secure, it can be a practical way to get a conversation started and to exchange secure messaging identities.",
+      "relatedMaterials": [
+        "Words"
+      ],
+      "pros": [
+        "Requires no technical prowess.",
+        "Useful to initiate communication with a journalist to exchange contact information for more secure channels."
+      ],
+      "cons": [
+        "Telephone communication is easily hackable and can reveal your identity and/or location.",
+        "It’s not always easy to verify that the person you’re speaking to is who they say they are."
+      ],
+      "readMoreCopy": "<h4>Get started</h4>\r\n                Before you get in touch, find the name of the journalist you want to speak to, and decide in advance exactly how much you want to tell us about who you are and how we can get back to you. The journalist you want may not be available when you call, so you may have to leave a message. Be prepared for that.\r\n                If you will need to share documents with us later, look at some of the other options in this guide before calling so you can tell the journalist how you’d prefer to do that. \r\n                Consider whether or not it is safe to call us from your work or home phone, or from any mobile phone that is associated with you. If you buy a pay-as-you-go sim card to call us from a new number, think carefully about where and when you buy it, and how you pay for it. And remember that mobile phone calls disclose the handset ID as well as the sim card. \r\n                <h4>After that</h4>\r\n                Call us on one of these numbers:\r\n                <span class=\"bullet\">•</span>London office: <a href='tel:+442033532000'>+44 (0)20 3353 2000</a>\r\n<span class=\"bullet\">•</span>Sydney office: <a href='tel:+6128076850'>+61 (0)2 8076 8500</a>\r\n                <span class=\"bullet\">•</span>New York office: <a href='tel:+12122317762'>+1 212 231 7762</a>\r\n                <span class=\"bullet\">•</span>Washington office: <a href='tel:+120251789042'>+1 202 517 89042</a>\r\n                <span class=\"bullet\">•</span>San Francisco office: <a href='tel:+14159195874'>+1 415 919 5874</a>"
+    },
+    {
+      "hed": "Post",
+      "introSentence": "Post still has its uses, especially if you want to send us hard copies.",
+      "relatedMaterials": [
+        "Words",
+        "Physical material"
+      ],
+      "pros": [
+        "If appropriate measures are taken, conventional mail can be a reasonably good way to hide who you are.",
+        "If you don’t want to meet a journalist in person, it’s the only reliable way to hand over physical objects."
+      ],
+      "cons": [
+        "It’s slow.",
+        "Post can get hijacked or at least scanned in transit.",
+        "Post can get lost."
+      ],
+      "readMoreCopy": "If you’re not actually being followed it’s fairly unlikely that an envelope or small package will get intercepted.\r\n                <h4>Get started</h4>\r\n                Stuff can go missing in the post, so consider how bad it would be to lose the material you’re planning to send us. Can you make copies? \r\nThink about whether or not you need to preserve your anonymity. Could the posting location give you up? How about the materials and packaging? If you’re very worried about the package being traced back to you, post it somewhere busy and make sure there is nothing memorable about your or the package’s appearance.\r\n                Mail is scanned for dangerous compounds and objects. Don’t include anything that could cause problems with delivery. International mail needs a customs declaration, and registered mail requires you to provide sender details.\r\n                <h4>After that</h4>\r\n<b>Guardian UK postal address</b>\r\n                The Guardian\r\n                Kings Place \r\n                90 York Way \r\n                London N1 9GU\r\n                United Kingdom\r\n<b>Guardian US postal address</b>\r\n                The Guardian\r\n                315 West 36th St\r\nNew York \r\nNY 10018\r\n                USA\r\n<b>Guardian Australia postal address</b>\r\n                The Guardian\r\n                Level 2 \r\n                19 Foster St\r\n                Surry Hills\r\n                NSW 2010\r\n                Australia"
+    }
+  ]
+}
