@@ -8,7 +8,10 @@ const subst = `</p><p>`;
 
 export async function render() {
 
-	let data = formatData(textcopy);
+	let data = formatData(await rp({
+        uri: "https://interactive.guim.co.uk/docsdata-test/19RsinuAYaTcwF9wY57IhzFVOXiVwYdugwfogm4RWYa4.json",
+        json: true
+    }));
 
     return buildEditView(data)
 
