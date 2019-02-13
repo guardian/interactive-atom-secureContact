@@ -3,7 +3,7 @@ import Mustache from 'mustache'
 import rp from 'request-promise'
 import textcopy from './js/copy12022019.json'
 
-const regex = /[\r\n]+/g;
+const regex = /(?:\\[rn]|[\r\n])/g;
 const subst = `</p><p>`;
 
 export async function render() {
