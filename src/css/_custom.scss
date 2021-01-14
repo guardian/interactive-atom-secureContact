@@ -371,10 +371,13 @@ h5 {
 
 .unselected {
     color: rgba($neutral-mid, 0.8);
+    color: rgba($neutral-20, 0.65);
     background-color: $inactive-fill;
     h5,
     span {
         color: rgba($neutral-mid, 0.8);
+        color: $neutral-46;
+        color: rgba($neutral-20, 0.8);
     }
 }
 
