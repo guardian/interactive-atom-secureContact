@@ -53,6 +53,6 @@
     "mustache": "^2.3.0",
     "natives": "^1.1.6",
     "request-promise": "^4.2.2",
-    "smoothscroll-polyfill": "^0.4.3"
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }
